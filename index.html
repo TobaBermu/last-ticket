@@ -51,7 +51,7 @@ section{position:relative;padding-block:clamp(72px,11vw,140px)}
 .rv.in{opacity:1;transform:none}
 
 /* HERO */
-.hero{padding-block:clamp(48px,8vw,96px) clamp(56px,8vw,110px);overflow:hidden;isolation:isolate}
+.hero{position:relative;padding-block:clamp(48px,8vw,96px) clamp(56px,8vw,110px);overflow:hidden;isolation:isolate}
 .hero::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:120%;background:radial-gradient(60% 50% at 75% 55%,rgba(91,26,140,.75),transparent 70%),radial-gradient(40% 40% at 10% 90%,rgba(255,45,122,.18),transparent 70%);z-index:-1}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,5vw,64px);align-items:center}
 .hero h1{font-size:clamp(56px,10.5vw,148px);letter-spacing:-.045em;line-height:.9}
@@ -169,11 +169,12 @@ section{position:relative;padding-block:clamp(72px,11vw,140px)}
 @media (max-width:900px){
   .flow{grid-template-columns:1fr}
   .phone-col{position:sticky;top:60px;z-index:5;order:-1;background:linear-gradient(var(--night) 88%,transparent);padding-bottom:14px}
-  .phone{height:min(66vh,620px);aspect-ratio:391/828;border-radius:34px;padding:8px}
+  .phone{height:min(54vh,560px);aspect-ratio:391/828;border-radius:30px;padding:7px}
+  .fstep h3{font-size:24px}.fstep p{font-size:15px}.fstep .data{font-size:12px}
   .phone iframe{top:8px;left:8px}
   .tryit{display:none}
   .phone .island{top:14px;width:64px;height:18px}
-  .fstep{min-height:85vh;align-content:end;padding-bottom:4vh;opacity:1}
+  .fstep{min-height:85vh;align-content:end;padding-bottom:96px;opacity:1}
 }
 
 /* MIX */
@@ -359,6 +360,88 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
 :focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:6px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.pre{opacity:1;transform:none}}
+
+/* DIAGRAMAS */
+.pet h4,.pet p,.fac h4,.fac p,.bone h4,.dg-head h3,.dg-head p{margin:0}.fac p{margin-top:6px}
+.dg{margin-top:clamp(48px,7vw,96px)}
+.dg-head{display:grid;gap:10px;margin-bottom:clamp(22px,3vw,36px);max-width:760px}
+.dg-head .tag{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.dg-head h3{font-size:clamp(28px,3.6vw,44px);letter-spacing:-.03em;text-wrap:balance}
+.dg-head p{color:var(--muted)}
+.dg-src{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:18px}
+/* flor */
+.flor{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.4vw,16px);max-width:820px;margin-inline:auto}
+.pet{background:linear-gradient(150deg,rgba(255,45,122,.9),rgba(255,159,28,.85));color:#fff;padding:clamp(16px,2vw,24px);min-height:130px;display:grid;align-content:center;gap:6px;text-align:center;min-width:0;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.pet.mej{background:linear-gradient(150deg,rgba(123,92,255,.75),rgba(255,45,122,.75))}
+.pet h4{font-family:var(--display);font-size:clamp(15px,1.5vw,18px);text-transform:uppercase;letter-spacing:.04em}
+.pet p{font-size:14px;line-height:1.4;opacity:.95}
+.pet:hover{transform:scale(1.04)}
+.pet.tl{border-radius:60% 60% 14px 60%}.pet.t{border-radius:60% 60% 14px 14px}.pet.tr{border-radius:60% 60% 60% 14px}
+.pet.l{border-radius:60% 14px 14px 60%}.pet.r{border-radius:14px 60% 60% 14px}
+.pet.bl{border-radius:60% 14px 60% 60%}.pet.b{border-radius:14px 14px 60% 60%}.pet.br{border-radius:14px 60% 60% 60%}
+.core{border-radius:50%;aspect-ratio:1;align-self:center;justify-self:center;width:100%;max-width:240px;display:grid;place-content:center;text-align:center;padding:18px;background:radial-gradient(circle at 40% 35%,var(--night-3),var(--night));border:3px solid var(--magenta);box-shadow:0 0 0 8px rgba(255,45,122,.12),0 0 60px rgba(255,45,122,.35)}
+.core b{font-family:var(--display);font-size:clamp(18px,2vw,24px);line-height:1.1}
+.core small{color:var(--muted);font-size:13px;margin-top:6px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:18px;font-size:14px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px;background:linear-gradient(150deg,var(--magenta),var(--orange))}
+.legend i.mej{background:linear-gradient(150deg,#7B5CFF,var(--magenta))}
+@media (max-width:640px){.flor{grid-template-columns:1fr 1fr}.core{grid-column:1/-1;order:-1;max-width:200px;margin-bottom:6px}.pet{min-height:0;border-radius:18px!important}}
+/* ishikawa */
+.fish{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(180px,250px);grid-template-rows:auto 56px auto;column-gap:clamp(12px,1.6vw,20px)}
+.bone{display:grid;gap:10px;align-content:end;min-width:0;position:relative}
+.bone.dn{align-content:start}
+.bone h4{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.bone .c{background:var(--night-2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px;color:var(--muted)}
+.bone .c b{display:block;color:var(--paper);font-size:12px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.bone .c.a{border-color:rgba(255,159,28,.45)}
+.bone::after{content:"";position:absolute;left:50%;width:3px;height:28px;background:linear-gradient(var(--magenta),var(--orange));border-radius:3px}
+.bone.up::after{bottom:-28px}.bone.dn::after{top:-28px}
+.bone.dn h4{order:3}
+.spine{grid-column:1/4;grid-row:2;align-self:center;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--glow),var(--magenta) 60%,var(--orange))}
+.head{grid-column:4;grid-row:1/4;align-self:center;background:linear-gradient(150deg,var(--magenta),var(--orange));border-radius:24px 120px 120px 24px;padding:28px 34px 28px 24px;font-family:var(--display);font-weight:800;font-size:clamp(18px,1.8vw,23px);line-height:1.15;color:#fff;box-shadow:0 20px 60px rgba(255,45,122,.35)}
+.head small{display:block;font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;opacity:.9}
+@media (max-width:900px){.fish{grid-template-columns:1fr 1fr;grid-template-rows:none;row-gap:16px}.head{grid-column:1/-1;grid-row:1;border-radius:24px}.spine{display:none}.bone{grid-row:auto!important}.bone::after{display:none}.bone.dn h4{order:0}}
+@media (max-width:560px){.fish{grid-template-columns:1fr}}
+/* kapferer */
+.prism{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,380px) minmax(0,1fr);gap:clamp(16px,2.4vw,32px);align-items:center}
+.facets{display:grid;gap:clamp(18px,3vw,40px)}
+.facets.lft{text-align:right}
+.fac h4{font-family:var(--display);font-size:clamp(20px,2vw,26px);text-transform:uppercase;letter-spacing:.02em}
+.fac p{color:var(--muted);font-size:15px;margin-top:4px}
+.fac:nth-child(2) h4{color:var(--orange)}
+.hex{position:relative;width:100%}
+.hex svg{display:block;width:100%;height:auto;overflow:visible}
+.hex .hx{fill:rgba(91,26,140,.35);stroke:url(#hg);stroke-width:5;stroke-dasharray:1200;stroke-dashoffset:0;transition:stroke-dashoffset 1.6s cubic-bezier(.2,.7,.2,1) .2s}
+.hex.pre .hx{stroke-dashoffset:1200}
+.hex .axl{stroke:var(--orange);stroke-width:2.5;stroke-dasharray:8 8;fill:none}
+.hex .lb{fill:var(--paper);font-family:var(--body);font-weight:700;font-size:15px}
+.hex .nm{fill:var(--paper);paint-order:stroke;stroke:#1E1B66;stroke-width:10px;stroke-linejoin:round;font-family:var(--display);font-weight:800;font-size:44px;letter-spacing:-.02em}
+@media (max-width:860px){.prism{grid-template-columns:1fr 1fr}.hex{grid-column:1/-1;order:-1;max-width:340px;margin-inline:auto}.facets.lft{text-align:left}}
+@media (max-width:480px){.prism{grid-template-columns:1fr}}
+
+/* MODO PRESENTACIÓN */
+html,body{overflow-x:clip}
+.marquee{overflow:clip}
+.deck{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateZ(500px);z-index:9999;display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:rgba(11,10,58,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 12px 40px rgba(0,0,0,.45);max-width:calc(100vw - 32px);transition:opacity .3s,transform .3s}
+.deck.off{opacity:0;pointer-events:none}
+.deck button{width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.08);color:var(--paper);font-size:20px;cursor:pointer;flex:none}
+.deck button.nx{background:var(--grad)}
+.deck button:disabled{opacity:.3}
+.deck{width:min(340px,calc(100vw - 32px))}
+.deck .lbl{display:grid;flex:1;min-width:0;padding:0 8px;text-align:center}
+.deck .lbl b{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.deck .lbl small{font-family:var(--mono);font-size:11px;color:var(--orange)}
+.deck .bar{height:3px;border-radius:3px;background:rgba(255,255,255,.12);margin-top:4px;overflow:hidden}
+.deck .bar i{display:block;height:100%;width:0;background:var(--grad);transition:width .4s}
+section[id],.hero,.fstep{scroll-margin-top:64px}
+.ax-more{display:none}
+@media (max-width:760px){
+  .ax.fold>:not(.ax-h):not(.ax-more){display:none!important}
+  .ax.fold>.ax-less{display:none!important}
+  .ax-more{display:block;width:100%;margin-top:12px;padding:13px;border-radius:14px;border:1px solid var(--orange);background:rgba(255,159,28,.08);color:var(--paper);font:600 15px var(--body);cursor:pointer}
+  section{padding-bottom:calc(clamp(64px,10vw,140px) + 40px)}
+  .finale{padding-bottom:110px}
+}
 </style>
 </head>
 <body>
@@ -540,12 +623,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <div class="steps" id="steps">
           <div class="fstep" data-step="splash"><span class="num">Paso 1 · Descubrimiento</span><h3>Una pieza en Instagram, una invitación con link.</h3><p>El 95,5% del segmento usa Instagram todos los días. Ahí se instala la categoría antes que la marca.</p><span class="data">Reels de reconocimiento: 1.168.831 impresiones</span></div>
           <div class="fstep" data-step="onb"><span class="num">Paso 2 · Registro y onboarding</span><h3>Elegís qué obras te gustan y activás los avisos.</h3><p>Comedia, drama, musical, teatro independiente. Las notificaciones se filtran por tus géneros para que cada aviso valga la pena.</p><span class="data">Meta: 60% de los registrados con notificaciones activas</span></div>
-          <div class="fstep" data-step="notify"><span class="num">Paso 3 · El aviso</span><h3>“Se abrió el cupo Rush de tus salas.”</h3><p>Los cupos llegan entre 8 y 2 horas antes de la función, justo cuando se decide el plan de la noche.</p><span class="data">Notificaciones de jueves a domingo, de 17 a 23 h</span></div>
-          <div class="fstep" data-step="det"><span class="num">Paso 4 · Elegís la función</span><h3>Precio final, sector y elenco antes de pagar.</h3><p>La ficha muestra el precio con cargo incluido, el precio de lista tachado, el sector en el plano y la cuenta regresiva.</p><span class="data">Respuesta al insight 3: sabés dónde te sentás</span></div>
-          <div class="fstep" data-step="pay"><span class="num">Paso 5 · Rush</span><h3>La butaca queda reservada mientras pagás.</h3><p>Diez minutos de bloqueo, dos entradas contiguas por defecto y pago en un toque con Mercado Pago.</p><span class="data">$25.200 por entrada · 2 entradas $50.400</span></div>
+          <div class="fstep" data-step="home"><span class="num">Paso 3 · Cerca tuyo</span><h3>El mapa muestra qué hay con Rush a pocas cuadras.</h3><p>La home ubica al usuario y lista las obras con cupo Rush dentro de 1,5 km, ordenadas por distancia. Si no hay nada cerca, la cartelera completa está a un toque.</p><span class="data">Decidir hoy también es decidir dónde: salir cerca de casa o del trabajo</span></div>
+          <div class="fstep" data-step="notify"><span class="num">Paso 4 · El aviso</span><h3>“Se abrió el cupo Rush de tus salas.”</h3><p>Los cupos llegan entre 8 y 2 horas antes de la función, justo cuando se decide el plan de la noche.</p><span class="data">Notificaciones de jueves a domingo, de 17 a 23 h</span></div>
+          <div class="fstep" data-step="det"><span class="num">Paso 5 · Elegís la función</span><h3>Precio final, sector y elenco antes de pagar.</h3><p>La ficha muestra el precio con cargo incluido, el precio de lista tachado, el sector en el plano y la cuenta regresiva.</p><span class="data">Respuesta al insight 3: sabés dónde te sentás</span></div>
+          <div class="fstep" data-step="pay"><span class="num">Paso 6 · Rush</span><h3>La butaca queda reservada mientras pagás.</h3><p>Diez minutos de bloqueo, dos entradas contiguas por defecto y pago en un toque con Mercado Pago.</p><span class="data">$25.200 por entrada · 2 entradas $50.400</span></div>
           <div class="fstep" data-step="lot"><span class="num">Paso 5 bis · Lottery</span><h3>Te anotás, sorteamos y te avisamos.</h3><p>Si salís sorteada, tenés 15 minutos para confirmar. Si no, la app te propone otra obra del mismo género.</p><span class="data">$20.160 por entrada · 60% de descuento</span></div>
-          <div class="fstep" data-step="tix"><span class="num">Paso 6 · E-ticket</span><h3>El QR llega al instante.</h3><p>En la app, en el mail y en la billetera del teléfono. Una hora antes, el recordatorio con cómo llegar a la sala.</p><span class="data">Reembolso automático si la función se suspende</span></div>
-          <div class="fstep" data-step="invite"><span class="num">Paso 7 · Después de la función</span><h3>Valorás la obra e invitás a alguien.</h3><p>El acompañante es parte del servicio: si se registra con tu link, los dos suman crédito para la próxima.</p><span class="data">Usuario recurrente: vuelve al paso 3</span></div>
+          <div class="fstep" data-step="tix"><span class="num">Paso 7 · E-ticket</span><h3>El QR llega al instante.</h3><p>En la app, en el mail y en la billetera del teléfono. Una hora antes, el recordatorio con cómo llegar a la sala.</p><span class="data">Reembolso automático si la función se suspende</span></div>
+          <div class="fstep" data-step="invite"><span class="num">Paso 8 · Después de la función</span><h3>Valorás la obra e invitás a alguien.</h3><p>El acompañante es parte del servicio: si se registra con tu link, los dos suman crédito para la próxima.</p><span class="data">Usuario recurrente: vuelve al paso 3</span></div>
         </div>
         <div class="phone-col">
           <div class="phone"><div class="island" aria-hidden="true"></div><iframe id="app" src="app.html#embed" title="Demo interactiva de la app Last Ticket" loading="eager"></iframe></div>
@@ -575,6 +659,44 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <div class="p sv rv"><span class="l">P</span><h3>Personas</h3><p>Atención por chat y WhatsApp de jueves a domingo, ejecutivo de cuentas para salas y personal de puerta capacitado.</p></div>
         <div class="p sv rv"><span class="l">P</span><h3>Productividad</h3><p>Cupos por API sin doble venta, e-ticket automático, liquidación semanal y panel de ocupación recuperada para cada sala.</p></div>
       </div>
+
+      <div class="dg">
+        <div class="dg-head rv">
+          <span class="tag">Flor de servicio · Lovelock</span>
+          <h3>Un servicio central y ocho pétalos que lo sostienen.</h3>
+          <p>Los pétalos facilitadores son los que hacen posible la compra; los de mejora son los que hacen que el espectador quiera volver.</p>
+        </div>
+        <div class="flor rv">
+          <div class="pet tl"><h4>Información</h4><p>Cartelera filtrable, reglas de Rush y Lottery, precio final, sector y cómo ingresar.</p></div>
+          <div class="pet t"><h4>Toma de pedidos</h4><p>Selección de función, checkout de un toque e inscripción al sorteo.</p></div>
+          <div class="pet tr mej"><h4>Consulta</h4><p>Recomendaciones por historial, funciones alternativas y chatbot.</p></div>
+          <div class="pet l mej"><h4>Hospitalidad</h4><p>Recordatorio previo, bienvenida y mensaje a quien no ganó el sorteo.</p></div>
+          <div class="core"><b>Entradas de teatro de último momento</b><small>Rush y Lottery</small></div>
+          <div class="pet r"><h4>Facturación</h4><p>Desglose antes de confirmar, comprobante automático e historial.</p></div>
+          <div class="pet bl mej"><h4>Cuidado</h4><p>Protección de datos, resguardo del e-ticket y política ante suspensión.</p></div>
+          <div class="pet b mej"><h4>Excepciones</h4><p>Reembolso automático, cupo agotado, falla del QR y cambio de horario.</p></div>
+          <div class="pet br"><h4>Pago</h4><p>Mercado Pago prioritario (59,5% del segmento), MODO, tarjetas y medio guardado.</p></div>
+        </div>
+        <div class="legend"><span><i></i>Facilitadores</span><span><i class="mej"></i>De mejora</span></div>
+      </div>
+
+      <div class="dg">
+        <div class="dg-head rv">
+          <span class="tag">Diagrama de Ishikawa</span>
+          <h3>Qué puede fallar en la puerta, y cómo lo prevenimos.</h3>
+          <p>El momento más crítico del servicio es el ingreso a la sala: es donde la promesa de certeza se cumple o se rompe.</p>
+        </div>
+        <div class="fish rv">
+          <div class="bone up" style="grid-row:1"><h4>Personas</h4><div class="c"><b>Causa</b>Personal de puerta sin instrucción; rotación.</div><div class="c a"><b>Prevención</b>Capacitación y guardia de soporte en la franja crítica.</div></div>
+          <div class="bone up" style="grid-row:1"><h4>Método</h4><div class="c"><b>Causa</b>Validación manual e inconsistente.</div><div class="c a"><b>Prevención</b>Proceso estandarizado y checklist de control en puerta.</div></div>
+          <div class="bone up" style="grid-row:1"><h4>Tecnología</h4><div class="c"><b>Causa</b>App o escáner sin sincronizar; fallas de conectividad.</div><div class="c a"><b>Prevención</b>Cupos por API en tiempo real y redundancia de conexión.</div></div>
+          <div class="spine" aria-hidden="true"></div>
+          <div class="head"><small>Efecto</small>El espectador no logra entrar a la sala con su entrada de Last Ticket.</div>
+          <div class="bone dn" style="grid-row:3"><h4>Materiales</h4><div class="c"><b>Causa</b>QR mal impreso o con baja legibilidad en pantalla.</div><div class="c a"><b>Prevención</b>QR en la billetera del teléfono y listado de respaldo.</div></div>
+          <div class="bone dn" style="grid-row:3"><h4>Entorno</h4><div class="c"><b>Causa</b>Alta demanda, filas largas y poca señalización.</div><div class="c a"><b>Prevención</b>Acceso identificado y señalética Last Ticket en salas socias.</div></div>
+          <div class="bone dn" style="grid-row:3"><h4>Medición</h4><div class="c"><b>Causa</b>Sin métricas de control ni alertas tempranas.</div><div class="c a"><b>Prevención</b>Meta de 98% de validaciones correctas y alertas en vivo.</div></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -588,6 +710,41 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <div class="bcard rv"><h3>Identidad</h3><p>Azul noche de sala a oscuras, magenta y naranja de las luces del escenario, y la cuenta regresiva como recurso propio.</p>
           <div class="swatches" style="margin-top:8px;padding-bottom:22px"><div class="sw" style="background:#0B0A3A"><span>#0B0A3A</span></div><div class="sw" style="background:#5B1A8C"><span>#5B1A8C</span></div><div class="sw" style="background:#FF2D7A"><span>#FF2D7A</span></div><div class="sw" style="background:#FF9F1C"><span>#FF9F1C</span></div></div>
         </div>
+      </div>
+
+      <div class="dg">
+        <div class="dg-head rv">
+          <span class="tag">Prisma de identidad · Kapferer</span>
+          <h3>Seis caras de una misma marca.</h3>
+          <p>A la izquierda, lo que la marca muestra hacia afuera; a la derecha, lo que lleva adentro. Arriba habla el emisor; abajo, el receptor.</p>
+        </div>
+        <div class="prism">
+          <div class="facets lft">
+            <div class="fac rv"><h4>Físico</h4><p>App móvil, e-ticket QR, cuenta regresiva naranja, paleta noche, magenta y naranja, cartelera del día.</p></div>
+            <div class="fac rv"><h4>Relación</h4><p>Facilitadora y cómplice: “yo te consigo el lugar”.</p></div>
+            <div class="fac rv"><h4>Reflejo</h4><p>Alguien que sabe moverse y consigue planes que el resto no encuentra.</p></div>
+          </div>
+          <div class="hex rv" aria-label="Prisma de identidad con Last Ticket en el centro">
+            <svg viewBox="-40 -40 380 420" role="img">
+              <defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF2D7A"/><stop offset="1" stop-color="#FF9F1C"/></linearGradient></defs>
+              <polygon class="hx" points="150,20 280,95 280,245 150,320 20,245 20,95"/>
+              <line class="axl" x1="150" y1="-6" x2="150" y2="346"/>
+              <line class="axl" x1="-30" y1="170" x2="330" y2="170"/>
+              <text class="lb" x="150" y="-16" text-anchor="middle">Emisor</text>
+              <text class="lb" x="150" y="370" text-anchor="middle">Receptor</text>
+              <text class="nm" x="150" y="160" text-anchor="middle">Last</text>
+              <text class="nm" x="150" y="206" text-anchor="middle">Ticket</text>
+              <text class="lb" x="-30" y="194" font-size="13">Exterior</text>
+              <text class="lb" x="330" y="194" text-anchor="end" font-size="13">Interior</text>
+            </svg>
+          </div>
+          <div class="facets">
+            <div class="fac rv"><h4>Personalidad</h4><p>Espontánea y resolutiva. Informal en el tono, rigurosa en la transacción.</p></div>
+            <div class="fac rv"><h4>Cultura</h4><p>El teatro no es un lujo. Una butaca vacía no le sirve a nadie.</p></div>
+            <div class="fac rv"><h4>Mentalización</h4><p>“Puedo seguir saliendo aunque esté ajustado”: el 59,4% tiene restricción presupuestaria.</p></div>
+          </div>
+        </div>
+        <p class="dg-src">Fuente: elaboración propia sobre la investigación Last Ticket (n = 404).</p>
       </div>
     </div>
   </section>
@@ -1014,6 +1171,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   </defs>
 </svg>
 
+<div class="deck" id="deck" role="navigation" aria-label="Modo presentación">
+  <button type="button" id="dk-prev" aria-label="Anterior">‹</button>
+  <div class="lbl"><small id="dk-n">01 / 10</small><b id="dk-t">Inicio</b><div class="bar"><i id="dk-bar"></i></div></div>
+  <button type="button" class="nx" id="dk-next" aria-label="Siguiente">›</button>
+</div>
+
 <script>
 (function(){
   var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1089,7 +1252,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   var months=document.querySelector(".months");
   if(months){ if(!reduce&&"IntersectionObserver" in window&&months.getBoundingClientRect().top>innerHeight){fillMonths(false);var mo=new IntersectionObserver(function(es){if(es[0].isIntersecting){fillMonths(true);mo.disconnect()}},{threshold:.3});mo.observe(months)}else{fillMonths(true)} }
   // anexo: chip activo
-  var axs=$$(".ax"),axl=$$(".anx-nav a");
+  var axs=$$("article.ax"),axl=$$(".anx-nav a");
   if("IntersectionObserver" in window){var ao=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){axl.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})}})},{rootMargin:"-30% 0px -60% 0px"});axs.forEach(function(a){ao.observe(a)})}
   // final: el telón se abre con el scroll y se sella la entrada
   var fin=document.getElementById("final"),stamped=false;
@@ -1102,8 +1265,39 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   }
   if(!reduce&&fin&&fin.getBoundingClientRect().top>innerHeight){fin.style.setProperty("--stamp",2.2);fin.style.setProperty("--stampo",0)}
   addEventListener("scroll",curtain,{passive:true});curtain();
+
+  // modo presentación: anterior / siguiente por sección (y por paso dentro de la app)
+  (function(){
+    var names={top:"Inicio",problema:"El problema",solucion:"Rush y Lottery",segmento:"Segmento",insights:"Insights",flujo:"La app",mix:"Marketing mix",marca:"Marca",medios:"Medios",anexo:"Anexo",final:"Cierre"};
+    var slides=[];
+    ["top","problema","solucion","segmento","insights","flujo"].forEach(function(id){var e=document.getElementById(id);if(e)slides.push({el:e,t:names[id]})});
+    $$("#flujo .fstep").forEach(function(f,i){slides.push({el:f,t:"La app · paso "+(i+1),step:1})});
+    ["mix","marca","medios","anexo","final"].forEach(function(id){var e=document.getElementById(id);if(e)slides.push({el:e,t:names[id]})});
+    var $=function(q){return document.querySelector(q)};
+    var deck=$("#deck"),cur=0,N=slides.length;
+    function idx(){var y=innerHeight*0.45,k=0;slides.forEach(function(s,i){if(s.el.getBoundingClientRect().top<=y)k=i});return k}
+    function paint(){cur=idx();$("#dk-n").textContent=String(cur+1).padStart(2,"0")+" / "+N;$("#dk-t").textContent=slides[cur].t;$("#dk-bar").style.width=((cur+1)/N*100)+"%";$("#dk-prev").disabled=cur===0;$("#dk-next").disabled=cur===N-1}
+    function go(k){k=Math.max(0,Math.min(N-1,k));var s=slides[k];var mobile=innerWidth<=900;
+      if(s.step&&mobile){var r=s.el.getBoundingClientRect();scrollTo({top:scrollY+r.bottom-innerHeight,behavior:reduce?"auto":"smooth"})}
+      else if(s.step){var r2=s.el.getBoundingClientRect();scrollTo({top:scrollY+r2.top-(innerHeight-r2.height)/2,behavior:reduce?"auto":"smooth"})}
+      else s.el.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+      cur=k;setTimeout(paint,700)}
+    $("#dk-prev").addEventListener("click",function(){go(idx()-1)});
+    $("#dk-next").addEventListener("click",function(){go(idx()+1)});
+    document.addEventListener("keydown",function(e){if(e.target.closest&&e.target.closest("input,textarea,iframe"))return;if(e.key==="ArrowRight"||e.key==="PageDown"){e.preventDefault();go(idx()+1)}else if(e.key==="ArrowLeft"||e.key==="PageUp"){e.preventDefault();go(idx()-1)}});
+    var tk=0;addEventListener("scroll",function(){if(tk)return;tk=requestAnimationFrame(function(){tk=0;paint()})},{passive:true});
+    paint();
+    // anexo plegable en el celular
+    $$("article.ax").forEach(function(a){var b=document.createElement("button");b.type="button";b.className="ax-more";b.textContent="Ver el detalle";
+      a.querySelector(".ax-h").insertAdjacentElement("afterend",b);a.classList.add("fold");
+      b.addEventListener("click",function(){var f=a.classList.toggle("fold");b.textContent=f?"Ver el detalle":"Ocultar el detalle";if(f)a.scrollIntoView({block:"start"})});
+      var c=b.cloneNode(false);c.className="ax-more ax-less";a.appendChild(c);});
+    $$("article.ax").forEach(function(a){var last=a.lastElementChild;last.textContent="Ocultar el detalle";last.addEventListener("click",function(){a.classList.add("fold");a.querySelector(".ax-more").textContent="Ver el detalle";a.scrollIntoView({block:"start"})})});
+    $$(".anx-nav a").forEach(function(l){l.addEventListener("click",function(){var t=document.querySelector(l.getAttribute("href"));if(t){t.classList.remove("fold");var m=t.querySelector(".ax-more");if(m)m.textContent="Ocultar el detalle"}})});
+  })();
 })();
 </script>
+
 
 </body>
 </html>

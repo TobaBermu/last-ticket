@@ -150,7 +150,7 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 .pay[aria-pressed="true"]{border-color:var(--ok)}
 .pay .mp{width:40px;height:28px;border-radius:8px;background:#00B1EA;display:grid;place-items:center;font-weight:800;font-size:12px;color:#fff}
 .qty{display:flex;align-items:center;gap:12px}
-.qty button{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.08);font-size:18px}
+.qty button{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.08);font-size:18px;color:inherit}.qty button:disabled{opacity:.35}.qty b{min-width:18px;text-align:center;font-variant-numeric:tabular-nums}
 
 /* ticket */
 .ticket{background:#fff;color:var(--navy);border-radius:24px;padding:18px;position:relative;margin-top:6px}
@@ -187,6 +187,39 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 
 .embed .side{display:none}.embed .stage{padding:0;gap:0}.embed .phone{position:fixed;inset:0;width:auto;height:auto;max-width:none;max-height:none;min-height:0;border-radius:0;padding:0;box-shadow:none}.embed .screen{border-radius:0}.embed .demo-tag{display:none}.embed .notif{top:46px!important}.embed .app{padding-top:40px!important}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* MAPA (home) */
+.loc{display:flex;gap:8px;align-items:center;margin:2px 0 10px}
+.locbtn{display:flex;align-items:center;gap:6px;font-weight:700;font-size:14px;padding:6px 10px 6px 8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line)}
+.locbtn small{color:var(--muted);font-weight:500}
+.search{display:flex;align-items:center;gap:8px;background:#fff;color:#2A2760;border-radius:14px;padding:11px 14px;font-size:14px;margin-bottom:12px}
+.search input{border:0;outline:0;font:inherit;color:#1a1850;flex:1;min-width:0;background:transparent}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:12px;padding:3px;margin-bottom:12px}
+.seg button{padding:8px;border-radius:9px;font-weight:700;font-size:14px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--grad);color:#fff}
+.map{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);aspect-ratio:340/250;background:#100E44}
+.map svg{position:absolute;inset:0;width:100%;height:100%;font-family:var(--body)}
+.pin{position:absolute;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;z-index:2;transition:opacity .3s,transform .3s}
+.pin b{background:var(--grad);color:#fff;font-size:12px;font-weight:800;padding:4px 8px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.pin i{width:2px;height:8px;background:var(--orange)}
+.pin.far{opacity:.45}.pin.far b{background:#3A3780}
+.pin.sel{transform:translate(-50%,-100%) scale(1.15);z-index:3}
+.pin.sel b{outline:2px solid #fff}
+.me{position:absolute;width:16px;height:16px;border-radius:50%;background:#3EA6FF;border:3px solid #fff;transform:translate(-50%,-50%);z-index:2;transition:left .6s,top .6s}
+.me::after{content:"";position:absolute;inset:-14px;border-radius:50%;background:rgba(62,166,255,.25);animation:pulse 1.8s infinite}
+@keyframes pulse{from{transform:scale(.4);opacity:1}to{transform:scale(1.4);opacity:0}}
+.radius{position:absolute;border-radius:50%;border:1.5px dashed rgba(62,166,255,.7);background:rgba(62,166,255,.08);transform:translate(-50%,-50%);pointer-events:none;transition:left .6s,top .6s}
+.maptag{position:absolute;left:10px;bottom:10px;z-index:2;font-size:12px;font-weight:700;background:rgba(11,10,58,.85);padding:5px 9px;border-radius:999px}
+.near{display:flex;gap:10px;overflow-x:auto;padding:12px 2px 4px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.near::-webkit-scrollbar{display:none}
+.ncard{flex:0 0 78%;scroll-snap-align:start;display:grid;grid-template-columns:58px 1fr;gap:10px;padding:10px;border-radius:18px;background:var(--navy-2);border:1px solid var(--line);text-align:left}
+.ncard.sel{border-color:var(--orange)}
+.ncard .poster{width:58px;height:auto;min-height:76px;font-size:10px;padding:6px}
+.ncard .t{font-weight:700;font-size:15px;line-height:1.2}
+.ncard .v{color:var(--muted);font-size:12px}
+.dist{font-size:11px;font-weight:800;color:#3EA6FF}
+.empty{padding:16px;border-radius:18px;border:1px dashed var(--line);text-align:center;display:grid;gap:8px;margin-top:12px}
+.empty p{margin:0;color:var(--muted);font-size:14px}
 </style>
 </head>
 <body>
@@ -255,10 +288,43 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
         <section class="view" id="v-home">
           <div class="top"><div class="brand"><svg class="logo" width="32" height="32" viewBox="0 0 120 120" aria-hidden="true"><use href="#lt-icon"/></svg><span style="font-size:17px">Last Ticket</span></div><div class="avatar">CF</div></div>
           <div class="scroll">
-            <div class="hero"><div class="eyebrow">Hola, Camila</div><h2 class="h">Hoy hay <em>teatro</em>.</h2><p class="sub" style="margin:0">Obras de teatro de esta noche, con precio final y sector antes de pagar.</p></div>
+            <div class="hero"><div class="eyebrow">Hola, Camila</div><h2 class="h">Hoy hay <em>teatro</em>.</h2></div>
+            <div class="loc"><button class="locbtn" id="locbtn" type="button" aria-label="Cambiar ubicación"><span aria-hidden="true">📍</span><span id="locname">Abasto</span><small>· CABA ▾</small></button></div>
+            <label class="search"><span aria-hidden="true">🔍</span><input id="q" type="search" placeholder="Buscá obras, salas o barrios" aria-label="Buscar obras"></label>
+            <div class="seg" role="group" aria-label="Vista"><button type="button" id="seg-map" aria-pressed="true">Mapa</button><button type="button" id="seg-list" aria-pressed="false">Lista</button></div>
+            <div id="mapview">
+              <div class="map" id="map">
+                <svg viewBox="0 0 340 250" aria-hidden="true">
+                  <path d="M250 0 L340 0 L340 120 C320 90 290 60 250 0Z" fill="#1B3A73" opacity=".8"/>
+                  <text x="300" y="30" fill="#7FA6E6" font-size="9"  text-anchor="middle">Río de la Plata</text>
+                  <path d="M60 0 L150 0 L170 40 L120 70 L80 50Z" fill="#163B3A" opacity=".85"/>
+                  <text x="112" y="34" fill="#6FBFA0" font-size="8"  text-anchor="middle">Bosques de Palermo</text>
+                  <g stroke="rgba(255,255,255,.07)" stroke-width="1">
+                    <path d="M0 40 L340 10M0 80 L340 50M0 120 L340 90M0 160 L340 130M0 200 L340 170M0 240 L340 210"/>
+                    <path d="M30 0 L60 250M90 0 L120 250M150 0 L180 250M210 0 L240 250M270 0 L300 250"/>
+                  </g>
+                  <path d="M0 182 L340 148" stroke="rgba(255,159,28,.55)" stroke-width="4"/>
+                  <text x="300" y="144" fill="#FFB65C" font-size="8"  transform="rotate(-6 300 144)">Av. Corrientes</text>
+                  <path d="M0 110 L340 60" stroke="rgba(255,255,255,.18)" stroke-width="3"/>
+                  <text x="20" y="100" fill="#B7B3E6" font-size="8"  transform="rotate(-8 20 100)">Av. Santa Fe</text>
+                  <g fill="#8E89D6" font-size="10"  font-weight="700">
+                    <text x="18" y="22">BELGRANO</text><text x="72" y="96">PALERMO</text><text x="160" y="118">ABASTO</text><text x="100" y="196">ALMAGRO</text><text x="250" y="190">MICROCENTRO</text>
+                  </g>
+                </svg>
+                <div class="radius" id="radius"></div>
+                <div class="me" id="me" aria-label="Tu ubicación"></div>
+                <div id="pins"></div>
+                <span class="maptag" id="maptag"></span>
+              </div>
+              <div class="section-t" style="margin-top:12px"><b>Rush cerca tuyo</b><small id="nearcount"></small></div>
+              <div class="near" id="near"></div>
+              <div class="empty" id="empty" hidden><b>No hay cupos Rush a menos de 1,5 km.</b><p>Probá con otro barrio o buscá en la cartelera completa.</p><button class="btn" id="tolist" type="button">Ver la lista de esta noche</button></div>
+            </div>
+            <div id="listview" hidden>
             <div class="tabs" id="tabs"><button class="tab sel" type="button">Todo</button><button class="tab" type="button">Comedia</button><button class="tab" type="button">Drama</button><button class="tab" type="button">Empiezan en 1 h</button><button class="tab" type="button">Lottery</button><button class="tab" type="button">Independiente</button></div>
             <div class="section-t"><b>Obras de esta noche</b><small>CABA · hoy</small></div>
             <div id="list"></div>
+            </div>
           </div>
         </section>
 
@@ -282,6 +348,7 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
               <button class="mode" data-mode="rush" aria-pressed="true" type="button"><b>Rush · <span id="m-rush"></span></b><small>Por orden de llegada</small></button>
               <button class="mode" data-mode="lot" aria-pressed="false" type="button"><b>Lottery · <span id="m-lot"></span></b><small>Sorteo 4 h antes</small></button>
             </div>
+            <div class="toggle" style="margin:12px 0"><div><b>¿Cuántas entradas?</b><small>Butacas contiguas · hasta 6</small></div><div class="qty"><button id="d-minus" type="button" aria-label="Una entrada menos">−</button><b id="d-qty" aria-live="polite">2</b><button id="d-plus" type="button" aria-label="Una entrada más">+</button></div></div>
             <div class="breakdown" id="d-break"></div>
           </div>
           <div class="foot"><button class="btn" id="d-cta" type="button">Comprar 2 entradas</button></div>
@@ -293,7 +360,7 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
           <div class="scroll">
             <div class="lockbar"><span>Butacas reservadas para vos</span><span id="lock">10:00</span></div>
             <div class="fact" style="margin-bottom:10px"><small id="p-when"></small><b id="p-title"></b></div>
-            <div class="toggle" style="margin-bottom:12px"><div><b>Entradas</b><small>Butacas contiguas en el mismo sector</small></div><div class="qty"><button id="minus" type="button" aria-label="Menos">−</button><b id="qty">2</b><button id="plus" type="button" aria-label="Más">+</button></div></div>
+            <div class="toggle" style="margin-bottom:12px"><div><b>Entradas</b><small>Podés ajustar la cantidad antes de pagar</small></div><div class="qty"><button id="minus" type="button" aria-label="Menos">−</button><b id="qty">2</b><button id="plus" type="button" aria-label="Más">+</button></div></div>
             <div class="eyebrow">Medio de pago</div>
             <button class="pay" aria-pressed="true" type="button" style="margin-top:8px"><span class="mp">MP</span><span><b>Mercado Pago</b><br><small style="color:var(--muted)">Dinero en cuenta · guardado</small></span></button>
             <button class="pay" aria-pressed="false" type="button"><span class="mp" style="background:#7B5CFF">VISA</span><span><b>Tarjeta •••• 4021</b><br><small style="color:var(--muted)">Crédito</small></span></button>
@@ -371,11 +438,11 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
   var now=new Date();
   function at(minsFromNow){var d=new Date(now.getTime()+minsFromNow*60000);d.setSeconds(0,0);return d}
   var shows=[
-    {id:"a",t:"Departamento compartido",g:"Comedia",venue:"Teatro Arlequín · Corrientes",start:at(68),list:45000,rush:.5,lot:.6,sector:"Platea · filas 8 a 12",cast:"Sí, elenco completo",left:6,c:["#FF2D7A","#FF9F1C"],zone:[3,4]},
-    {id:"b",t:"Los vecinos de arriba",g:"Comedia dramática",venue:"Sala El Andén · Abasto",start:at(140),list:38000,rush:.3,lot:.6,sector:"Pullman · fila 3",cast:"Sí",left:11,c:["#7B5CFF","#FF2D7A"],zone:[6,7]},
-    {id:"c",t:"Cumbre de sobremesa",g:"Comedia",venue:"Teatro Faro · Palermo",start:at(215),list:42000,rush:.4,lot:.6,sector:"Platea · filas 14 a 16",cast:"Sí",left:4,c:["#FF9F1C","#5B1A8C"],zone:[5,6]},
-    {id:"e",t:"Bajo la misma luz",g:"Musical",venue:"Teatro Nuevo Sur · Corrientes",start:at(175),list:52000,rush:.4,lot:.6,sector:"Pullman · filas 2 a 4",cast:"Sí, elenco completo",left:8,c:["#5B1A8C","#FF9F1C"],zone:[1,2]},
-    {id:"d",t:"Hora de cierre",g:"Drama",venue:"La Grieta · Almagro (independiente)",start:at(290),list:22000,rush:.5,lot:.6,sector:"General · gradas centrales",cast:"Sí",left:9,c:["#211E66","#FF2D7A"],zone:[2,3,4]}
+    {id:"a",x:215,y:170,t:"Departamento compartido",g:"Comedia",venue:"Teatro Arlequín · Corrientes",start:at(68),list:45000,rush:.5,lot:.6,sector:"Platea · filas 8 a 12",cast:"Sí, elenco completo",left:6,c:["#FF2D7A","#FF9F1C"],zone:[3,4]},
+    {id:"b",x:128,y:128,t:"Los vecinos de arriba",g:"Comedia dramática",venue:"Sala El Andén · Abasto",start:at(140),list:38000,rush:.3,lot:.6,sector:"Pullman · fila 3",cast:"Sí",left:11,c:["#7B5CFF","#FF2D7A"],zone:[6,7]},
+    {id:"c",x:100,y:75,t:"Cumbre de sobremesa",g:"Comedia",venue:"Teatro Faro · Palermo",start:at(215),list:42000,rush:.4,lot:.6,sector:"Platea · filas 14 a 16",cast:"Sí",left:4,c:["#FF9F1C","#5B1A8C"],zone:[5,6]},
+    {id:"e",x:262,y:146,t:"Bajo la misma luz",g:"Musical",venue:"Teatro Nuevo Sur · Corrientes",start:at(175),list:52000,rush:.4,lot:.6,sector:"Pullman · filas 2 a 4",cast:"Sí, elenco completo",left:8,c:["#5B1A8C","#FF9F1C"],zone:[1,2]},
+    {id:"d",x:130,y:188,t:"Hora de cierre",g:"Drama",venue:"La Grieta · Almagro (independiente)",start:at(290),list:22000,rush:.5,lot:.6,sector:"General · gradas centrales",cast:"Sí",left:9,c:["#211E66","#FF2D7A"],zone:[2,3,4]}
   ];
   var cur=shows[0],mode="rush",qty=2;
   function priceOf(s,m){return s.list*(1-(m==="rush"?s.rush:s.lot))*1.12}
@@ -416,22 +483,30 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
   function setMode(m){
     mode=m;
     document.querySelectorAll(".mode").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-mode")===m))});
-    $("#d-break").innerHTML=breakdown(m,2);
-    $("#d-cta").textContent=m==="rush"?"Comprar 2 entradas":"Anotarme al sorteo";
+    renderQty();
   }
+  function renderQty(){
+    var n=qty===1?"1 entrada":qty+" entradas";
+    $("#d-qty").textContent=qty;$("#qty").textContent=qty;
+    $("#d-minus").disabled=qty<=1;$("#d-plus").disabled=qty>=6;$("#minus").disabled=qty<=1;$("#plus").disabled=qty>=6;
+    $("#d-break").innerHTML=breakdown(mode,qty);$("#p-break").innerHTML=breakdown("rush",qty);
+    $("#d-cta").textContent=mode==="rush"?"Comprar "+n:"Anotarme al sorteo · "+n;
+  }
+  function setQty(q){qty=Math.max(1,Math.min(6,q));renderQty()}
+  $("#d-minus").addEventListener("click",function(){setQty(qty-1)});
+  $("#d-plus").addEventListener("click",function(){setQty(qty+1)});
   document.querySelectorAll(".mode").forEach(function(b){b.addEventListener("click",function(){setMode(b.getAttribute("data-mode"))})});
 
   // checkout
   var lockEnd=0;
   $("#d-cta").addEventListener("click",function(){
     if(mode==="lot"){startLottery();return}
-    qty=2;$("#qty").textContent=qty;
+    renderQty();
     $("#p-title").textContent=cur.t;$("#p-when").textContent="Hoy "+hhmm(cur.start)+" h · "+cur.sector;
-    $("#p-break").innerHTML=breakdown("rush",qty);
     lockEnd=Date.now()+10*60000;show("v-pay");
   });
-  $("#minus").addEventListener("click",function(){qty=Math.max(1,qty-1);$("#qty").textContent=qty;$("#p-break").innerHTML=breakdown("rush",qty)});
-  $("#plus").addEventListener("click",function(){qty=Math.min(4,qty+1);$("#qty").textContent=qty;$("#p-break").innerHTML=breakdown("rush",qty)});
+  $("#minus").addEventListener("click",function(){setQty(qty-1)});
+  $("#plus").addEventListener("click",function(){setQty(qty+1)});
   document.querySelectorAll(".pay").forEach(function(p){p.addEventListener("click",function(){document.querySelectorAll(".pay").forEach(function(x){x.setAttribute("aria-pressed","false")});p.setAttribute("aria-pressed","true")})});
   $("#pay-btn").addEventListener("click",function(){
     var b=this;b.textContent="Procesando…";
@@ -439,7 +514,7 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
   });
   function issueTicket(m){
     $("#t-title").textContent=cur.t;
-    $("#t-meta").textContent="Hoy "+hhmm(cur.start)+" h · "+cur.venue+" · "+cur.sector+" · "+(m==="rush"?qty:2)+" entradas";
+    $("#t-meta").textContent="Hoy "+hhmm(cur.start)+" h · "+cur.venue+" · "+cur.sector+" · "+(qty===1?"1 entrada":qty+" entradas");
     drawQR(cur.id+Date.now());show("v-tix");
     timers.push(setTimeout(function(){notify("Tu entrada está lista","Mostrá el QR en la puerta de "+cur.venue.split(" · ")[0]+". Te recordamos 1 h antes.")},1500));
   }
@@ -449,11 +524,11 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
     $("#l-msg").textContent="Sorteamos 4 horas antes de la función. Te avisamos por notificación.";$("#l-cta").hidden=true;show("v-lot");
     timers.push(setTimeout(function(){
       $("#drum").classList.add("stop");$("#drum-t").innerHTML="¡Ganaste!<br><small style='font-size:14px;color:#FF9F1C'>"+fmt(priceOf(cur,"lot"))+" c/u</small>";
-      $("#l-msg").textContent="Tenés 15 minutos para confirmar tus 2 entradas.";$("#l-cta").hidden=false;
+      $("#l-msg").textContent="Tenés 15 minutos para confirmar "+(qty===1?"tu entrada.":"tus "+qty+" entradas.");$("#l-cta").hidden=false;
       notify("¡Saliste sorteada! 🎟️",cur.t+" hoy "+hhmm(cur.start)+" h. Confirmá en 15 min: "+fmt(priceOf(cur,"lot"))+" por entrada.");
     },5000));
   }
-  $("#l-cta").addEventListener("click",function(){qty=2;issueTicket("lot")});
+  $("#l-cta").addEventListener("click",function(){issueTicket("lot")});
 
   // QR de ejemplo
   function drawQR(seed){
@@ -527,7 +602,35 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
     else if(st==="invite"){openShow("a");qty=2;issueTicket("rush");setTimeout(function(){$("#sheet").hidden=false},900)}
   });
   if(EMBED){timers.forEach(clearTimeout)}
-  renderList();tick();if(!EMBED)start();
+
+  // mapa: ubicación simulada y obras cercanas con Rush
+  var places=[{n:"Abasto",x:165,y:150},{n:"Palermo",x:95,y:70},{n:"Belgrano",x:38,y:30}],pl=0,selId=null,view="map";
+  var KM=25; // 1 unidad del mapa = 25 m
+  function distOf(s){var p=places[pl];return Math.round(Math.hypot(s.x-p.x,s.y-p.y)*KM)}
+  function km(m){return m<1000?(Math.round(m/50)*50)+" m":(m/1000).toFixed(1).replace(".",",")+" km"}
+  function renderMap(){
+    var p=places[pl],R=60;
+    $("#locname").textContent=p.n;
+    var me=$("#me"),rd=$("#radius");me.style.left=(p.x/340*100)+"%";me.style.top=(p.y/250*100)+"%";
+    rd.style.left=me.style.left;rd.style.top=me.style.top;rd.style.width=(R*2/340*100)+"%";rd.style.height=(R*2/250*100)+"%";
+    var near=shows.map(function(s){return {s:s,d:distOf(s)}}).sort(function(a,b){return a.d-b.d});
+    var inR=near.filter(function(o){return o.d<=1500});
+    var ph="";near.forEach(function(o){ph+='<button class="pin'+(o.d>1500?' far':'')+(o.s.id===selId?' sel':'')+'" data-id="'+o.s.id+'" type="button" style="left:'+(o.s.x/340*100)+'%;top:'+(o.s.y/250*100)+'%" aria-label="'+o.s.t+'"><b>'+fmt(priceOf(o.s,"rush"))+'</b><i></i></button>'});
+    $("#pins").innerHTML=ph;
+    $("#maptag").textContent="Radio de 1,5 km · "+inR.length+(inR.length===1?" obra":" obras")+" con Rush";
+    $("#nearcount").textContent=inR.length?"ordenadas por distancia":"";
+    var nh="";inR.forEach(function(o){var s=o.s;nh+='<button class="ncard'+(s.id===selId?' sel':'')+'" data-id="'+s.id+'" type="button"><div class="poster" style="background:linear-gradient(150deg,'+s.c[0]+','+s.c[1]+')">'+s.g+'</div><div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span class="dist">a '+km(o.d)+'</span><span class="t">'+s.t+'</span><span class="v">'+s.venue.split(" · ")[0]+' · '+hhmm(s.start)+' h</span><span><span class="price">'+fmt(priceOf(s,"rush"))+'</span> <span class="badge rush">Rush −'+Math.round(s.rush*100)+'%</span></span></div></button>'});
+    $("#near").innerHTML=nh;$("#near").hidden=!inR.length;$("#empty").hidden=!!inR.length;
+    document.querySelectorAll("#pins .pin").forEach(function(b){b.addEventListener("click",function(){var id=b.getAttribute("data-id");if(selId===id){openShow(id);return}selId=id;renderMap();var c=document.querySelector('.ncard[data-id="'+id+'"]');if(c){var n=$("#near");n.scrollTo({left:c.offsetLeft-n.offsetLeft,behavior:"smooth"})}else openShow(id)})});
+    document.querySelectorAll("#near .ncard").forEach(function(c){c.addEventListener("click",function(){openShow(c.getAttribute("data-id"))})});
+  }
+  function setView(v){view=v;$("#seg-map").setAttribute("aria-pressed",String(v==="map"));$("#seg-list").setAttribute("aria-pressed",String(v==="list"));$("#mapview").hidden=v!=="map";$("#listview").hidden=v!=="list"}
+  $("#seg-map").addEventListener("click",function(){setView("map")});
+  $("#seg-list").addEventListener("click",function(){setView("list")});
+  $("#tolist").addEventListener("click",function(){setView("list")});
+  $("#locbtn").addEventListener("click",function(){pl=(pl+1)%places.length;selId=null;renderMap()});
+  $("#q").addEventListener("input",function(){var q=this.value.trim().toLowerCase();if(q)setView("list");document.querySelectorAll("#list .card").forEach(function(c){var s=shows.filter(function(x){return x.id===c.getAttribute("data-id")})[0];c.hidden=!!q&&(s.t+" "+s.venue+" "+s.g).toLowerCase().indexOf(q)<0})});
+  renderList();renderMap();tick();if(!EMBED)start();
 })();
 </script>
 
