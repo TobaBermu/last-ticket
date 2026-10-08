@@ -767,6 +767,26 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 .avatar.ph{padding:0;overflow:hidden;background:var(--night-3)}
 .avatar.ph img{width:100%;height:100%;object-fit:cover;object-position:40% 30%;border-radius:50%}
 @media (prefers-reduced-motion:reduce){.ph-art *,.cam-photo *,.ph-art img{animation:none!important}}
+
+/* v17: menos datos, más imagen */
+.say{font-family:var(--display);font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
+.stat-tile .say{margin-top:6px}
+.hypo-sum b.sm{font-size:clamp(28px,3vw,38px);line-height:1}
+.ph-band{position:relative;margin:clamp(32px,5vw,56px) 0 0;border-radius:24px;overflow:hidden;aspect-ratio:21/8;box-shadow:0 24px 60px rgba(0,0,0,.4);background:var(--night-3);isolation:isolate}
+.ph-band img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block;animation:kb 22s ease-in-out infinite alternate}
+.ph-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,10,58,.82) 0%,rgba(11,10,58,.35) 45%,transparent 70%);pointer-events:none}
+.ph-band figcaption{position:absolute;z-index:1;left:clamp(18px,4vw,48px);top:50%;transform:translateY(-50%);max-width:min(46%,420px);font-family:var(--display);font-weight:800;font-size:clamp(22px,3.2vw,42px);line-height:1.05;letter-spacing:-.02em;color:#fff;text-wrap:balance}
+.ph-band figcaption span{display:block}
+@media (max-width:700px){.ph-band{aspect-ratio:4/3}.ph-band img{object-position:60% 50%}.ph-band::after{background:linear-gradient(0deg,rgba(11,10,58,.85) 0%,rgba(11,10,58,.2) 55%,transparent 80%)}.ph-band figcaption{top:auto;bottom:18px;transform:none;max-width:85%}}
+details.xdata{margin-top:clamp(20px,3vw,32px)}
+details.xdata>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:#fff;background:rgba(255,255,255,.04)}
+details.xdata>summary::-webkit-details-marker{display:none}
+details.xdata>summary::after{content:"+";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--magenta);color:var(--ink-on-accent);font-size:15px;transition:transform .3s}
+details.xdata[open]>summary::after{transform:rotate(45deg)}
+details.xdata>summary:hover{border-color:rgba(255,45,122,.65)}
+details.xdata>summary:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+details.xdata[open]>summary{margin-bottom:clamp(18px,2.6vw,28px)}
+@media (prefers-reduced-motion:reduce){.ph-band img{animation:none}}
 </style>
 </head>
 <body>
@@ -854,12 +874,12 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
       <div class="sec-art"><div class="sec-head rv">
         <p class="eyebrow">01 · El problema</p>
         <h2>Las ganas de ir siguen. <span class="grad">El precio no ayuda.</span></h2>
-        <p class="hint">Tocá cada dato para ver de dónde sale.</p>
+        <p class="hint">Tocá cada tarjeta para ver el dato.</p>
       </div><div class="art rv"><figure class="ph-art"><img src="lt-teatro.webp" alt="Sala de teatro con el telón abierto y las butacas vacías" width="799" height="449" loading="lazy"><figcaption class="ph-tag"><span class="dot"></span>Esta noche · butacas libres</figcaption></figure></div></div>
       <div class="tiles t3">
-        <button class="tile stat-tile rv" type="button" data-pop="p-precio"><svg class="ic" aria-hidden="true"><use href="#i-wallet"/></svg><span class="n" data-count="63.1" data-dec="1" data-suf="%">63,1%</span><span class="tx">va menos por el precio.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile stat-tile rv" type="button" data-pop="p-ganas"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg><span class="n" data-count="88.9" data-dec="1" data-suf="%">88,9%</span><span class="tx">de quienes no van quiere volver.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile stat-tile rv" type="button" data-pop="p-hoy"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span class="n" data-count="96.4" data-dec="1" data-suf="%">96,4%</span><span class="tx">se anima a decidir el mismo día.</span><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile stat-tile rv" type="button" data-pop="p-precio"><svg class="ic" aria-hidden="true"><use href="#i-wallet"/></svg><b class="say">El precio la aleja.</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile stat-tile rv" type="button" data-pop="p-ganas"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg><b class="say">Las ganas siguen.</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile stat-tile rv" type="button" data-pop="p-hoy"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><b class="say">Se anima a ir hoy.</b><span class="more" aria-hidden="true">+</span></button>
       </div>
     </div>
   </section>
@@ -881,12 +901,12 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 <g font-family="Bricolage Grotesque,system-ui" font-weight="800" fill="#fff"><text x="250" y="262" font-size="44">404</text><text x="252" y="284" font-size="13" font-family="DM Mono,monospace" font-weight="400" fill="#FF9F1C">RESPUESTAS VÁLIDAS</text></g>
 </svg></div></div>
       <ol class="method">
-        <li class="rv"><button class="tile mstep" type="button" data-pop="p-entrevistas"><span class="k">Cualitativa</span><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><b>4 entrevistas</b><span class="more" aria-hidden="true">+</span></button></li>
-        <li class="rv"><button class="tile mstep" type="button" data-pop="p-encuesta"><span class="k">Cuantitativa</span><svg class="ic" aria-hidden="true"><use href="#i-form"/></svg><b>Encuesta de 41 preguntas</b><span class="more" aria-hidden="true">+</span></button></li>
-        <li class="rv"><button class="tile mstep" type="button" data-pop="p-muestra"><span class="k">Muestra</span><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg><b>404 respuestas</b><span class="tx">±4,9% de margen</span><span class="more" aria-hidden="true">+</span></button></li>
+        <li class="rv"><button class="tile mstep" type="button" data-pop="p-entrevistas"><span class="k">Cualitativa</span><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><b>Entrevistas en profundidad</b><span class="more" aria-hidden="true">+</span></button></li>
+        <li class="rv"><button class="tile mstep" type="button" data-pop="p-encuesta"><span class="k">Cuantitativa</span><svg class="ic" aria-hidden="true"><use href="#i-form"/></svg><b>Encuesta online</b><span class="more" aria-hidden="true">+</span></button></li>
+        <li class="rv"><button class="tile mstep" type="button" data-pop="p-muestra"><span class="k">Muestra</span><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg><b>Público de CABA y GBA</b><span class="more" aria-hidden="true">+</span></button></li>
         <li class="rv"><button class="tile mstep" type="button" data-pop="p-cruces"><span class="k">Análisis</span><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg><b>Cruces de variables</b><span class="more" aria-hidden="true">+</span></button></li>
       </ol>
-      <div class="hypo-wrap rv"><p class="eyebrow hy-e">Lo que validamos con la encuesta</p><div class="hypo"><button class="hypo-sum" type="button" data-pop="p-hipo"><span class="k">Hipótesis · n = 404</span><b>0</b><span class="lg0">rechazadas de 10</span><span class="hbars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i class="hp"></i><i class="hp"></i><i class="hp"></i><i class="hp"></i><i class="hp"></i></span><span class="lg">5 validadas · 5 parciales</span><span class="more" aria-hidden="true">+</span></button><div class="hypo-cards"><button class="hcard" type="button" data-pop="p-h2"><span class="st">H2 · validada</span><b>Precio</b><span class="tx">A menor precio que está dispuesto a pagar, más ganas de usar la app.</span><span class="pv">p = 0,005</span><span class="more" aria-hidden="true">+</span></button><button class="hcard" type="button" data-pop="p-h5"><span class="st">H5 · validada</span><b>Último momento</b><span class="tx">Quien se organiza en pocas horas tiene más intención de uso.</span><span class="pv">p = 0,002</span><span class="more" aria-hidden="true">+</span></button><button class="hcard" type="button" data-pop="p-h10"><span class="st sp">H10 · parcial</span><b>Aviso</b><span class="tx">Las notificaciones de ofertas suben la intención de uso.</span><span class="pv">p < 0,001</span><span class="more" aria-hidden="true">+</span></button><button class="hcard" type="button" data-pop="p-h9"><span class="st">H9 · validada</span><b>Perfil completo</b><span class="tx">El segmento que reúne los cuatro rasgos es el que más quiere usarla.</span><span class="pv">65,9% vs 43–47%</span><span class="more" aria-hidden="true">+</span></button></div></div></div>
+      <div class="hypo-wrap rv"><p class="eyebrow hy-e">Lo que validamos con la encuesta</p><div class="hypo"><button class="hypo-sum" type="button" data-pop="p-hipo"><span class="k">Hipótesis</span><b class="sm">Ninguna rechazada</b><span class="hbars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i class="hp"></i><i class="hp"></i><i class="hp"></i><i class="hp"></i><i class="hp"></i></span><span class="lg">5 validadas · 5 parciales</span><span class="more" aria-hidden="true">+</span></button><div class="hypo-cards"><button class="hcard" type="button" data-pop="p-h2"><span class="st">H2 · validada</span><b>Precio</b><span class="tx">A menor precio que está dispuesto a pagar, más ganas de usar la app.</span><span class="more" aria-hidden="true">+</span></button><button class="hcard" type="button" data-pop="p-h5"><span class="st">H5 · validada</span><b>Último momento</b><span class="tx">Quien se organiza en pocas horas tiene más intención de uso.</span><span class="more" aria-hidden="true">+</span></button><button class="hcard" type="button" data-pop="p-h10"><span class="st sp">H10 · parcial</span><b>Aviso</b><span class="tx">Las notificaciones de ofertas suben la intención de uso.</span><span class="more" aria-hidden="true">+</span></button><button class="hcard" type="button" data-pop="p-h9"><span class="st">H9 · validada</span><b>Perfil completo</b><span class="tx">El segmento que reúne los cuatro rasgos es el que más quiere usarla.</span><span class="more" aria-hidden="true">+</span></button></div></div></div>
     </div>
   </section>
 
@@ -942,14 +962,15 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
         <p class="eyebrow">05 · Segmento</p>
         <h2><span class="grad">666.642</span> personas buscan esta salida.</h2>
       </div><div class="art rv"><figure class="ph-art"><img src="lt-publico.webp" alt="Público joven en una sala de teatro, mirando el escenario" width="799" height="449" loading="lazy"><figcaption class="ph-tag"><span class="dot"></span>18 a 55 años · CABA y GBA</figcaption></figure></div></div>
-      <div class="funnel" id="funnel">
+      <details class="xdata"><summary>Ver cómo llegamos a este número</summary><div class="funnel" id="funnel">
         <button class="step  rv" type="button" data-pop="p-f0"><div class="shape" data-w="1"><b>3.312.139</b></div><span class="lbl"><b>Mercado potencial</b><span class="pct">base</span></span></button>
         <button class="step  rv" type="button" data-pop="p-f1"><div class="shape" data-w=".473"><b>1.565.700</b></div><span class="lbl"><b>Intención de uso</b><span class="pct">× 47,3%</span></span></button>
         <button class="step  rv" type="button" data-pop="p-f2"><div class="shape" data-w=".363"><b>1.202.458</b></div><span class="lbl"><b>Paga el precio Rush</b><span class="pct">× 76,8%</span></span></button>
         <button class="step  rv" type="button" data-pop="p-f3"><div class="shape" data-w=".24"><b>793.622</b></div><span class="lbl"><b>Se organiza con 8 h de aviso</b><span class="pct">× 66,0%</span></span></button>
         <button class="step final rv" type="button" data-pop="p-f4"><div class="shape" data-w=".201"><b>666.642</b></div><span class="lbl"><b>Acepta la butaca asignada</b><span class="pct">× 84,0%</span><span class="ftag">Segmento atractivo: el público de Last Ticket</span></span></button>
-      </div>
+      </div></details>
       <div class="meta1 rv"><span class="k">Meta del año 1</span><div><b>125</b><span>funciones por mes</span></div><div><b>30.000</b><span>usuarios registrados</span></div><div><b>2.500</b><span>entradas por mes</span></div><div><b>10%</b><span>de reconocimiento</span></div></div>
+      <figure class="ph-band rv"><img src="lt-amigos.webp" alt="Cuatro amigos se ríen en la puerta de un teatro de noche; una muestra las entradas en el celular" width="1600" height="807" loading="lazy"><figcaption><span>Las mejores noches</span><span class="grad">no se planean.</span></figcaption></figure>
     </div>
   </section>
 
@@ -1018,9 +1039,15 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
     <div class="wrap">
       <div class="sec-head rv">
         <p class="eyebrow">09 · Medios · año 1</p>
-        <h2>$36 millones de pauta. <span class="grad">7.016 registrados.</span></h2>
-        <p class="hint">Instagram primero: el 95,5% del segmento lo usa a diario.</p>
+        <h2>Una campaña en tres actos. <span class="grad">Instagram primero.</span></h2>
+        <p class="hint">Tocá cada pieza para ver la etapa.</p>
       </div>
+      <div class="tiles t3 timeline">
+        <button class="tile stage pimg rv" type="button" data-pop="p-pre" aria-label="Pre-lanzamiento: ver la pieza"><span class="ph"><img data-from="p-pre" alt="" width="432" height="540"></span><span class="d">Nov – dic 2026</span><b>Pre-lanzamiento</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile stage pimg rv" type="button" data-pop="p-lanz" aria-label="Lanzamiento: ver la pieza"><span class="ph"><img data-from="p-lanz" alt="" width="432" height="540"></span><span class="d">Dic 2026 – mar 2027</span><b>Lanzamiento</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile stage pimg rv" type="button" data-pop="p-post" aria-label="Post-lanzamiento: ver la pieza"><span class="ph"><img data-from="p-post" alt="" width="432" height="540"></span><span class="d">Abr – oct 2027</span><b>Post-lanzamiento</b><span class="more" aria-hidden="true">+</span></button>
+      </div>
+      <details class="xdata"><summary>Ver presupuesto y canales</summary>
       <div class="media">
         <div class="mbars" id="mbars">
           <div class="mb rv"><div class="top"><span>Meta Ads · Instalación</span><b>$16,2 M</b></div><div class="track"><div class="fill" data-w=".45"></div></div><small>45% · 3.156 registrados</small></div>
@@ -1039,11 +1066,7 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
           </div>
         </div>
       </div>
-      <div class="tiles t3 timeline">
-        <button class="tile stage pimg rv" type="button" data-pop="p-pre" aria-label="Pre-lanzamiento: ver la pieza"><span class="ph"><img data-from="p-pre" alt="" width="432" height="540"></span><span class="d">Nov – dic 2026</span><b>Pre-lanzamiento</b><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile stage pimg rv" type="button" data-pop="p-lanz" aria-label="Lanzamiento: ver la pieza"><span class="ph"><img data-from="p-lanz" alt="" width="432" height="540"></span><span class="d">Dic 2026 – mar 2027</span><b>Lanzamiento</b><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile stage pimg rv" type="button" data-pop="p-post" aria-label="Post-lanzamiento: ver la pieza"><span class="ph"><img data-from="p-post" alt="" width="432" height="540"></span><span class="d">Abr – oct 2027</span><b>Post-lanzamiento</b><span class="more" aria-hidden="true">+</span></button>
-      </div>
+      </details>
     </div>
   </section>
 
