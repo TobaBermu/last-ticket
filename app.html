@@ -223,6 +223,68 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 .dist{font-size:11px;font-weight:800;color:#3EA6FF}
 .empty{padding:16px;border-radius:18px;border:1px dashed var(--line);text-align:center;display:grid;gap:8px;margin-top:12px}
 .empty p{margin:0;color:var(--muted);font-size:14px}
+
+/* v8: Rush y Lottery separados, butacas, datos y sorteo */
+.seg.kind{margin:0 0 12px;padding:4px}
+.seg.kind button{padding:10px 8px;font-size:15px;display:flex;flex-direction:column;align-items:center;gap:1px;line-height:1.15}
+.seg.kind button small{font-size:11px;font-weight:600;opacity:.85}
+.seg.kind button[aria-pressed="true"]{background:var(--grad);color:#fff}
+.tab:disabled{opacity:.4}
+.nores{padding:14px;border-radius:16px;border:1px dashed var(--line);color:var(--muted);text-align:center;font-size:14px}
+
+.seats{display:grid;grid-template-columns:14px repeat(5,1fr) 8px repeat(5,1fr) 14px;gap:5px 4px;align-items:center;margin:6px 0 8px}
+.seats .rl{font-size:10px;font-weight:700;color:var(--muted);text-align:center}
+.st{aspect-ratio:1;border-radius:6px 6px 4px 4px;background:rgba(255,255,255,.09);padding:0;font-size:9px;font-weight:800;color:transparent;display:grid;place-items:center;min-width:0}
+.st.av{background:var(--orange);color:rgba(11,10,58,.55)}
+.st.av:hover{outline:2px solid #fff;outline-offset:1px}
+.st.sel{background:#fff;color:var(--navy);box-shadow:0 0 0 2px var(--magenta) inset}
+.st:disabled{cursor:default}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-bottom:6px}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.picked{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:var(--navy-2);border:1px solid var(--line);margin:8px 0 12px;font-size:14px}
+.picked b{font-variant-numeric:tabular-nums}
+.btn:disabled{opacity:.45;box-shadow:none;cursor:default}
+
+.fld{display:grid;gap:6px;margin-bottom:12px}
+.fld label{font-size:13px;font-weight:700}
+.fld input{font:inherit;font-size:16px;color:#1a1850;background:#fff;border:2px solid transparent;border-radius:12px;padding:12px 14px;width:100%;outline:0}
+.fld input:focus{border-color:var(--orange)}
+.fld input[aria-invalid="true"]{border-color:var(--magenta)}
+.fld .err{font-size:12px;color:#FF9DBF;min-height:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.two .fld{min-width:0}
+.lockbar.lot{background:rgba(255,159,28,.16);color:#FFD08A}
+
+.lrow{display:grid;grid-template-columns:auto 58px 1fr;gap:10px;align-items:center;padding:10px;border-radius:18px;background:var(--navy-2);border:1px solid var(--line);margin-bottom:8px;width:100%;text-align:left}
+.lrow.hl{border-color:var(--orange)}
+.lrow .poster{width:58px;height:72px;font-size:10px;padding:6px}
+.lrow .t{font-weight:700;font-size:15px;line-height:1.2}
+.lrow .v{color:var(--muted);font-size:12px}
+.ck{width:24px;height:24px;border-radius:7px;border:2px solid var(--muted);display:grid;place-items:center;font-size:14px;font-weight:800;color:transparent}
+.lrow[aria-checked="true"] .ck,.consent[aria-checked="true"] .ck{background:var(--grad);border-color:transparent;color:#fff}
+.consent{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;text-align:left;font-size:13px;color:#fff;line-height:1.4;margin:6px 0 4px;width:100%}
+.stt{font-size:12px;font-weight:800;padding:4px 8px;border-radius:8px;justify-self:start}
+.stt.wait{background:rgba(255,255,255,.08);color:var(--muted)}
+.stt.no{background:rgba(255,255,255,.06);color:var(--muted)}
+.stt.win{background:var(--grad);color:#fff}
+.stt.rej{background:rgba(255,45,122,.15);color:#FF9DBF}
+.stt.ok{background:rgba(43,217,159,.18);color:var(--ok)}
+.lrow.wrow{grid-template-columns:58px 1fr}
+.spin{display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:spin .8s linear infinite;vertical-align:-1px;margin-right:4px}
+
+.modal{position:absolute;inset:0;z-index:50;background:rgba(5,4,31,.72);display:grid;place-items:center;padding:18px}
+.modal .box{width:100%;background:var(--navy-2);border:1px solid var(--line);border-radius:26px;padding:20px 18px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:pop .45s cubic-bezier(.2,1.3,.4,1) both}
+.modal h4{font-family:var(--display);font-size:26px;margin:4px 0 4px;line-height:1.05}
+.modal .mt{font-weight:700;font-size:16px}
+.modal .mv{color:var(--muted);font-size:13px;margin-bottom:12px}
+.seatbox{background:#fff;color:var(--navy);border-radius:16px;padding:12px;margin:0 0 12px}
+.seatbox small{display:block;color:#55519a;font-size:12px}
+.seatbox b{font-family:var(--display);font-size:22px}
+.clock{font-family:var(--display);font-weight:800;font-size:46px;line-height:1;font-variant-numeric:tabular-nums;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.clocklbl{font-size:12px;color:var(--muted);margin:4px 0 14px}
+.modal .btns{display:grid;gap:8px}
+.btn.rej{background:transparent;border:1px solid rgba(255,45,122,.6);color:#FF9DBF;box-shadow:none}
 </style>
 </head>
 <body>
@@ -232,13 +294,13 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
   <section class="side" aria-label="Sobre la demo">
     <div class="brand"><svg class="logo" width="44" height="44" viewBox="0 0 120 120" aria-hidden="true"><use href="#lt-icon"/></svg><span>Last Ticket</span></div>
     <h1>Hoy hay teatro. Probá la app.</h1>
-    <p>Demo interactiva de la app de entradas de teatro de último momento: onboarding, cartelera del día con cuenta regresiva, Rush y Lottery, pago en un toque y e-ticket QR.</p>
+    <p>Demo interactiva de la app de entradas de teatro de último momento: mapa y cartelera separados en Rush y Lottery, elección de butacas, sorteo con confirmación y e-ticket QR.</p>
     <ul class="how">
-      <li><b>Aviso:</b> a la tarde llega la notificación con los cupos Rush de tus salas.</li>
-      <li><b>Cerca tuyo:</b> el mapa muestra las obras con Rush a menos de 1,5 km; si no hay, la lista.</li>
-      <li><b>La función:</b> precio final, sector en el plano y la cantidad de entradas.</li>
-      <li><b>Pago y QR:</b> la butaca queda reservada mientras pagás y la entrada llega al instante.</li>
-      <li><b>Lottery:</b> te anotás y, si salís sorteado, confirmás en 15 minutos.</li>
+      <li><b>Rush o Lottery:</b> la cartelera se divide en dos; cada obra sale por una sola modalidad.</li>
+      <li><b>Rush:</b> elegís tus butacas entre las naranjas (las disponibles) y pagás con 10 minutos de reserva.</li>
+      <li><b>Lottery:</b> te anotás en los 4 sorteos de la noche. Si salís, ves tu butaca y tenés 15 minutos para confirmar o rechazar.</li>
+      <li><b>Tus datos:</b> nombre, apellido, mail y celular antes de pagar; la entrada sale a tu nombre.</li>
+      <li><b>QR:</b> la entrada llega al instante, a la app y al mail.</li>
     </ul>
     <div class="pill-row">
       <button class="chip" id="replay" type="button">Reiniciar demo</button>
@@ -294,6 +356,7 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
           <div class="top"><div class="brand"><svg class="logo" width="32" height="32" viewBox="0 0 120 120" aria-hidden="true"><use href="#lt-icon"/></svg><span style="font-size:17px">Last Ticket</span></div><div class="avatar">CF</div></div>
           <div class="scroll">
             <div class="hero"><div class="eyebrow">Hola, Camila</div><h2 class="h">Hoy hay <em>teatro</em>.</h2></div>
+            <div class="seg kind" role="group" aria-label="Modalidad"><button type="button" id="k-rush" aria-pressed="true">Rush<small>Elegís butaca y comprás ya</small></button><button type="button" id="k-lot" aria-pressed="false">Lottery<small>Te anotás al sorteo</small></button></div>
             <div class="loc"><button class="locbtn" id="locbtn" type="button" aria-label="Cambiar ubicación"><span aria-hidden="true">📍</span><span id="locname">Abasto</span><small>· CABA ▾</small></button></div>
             <label class="search"><span aria-hidden="true">🔍</span><input id="q" type="search" placeholder="Buscá obras, salas o barrios" aria-label="Buscar obras"></label>
             <div class="seg" role="group" aria-label="Vista"><button type="button" id="seg-map" aria-pressed="true">Mapa</button><button type="button" id="seg-list" aria-pressed="false">Lista</button></div>
@@ -321,51 +384,67 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
                 <div id="pins"></div>
                 <span class="maptag" id="maptag"></span>
               </div>
-              <div class="section-t" style="margin-top:12px"><b>Rush cerca tuyo</b><small id="nearcount"></small></div>
+              <div class="section-t" style="margin-top:12px"><b id="neartitle">Rush cerca tuyo</b><small id="nearcount"></small></div>
               <div class="near" id="near"></div>
-              <div class="empty" id="empty" hidden><b>No hay cupos Rush a menos de 1,5 km.</b><p>Probá con otro barrio o buscá en la cartelera completa.</p><button class="btn" id="tolist" type="button">Ver la lista de esta noche</button></div>
+              <div class="empty" id="empty" hidden><b id="emptyt">No hay cupos Rush a menos de 1,5 km.</b><p>Probá con otro barrio o buscá en la cartelera completa.</p><button class="btn" id="tolist" type="button">Ver la lista de esta noche</button></div>
             </div>
             <div id="listview" hidden>
-            <div class="tabs" id="tabs"><button class="tab sel" type="button">Todo</button><button class="tab" type="button">Comedia</button><button class="tab" type="button">Drama</button><button class="tab" type="button">Empiezan en 1 h</button><button class="tab" type="button">Lottery</button><button class="tab" type="button">Independiente</button></div>
-            <div class="section-t"><b>Obras de esta noche</b><small>CABA · hoy</small></div>
-            <div id="list"></div>
+              <div class="tabs" id="tabs"><button class="tab sel" data-f="all" type="button">Todo</button><button class="tab" data-f="Comedia" type="button">Comedia</button><button class="tab" data-f="Drama" type="button">Drama</button><button class="tab" data-f="Musical" type="button">Musical</button><button class="tab" data-f="indep" type="button">Independiente</button><button class="tab" data-f="soon" type="button">Empiezan pronto</button></div>
+              <div class="section-t"><b id="listtitle">Rush de esta noche</b><small>CABA · hoy</small></div>
+              <div id="list"></div>
+              <div class="nores" id="nores" hidden>No hay obras con ese filtro. Probá con otro.</div>
             </div>
           </div>
         </section>
 
-        <!-- 4 detalle -->
+        <!-- 4 detalle Rush: elegís butacas -->
         <section class="view" id="v-det">
           <div class="top"><button class="back" data-back="v-home" type="button" aria-label="Volver">←</button><span class="timer" id="d-timer"></span></div>
           <div class="scroll">
-            <div class="cover" id="d-cover"><h3 id="d-title"></h3></div>
+            <div class="cover" id="d-cover"><span class="badge rush" style="position:absolute;top:14px;left:14px;background:rgba(11,10,58,.7)" id="d-badge">Rush</span><h3 id="d-title"></h3></div>
             <div class="facts">
               <div class="fact"><small>Sala</small><b id="d-venue"></b></div>
               <div class="fact"><small>Función</small><b id="d-time"></b></div>
-              <div class="fact"><small>Sector</small><b id="d-sector"></b></div>
-              <div class="fact"><small>Elenco confirmado</small><b id="d-cast"></b></div>
+              <div class="fact"><small>Sector Rush</small><b id="d-sector"></b></div>
+              <div class="fact"><small>Precio Rush</small><b id="d-price"></b></div>
             </div>
-            <div class="eyebrow">Tu sector</div>
-            <div class="stagebar"></div>
-            <div class="seatmap" id="seatmap"></div>
-            <p class="note" style="margin-top:4px">La sala asigna la butaca dentro de este sector. Vos sabés dónde vas a estar antes de pagar.</p>
-            <div class="eyebrow" style="margin-top:12px">Elegí cómo comprar</div>
-            <div class="modes" id="modes">
-              <button class="mode" data-mode="rush" aria-pressed="true" type="button"><b>Rush · <span id="m-rush"></span></b><small>Por orden de llegada</small></button>
-              <button class="mode" data-mode="lot" aria-pressed="false" type="button"><b>Lottery · <span id="m-lot"></span></b><small>Sorteo 4 h antes</small></button>
-            </div>
-            <div class="toggle" style="margin:12px 0"><div><b>¿Cuántas entradas?</b><small>Butacas contiguas · hasta 6</small></div><div class="qty"><button id="d-minus" type="button" aria-label="Una entrada menos">−</button><b id="d-qty" aria-live="polite">2</b><button id="d-plus" type="button" aria-label="Una entrada más">+</button></div></div>
+            <div class="eyebrow">Elegí tus butacas</div>
+            <p class="note" style="margin:4px 0 8px">Tocá las butacas naranjas: son las que la sala liberó para Rush. Hasta 6 por compra.</p>
+            <div class="stagebar" title="Escenario"></div>
+            <div class="seats" id="seats"></div>
+            <div class="legend"><span><i style="background:var(--orange)"></i>Disponible</span><span><i style="background:#fff"></i>Tu elección</span><span><i style="background:rgba(255,255,255,.12)"></i>Ocupada</span></div>
+            <div class="picked"><span id="pickedtxt">Todavía no elegiste butacas</span><b id="pickedn">0 / 6</b></div>
             <div class="breakdown" id="d-break"></div>
           </div>
-          <div class="foot"><button class="btn" id="d-cta" type="button">Comprar 2 entradas</button></div>
+          <div class="foot"><button class="btn" id="d-cta" type="button" disabled>Elegí tus butacas</button></div>
         </section>
 
-        <!-- 5 checkout -->
-        <section class="view" id="v-pay">
-          <div class="top"><button class="back" data-back="v-det" type="button" aria-label="Volver">←</button><b>Confirmá tu compra</b><span style="width:38px"></span></div>
+        <!-- 5 datos del comprador -->
+        <section class="view" id="v-data">
+          <div class="top"><button class="back" id="data-back" type="button" aria-label="Volver">←</button><b>Tus datos</b><span style="width:38px"></span></div>
           <div class="scroll">
-            <div class="lockbar"><span>Butacas reservadas para vos</span><span id="lock">10:00</span></div>
-            <div class="fact" style="margin-bottom:10px"><small id="p-when"></small><b id="p-title"></b></div>
-            <div class="toggle" style="margin-bottom:12px"><div><b>Entradas</b><small>Podés ajustar la cantidad antes de pagar</small></div><div class="qty"><button id="minus" type="button" aria-label="Menos">−</button><b id="qty">2</b><button id="plus" type="button" aria-label="Más">+</button></div></div>
+            <div class="lockbar" id="lock1"><span class="lklbl">Butacas reservadas para vos</span><span class="lk">10:00</span></div>
+            <p class="sub" style="margin-bottom:12px">Las entradas salen a tu nombre. Te mandamos el QR al mail y un aviso al celular.</p>
+            <form id="form" novalidate>
+              <div class="two">
+                <div class="fld"><label for="f-nom">Nombre</label><input id="f-nom" autocomplete="given-name" placeholder="Camila"><span class="err"></span></div>
+                <div class="fld"><label for="f-ape">Apellido</label><input id="f-ape" autocomplete="family-name" placeholder="Fernández"><span class="err"></span></div>
+              </div>
+              <div class="fld"><label for="f-mail">Mail</label><input id="f-mail" type="email" inputmode="email" autocomplete="email" placeholder="camila@mail.com"><span class="err"></span></div>
+              <div class="fld"><label for="f-cel">Celular</label><input id="f-cel" type="tel" inputmode="tel" autocomplete="tel" placeholder="11 5555 0123"><span class="err"></span></div>
+            </form>
+            <button class="chip" id="autofill" type="button">Usar los datos de mi perfil</button>
+          </div>
+          <div class="foot"><button class="btn" id="data-cta" type="button">Continuar al pago</button></div>
+        </section>
+
+        <!-- 6 checkout -->
+        <section class="view" id="v-pay">
+          <div class="top"><button class="back" data-back="v-data" type="button" aria-label="Volver">←</button><b>Confirmá tu compra</b><span style="width:38px"></span></div>
+          <div class="scroll">
+            <div class="lockbar" id="lock2"><span class="lklbl">Butacas reservadas para vos</span><span class="lk">10:00</span></div>
+            <div class="fact" style="margin-bottom:8px"><small id="p-when"></small><b id="p-title"></b></div>
+            <div class="facts"><div class="fact"><small>Butacas</small><b id="p-seats"></b></div><div class="fact"><small>A nombre de</small><b id="p-who"></b></div></div>
             <div class="eyebrow">Medio de pago</div>
             <button class="pay" aria-pressed="true" type="button" style="margin-top:8px"><span class="mp">MP</span><span><b>Mercado Pago</b><br><small style="color:var(--muted)">Dinero en cuenta · guardado</small></span></button>
             <button class="pay" aria-pressed="false" type="button"><span class="mp" style="background:#7B5CFF">VISA</span><span><b>Tarjeta •••• 4021</b><br><small style="color:var(--muted)">Crédito</small></span></button>
@@ -375,19 +454,32 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
           <div class="foot"><button class="btn" id="pay-btn" type="button">Pagar con Mercado Pago</button></div>
         </section>
 
-        <!-- 6 lottery -->
+        <!-- 7 lottery: anotarse -->
         <section class="view" id="v-lot">
-          <div class="top"><button class="back" data-back="v-home" type="button" aria-label="Volver">←</button><b>Lottery</b><span style="width:38px"></span></div>
-          <div class="scroll" style="text-align:center">
-            <div class="eyebrow" style="margin-top:6px">Estás anotada</div>
-            <h2 class="h" id="l-title"></h2>
-            <div class="drum" id="drum"><span id="drum-t">Sorteando…</span></div>
-            <p class="sub" id="l-msg">Sorteamos 4 horas antes de la función. Te avisamos por notificación.</p>
+          <div class="top"><button class="back" data-back="v-home" type="button" aria-label="Volver">←</button><b>Lottery de esta noche</b><span style="width:38px"></span></div>
+          <div class="scroll">
+            <p class="sub" style="margin-top:4px">Anotarte es gratis. Si salís sorteada, te mostramos tu butaca y tenés <b style="color:#fff">15 minutos</b> para confirmar, completar tus datos y pagar.</p>
+            <div class="section-t" style="margin-top:4px"><b>Participás en estos sorteos</b><small id="l-count"></small></div>
+            <div id="l-list"></div>
+            <div class="toggle" style="margin:12px 0"><div><b>Entradas por sorteo</b><small>Butacas juntas · hasta 4</small></div><div class="qty"><button id="l-minus" type="button" aria-label="Una entrada menos">−</button><b id="l-qty" aria-live="polite">2</b><button id="l-plus" type="button" aria-label="Una entrada más">+</button></div></div>
+            <button class="consent" id="consent" role="checkbox" aria-checked="false" type="button"><span class="ck">✓</span><span>Si salgo sorteada, acepto que se usen mis datos para emitir la entrada (Ley 25.326).</span></button>
           </div>
-          <div class="foot"><button class="btn" id="l-cta" type="button" hidden>Pagar y recibir el QR</button><button class="btn ghost" data-back="v-home" type="button">Volver a la cartelera</button></div>
+          <div class="foot"><button class="btn" id="l-cta" type="button" disabled>Participar</button></div>
         </section>
 
-        <!-- 7 ticket -->
+        <!-- 8 lottery: esperando el sorteo -->
+        <section class="view" id="v-lotw">
+          <div class="top"><button class="back" data-back="v-home" type="button" aria-label="Volver">←</button><b>Mis sorteos</b><span style="width:38px"></span></div>
+          <div class="scroll">
+            <div class="eyebrow" style="margin-top:6px">Estás anotada</div>
+            <h2 class="h" id="w-h">Sorteando…</h2>
+            <p class="sub" id="w-sub">Sorteamos 4 horas antes de cada función. Te avisamos por notificación.</p>
+            <div id="w-list"></div>
+          </div>
+          <div class="foot"><button class="btn" id="w-open" type="button" hidden>Ver mi entrada sorteada</button><button class="btn ghost" data-back="v-home" type="button">Volver a la cartelera</button></div>
+        </section>
+
+        <!-- 9 ticket -->
         <section class="view" id="v-tix">
           <div class="top"><button class="back" data-back="v-home" type="button" aria-label="Volver">←</button><b>Tu entrada</b><span style="width:38px"></span></div>
           <div class="scroll">
@@ -397,7 +489,7 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
               <small id="t-meta"></small>
               <div class="perf"></div>
               <canvas class="qr" id="qr" width="170" height="170" aria-label="Código QR de ejemplo"></canvas>
-              <div style="text-align:center"><small>Mostralo en la puerta · también está en tu mail y en la billetera</small></div>
+              <div style="text-align:center"><small id="t-to">Mostralo en la puerta · también está en tu mail y en la billetera</small></div>
             </div>
             <div class="toggle" style="margin-top:12px"><div><b>Recordatorio 1 h antes</b><small>Te avisamos cómo llegar a la sala</small></div><span class="badge lot">Activo</span></div>
           </div>
@@ -411,6 +503,19 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
           <p class="sub">Compartí el link de la función. Si se registra, los dos suman crédito para la próxima.</p>
           <div class="toggle" style="margin-bottom:12px"><div><b id="inv-link">lastticket.app/f/esta-noche</b><small>Link de ejemplo</small></div><button class="chip" id="copy" type="button">Copiar</button></div>
           <button class="btn ghost" id="close-sheet" type="button">Listo</button>
+        </div>
+      </div>
+      <div class="modal" id="win" hidden role="dialog" aria-modal="true" aria-labelledby="win-h">
+        <div class="box" id="win-box">
+          <div class="eyebrow">Lottery</div>
+          <h4 id="win-h">¡Saliste sorteada! 🎟️</h4>
+          <div class="mt" id="win-t"></div>
+          <div class="mv" id="win-v"></div>
+          <div class="seatbox"><small>Tu butaca</small><b id="win-seat"></b><small id="win-price"></small></div>
+          <div class="clock" id="win-clock">15:00</div>
+          <div class="clocklbl" id="win-lbl">para confirmar o rechazar. Si no respondés, la entrada pasa a la siguiente persona.</div>
+          <div class="btns" id="win-btns"><button class="btn" id="win-ok" type="button">Confirmar y completar datos</button><button class="btn rej" id="win-no" type="button">Rechazar entrada</button></div>
+          <div class="btns" id="win-btns2" hidden><button class="btn ghost" id="win-close" type="button">Volver a mis sorteos</button></div>
         </div>
       </div>
       <div class="demo-tag">DEMO · datos de ejemplo</div>
@@ -429,101 +534,268 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 <script>
 (function(){
   var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
   var fmt=function(n){return "$"+Math.round(n).toLocaleString("es-AR")};
   var now=new Date();
   function at(minsFromNow){var d=new Date(now.getTime()+minsFromNow*60000);d.setSeconds(0,0);return d}
+  var ROWS="ABCDEFGHI";
+  // Obras Rush y obras Lottery: cada obra sale por una sola modalidad.
   var shows=[
-    {id:"a",x:215,y:170,t:"Departamento compartido",g:"Comedia",venue:"Teatro Arlequín · Corrientes",start:at(68),list:45000,rush:.5,lot:.6,sector:"Platea · filas 8 a 12",cast:"Sí, elenco completo",left:6,c:["#FF2D7A","#FF9F1C"],zone:[3,4]},
-    {id:"b",x:128,y:128,t:"Los vecinos de arriba",g:"Comedia dramática",venue:"Sala El Andén · Abasto",start:at(140),list:38000,rush:.3,lot:.6,sector:"Pullman · fila 3",cast:"Sí",left:11,c:["#7B5CFF","#FF2D7A"],zone:[6,7]},
-    {id:"c",x:100,y:75,t:"Cumbre de sobremesa",g:"Comedia",venue:"Teatro Faro · Palermo",start:at(215),list:42000,rush:.4,lot:.6,sector:"Platea · filas 14 a 16",cast:"Sí",left:4,c:["#FF9F1C","#5B1A8C"],zone:[5,6]},
-    {id:"e",x:262,y:146,t:"Bajo la misma luz",g:"Musical",venue:"Teatro Nuevo Sur · Corrientes",start:at(175),list:52000,rush:.4,lot:.6,sector:"Pullman · filas 2 a 4",cast:"Sí, elenco completo",left:8,c:["#5B1A8C","#FF9F1C"],zone:[1,2]},
-    {id:"d",x:130,y:188,t:"Hora de cierre",g:"Drama",venue:"La Grieta · Almagro (independiente)",start:at(290),list:22000,rush:.5,lot:.6,sector:"General · gradas centrales",cast:"Sí",left:9,c:["#211E66","#FF2D7A"],zone:[2,3,4]}
+    {id:"a",kind:"rush",x:215,y:170,t:"Departamento compartido",g:"Comedia",indep:false,venue:"Teatro Arlequín · Corrientes",start:at(68),list:45000,disc:.5,sector:"Platea · filas D a F",c:["#FF2D7A","#FF9F1C"],zone:[3,4,5]},
+    {id:"b",kind:"rush",x:128,y:128,t:"Los vecinos de arriba",g:"Comedia dramática",indep:false,venue:"Sala El Andén · Abasto",start:at(140),list:38000,disc:.3,sector:"Pullman · filas G e H",c:["#7B5CFF","#FF2D7A"],zone:[6,7]},
+    {id:"e",kind:"rush",x:262,y:146,t:"Bajo la misma luz",g:"Musical",indep:false,venue:"Teatro Nuevo Sur · Corrientes",start:at(175),list:52000,disc:.4,sector:"Platea · filas B y C",c:["#5B1A8C","#FF9F1C"],zone:[1,2]},
+    {id:"d",kind:"rush",x:130,y:188,t:"Hora de cierre",g:"Drama",indep:true,venue:"La Grieta · Almagro",start:at(290),list:22000,disc:.5,sector:"General · filas C a E",c:["#211E66","#FF2D7A"],zone:[2,3,4]},
+    {id:"c",kind:"lot",x:100,y:75,t:"Cumbre de sobremesa",g:"Comedia",indep:false,venue:"Teatro Faro · Palermo",start:at(300),list:42000,disc:.6,sector:"Platea",c:["#FF9F1C","#5B1A8C"],zone:[4,5]},
+    {id:"f",kind:"lot",x:190,y:132,t:"El último ensayo",g:"Comedia",indep:false,venue:"Teatro del Abasto",start:at(330),list:40000,disc:.6,sector:"Platea",c:["#FF2D7A","#211E66"],zone:[3,4]},
+    {id:"g",kind:"lot",x:58,y:46,t:"Cartas a Mendoza",g:"Drama",indep:true,venue:"Espacio Nido · Belgrano",start:at(360),list:20000,disc:.6,sector:"General",c:["#2A27A8","#FF9F1C"],zone:[2,3]},
+    {id:"h",kind:"lot",x:236,y:178,t:"Noche de gala",g:"Musical",indep:false,venue:"Gran Teatro Lavalle · Corrientes",start:at(390),list:55000,disc:.6,sector:"Pullman",c:["#5B1A8C","#FF2D7A"],zone:[6,7]}
   ];
-  var cur=shows[0],mode="rush",qty=2;
-  function priceOf(s,m){return s.list*(1-(m==="rush"?s.rush:s.lot))*1.12}
+  function byId(id){return shows.filter(function(s){return s.id===id})[0]}
+  function drawTime(s){return new Date(s.start.getTime()-4*3.6e6)}
+  var cur=shows[0],picked=[],flow="rush",buyer=null;
+  var kind="rush",filt="all",view="map";
+  var lockEnd=0,lotDeadline=0;
+  var lotSel=[],lotFocus=null,lotQty=2,entries=[],winner=null;
+
+  function unit(s){return s.list*(1-s.disc)}
+  function priceOf(s){return unit(s)*1.12}
   function hhmm(d){return d.toLocaleTimeString("es-AR",{hour:"2-digit",minute:"2-digit",hour12:false})}
   function left(d){var ms=d-Date.now();if(ms<0)ms=0;var h=Math.floor(ms/3.6e6),m=Math.floor(ms%3.6e6/6e4),s=Math.floor(ms%6e4/1e3);return (h?h+" h ":"")+String(m).padStart(2,"0")+" min "+String(s).padStart(2,"0")+" s"}
+  function mmss(ms){ms=Math.max(0,ms);return String(Math.floor(ms/6e4)).padStart(2,"0")+":"+String(Math.floor(ms%6e4/1e3)).padStart(2,"0")}
+  function plural(n,a,b){return n===1?"1 "+a:n+" "+b}
+  function seatText(arr){
+    if(!arr.length)return "";
+    var rows={};arr.forEach(function(x){(rows[x[0]]=rows[x[0]]||[]).push(+x.slice(1))});
+    return Object.keys(rows).sort().map(function(r){var n=rows[r].sort(function(a,b){return a-b});return "Fila "+r+" · "+(n.length===1?"butaca ":"butacas ")+(n.length===1?n[0]:n.slice(0,-1).join(", ")+" y "+n[n.length-1])}).join(" / ");
+  }
+  function breakdown(s,q){
+    var b=unit(s);
+    return '<div><span>Precio de lista</span><span class="was">'+fmt(s.list*q)+'</span></div><div><span>'+(s.kind==="rush"?"Rush":"Lottery")+' −'+Math.round(s.disc*100)+'% × '+q+'</span><span>'+fmt(b*q)+'</span></div><div><span>Cargo por servicio 12%</span><span>'+fmt(b*.12*q)+'</span></div><div class="tot"><span>Total</span><span>'+fmt(b*1.12*q)+'</span></div>';
+  }
 
-  function show(id){document.querySelectorAll(".view").forEach(function(v){v.classList.toggle("on",v.id===id)})}
-  document.querySelectorAll("[data-back]").forEach(function(b){b.addEventListener("click",function(){show(b.getAttribute("data-back"))})});
+  function show(id){$$(".view").forEach(function(v){v.classList.toggle("on",v.id===id)});var v=document.getElementById(id);var sc=v&&v.querySelector(".scroll");if(sc)sc.scrollTop=0}
+  $$("[data-back]").forEach(function(b){b.addEventListener("click",function(){show(b.getAttribute("data-back"))})});
 
-  // lista
+  // ---------- HOME: Rush / Lottery por separado ----------
+  function setKind(k){
+    kind=k;selId=null;
+    $("#k-rush").setAttribute("aria-pressed",String(k==="rush"));$("#k-lot").setAttribute("aria-pressed",String(k==="lot"));
+    $("#listtitle").textContent=k==="rush"?"Rush de esta noche":"Sorteos de esta noche";
+    $("#neartitle").textContent=k==="rush"?"Rush cerca tuyo":"Lottery cerca tuyo";
+    renderList();renderMap();
+  }
+  $("#k-rush").addEventListener("click",function(){setKind("rush")});
+  $("#k-lot").addEventListener("click",function(){setKind("lot")});
+
+  function matches(s){
+    if(s.kind!==kind)return false;
+    var q=($("#q").value||"").trim().toLowerCase();
+    if(q&&(s.t+" "+s.venue+" "+s.g).toLowerCase().indexOf(q)<0)return false;
+    if(filt==="all")return true;
+    if(filt==="indep")return s.indep;
+    if(filt==="soon")return s.start-Date.now()<3*3.6e6;
+    return s.g.indexOf(filt)===0;
+  }
   function renderList(){
     var html="";
-    shows.forEach(function(s){
-      var p=priceOf(s,"rush");
-      html+='<button class="card" data-id="'+s.id+'" type="button"><div class="poster" style="background:linear-gradient(150deg,'+s.c[0]+','+s.c[1]+')">'+s.g+'</div><div class="meta"><div class="row"><span class="badge rush">Rush −'+Math.round(s.rush*100)+'%</span><span class="badge lot">Lottery</span></div><div class="t">'+s.t+'</div><div class="v">'+s.venue+' · '+hhmm(s.start)+' h</div><div class="row"><span class="price">'+fmt(p)+'</span><span class="was">'+fmt(s.list*1.12)+'</span></div><div class="row"><span class="timer" data-start="'+s.start.getTime()+'"></span>'+(s.left<=6?'<span class="few">Quedan '+s.left+' lugares</span>':'')+'</div></div></button>';
+    shows.filter(matches).forEach(function(s){
+      var top=s.kind==="rush"?'<span class="badge rush">Rush −'+Math.round(s.disc*100)+'%</span>':'<span class="badge lot">Lottery −'+Math.round(s.disc*100)+'%</span>';
+      var tm=s.kind==="rush"?'<span class="timer" data-start="'+s.start.getTime()+'" data-pre="Empieza en "></span>':'<span class="timer" data-start="'+drawTime(s).getTime()+'" data-pre="Sorteo en "></span>';
+      html+='<button class="card" data-id="'+s.id+'" type="button"><div class="poster" style="background:linear-gradient(150deg,'+s.c[0]+','+s.c[1]+')">'+s.g+'</div><div class="meta"><div class="row">'+top+(s.indep?'<span class="badge" style="background:rgba(255,255,255,.08);color:#fff">Indep.</span>':'')+'</div><div class="t">'+s.t+'</div><div class="v">'+s.venue+' · '+hhmm(s.start)+' h</div><div class="row"><span class="price">'+fmt(priceOf(s))+'</span><span class="was">'+fmt(s.list*1.12)+'</span></div><div class="row">'+tm+'</div></div></button>';
     });
-    $("#list").innerHTML=html;
-    document.querySelectorAll(".card").forEach(function(c){c.addEventListener("click",function(){openShow(c.getAttribute("data-id"))})});
+    $("#list").innerHTML=html;$("#nores").hidden=!!html;
+    $$("#list .card").forEach(function(c){c.addEventListener("click",function(){openAny(c.getAttribute("data-id"))})});
+    tick();
+  }
+  $$("#tabs .tab").forEach(function(t){t.addEventListener("click",function(){$$("#tabs .tab").forEach(function(x){x.classList.remove("sel")});t.classList.add("sel");filt=t.getAttribute("data-f");renderList()})});
+  function openAny(id){var s=byId(id);if(!s)return;if(s.kind!==kind)setKind(s.kind);if(s.kind==="rush")openShow(id);else openLottery(id)}
+
+  // ---------- RUSH: elegir butacas ----------
+  function seatState(s,r,c){
+    if(s.zone.indexOf(r)<0||c<1||c>8)return "occ";
+    return ((r*7+c*3+s.id.charCodeAt(0))%4===0)?"occ":"av";
   }
   function openShow(id){
-    cur=shows.filter(function(s){return s.id===id})[0]||shows[0];mode="rush";
+    cur=byId(id)||shows[0];picked=[];flow="rush";lockEnd=0;
     $("#d-title").textContent=cur.t;
     $("#d-cover").style.background="linear-gradient(150deg,"+cur.c[0]+","+cur.c[1]+")";
+    $("#d-badge").textContent="Rush −"+Math.round(cur.disc*100)+"%";
     $("#d-venue").textContent=cur.venue.split(" · ")[0];
     $("#d-time").textContent="Hoy "+hhmm(cur.start)+" h";
     $("#d-sector").textContent=cur.sector;
-    $("#d-cast").textContent=cur.cast;
-    $("#m-rush").textContent=fmt(priceOf(cur,"rush"));
-    $("#m-lot").textContent=fmt(priceOf(cur,"lot"));
-    var sm="";for(var r=0;r<9;r++)for(var c=0;c<10;c++)sm+='<i class="'+(cur.zone.indexOf(r)>-1&&c>1&&c<8?"zone":"")+'"></i>';
-    $("#seatmap").innerHTML=sm;
-    setMode("rush");show("v-det");
+    $("#d-price").textContent=fmt(priceOf(cur))+" c/u";
+    var h="";
+    for(var r=0;r<9;r++){
+      h+='<span class="rl">'+ROWS[r]+'</span>';
+      for(var c=0;c<10;c++){
+        if(c===5)h+='<span></span>';
+        var st=seatState(cur,r,c),nm=ROWS[r]+(c+1);
+        h+='<button class="st'+(st==="av"?" av":"")+'" data-seat="'+nm+'" type="button" '+(st==="av"?'aria-label="Butaca '+nm+', disponible" aria-pressed="false"':'disabled aria-label="Butaca '+nm+', ocupada"')+'>'+(st==="av"?c+1:"")+'</button>';
+      }
+      h+='<span class="rl">'+ROWS[r]+'</span>';
+    }
+    $("#seats").innerHTML=h;
+    $$("#seats .st.av").forEach(function(b){b.addEventListener("click",function(){toggleSeat(b.getAttribute("data-seat"))})});
+    renderPicked();show("v-det");tick();
   }
-  function breakdown(m,q){
-    var base=cur.list*(1-(m==="rush"?cur.rush:cur.lot));
-    return '<div><span>Precio de lista</span><span class="was">'+fmt(cur.list*q)+'</span></div><div><span>'+(m==="rush"?"Rush":"Lottery")+' −'+Math.round((m==="rush"?cur.rush:cur.lot)*100)+'% × '+q+'</span><span>'+fmt(base*q)+'</span></div><div><span>Cargo por servicio 12%</span><span>'+fmt(base*.12*q)+'</span></div><div class="tot"><span>Total</span><span>'+fmt(base*1.12*q)+'</span></div>';
+  function toggleSeat(nm){
+    var i=picked.indexOf(nm);
+    if(i>-1)picked.splice(i,1);
+    else{if(picked.length>=6){flash("Máximo 6 butacas por compra");return}picked.push(nm)}
+    renderPicked();
   }
-  function setMode(m){
-    mode=m;
-    document.querySelectorAll(".mode").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-mode")===m))});
-    renderQty();
+  function renderPicked(){
+    $$("#seats .st.av").forEach(function(b){var on=picked.indexOf(b.getAttribute("data-seat"))>-1;b.classList.toggle("sel",on);b.setAttribute("aria-pressed",String(on))});
+    var n=picked.length;
+    $("#pickedtxt").textContent=n?seatText(picked):"Todavía no elegiste butacas";
+    $("#pickedn").textContent=n+" / 6";
+    $("#d-break").innerHTML=n?breakdown(cur,n):"";
+    var b=$("#d-cta");b.disabled=!n;b.textContent=n?"Continuar con "+plural(n,"butaca","butacas")+" · "+fmt(priceOf(cur)*n):"Elegí tus butacas";
   }
-  function renderQty(){
-    var n=qty===1?"1 entrada":qty+" entradas";
-    $("#d-qty").textContent=qty;$("#qty").textContent=qty;
-    $("#d-minus").disabled=qty<=1;$("#d-plus").disabled=qty>=6;$("#minus").disabled=qty<=1;$("#plus").disabled=qty>=6;
-    $("#d-break").innerHTML=breakdown(mode,qty);$("#p-break").innerHTML=breakdown("rush",qty);
-    $("#d-cta").textContent=mode==="rush"?"Comprar "+n:"Anotarme al sorteo · "+n;
-  }
-  function setQty(q){qty=Math.max(1,Math.min(6,q));renderQty()}
-  $("#d-minus").addEventListener("click",function(){setQty(qty-1)});
-  $("#d-plus").addEventListener("click",function(){setQty(qty+1)});
-  document.querySelectorAll(".mode").forEach(function(b){b.addEventListener("click",function(){setMode(b.getAttribute("data-mode"))})});
-
-  // checkout
-  var lockEnd=0;
+  function flash(t){var e=$("#pickedtxt"),o=e.textContent;e.textContent=t;e.style.color="#FF9DBF";setTimeout(function(){e.style.color="";renderPicked()},1400)}
   $("#d-cta").addEventListener("click",function(){
-    if(mode==="lot"){startLottery();return}
-    renderQty();
-    $("#p-title").textContent=cur.t;$("#p-when").textContent="Hoy "+hhmm(cur.start)+" h · "+cur.sector;
-    lockEnd=Date.now()+10*60000;show("v-pay");
+    if(!picked.length)return;
+    flow="rush";lockEnd=Date.now()+10*60000;goData();
   });
-  $("#minus").addEventListener("click",function(){setQty(qty-1)});
-  $("#plus").addEventListener("click",function(){setQty(qty+1)});
-  document.querySelectorAll(".pay").forEach(function(p){p.addEventListener("click",function(){document.querySelectorAll(".pay").forEach(function(x){x.setAttribute("aria-pressed","false")});p.setAttribute("aria-pressed","true")})});
+
+  // ---------- DATOS DEL COMPRADOR ----------
+  function setLockbars(){
+    $$("#lock1,#lock2").forEach(function(l){l.classList.toggle("lot",flow==="lot");l.querySelector(".lklbl").textContent=flow==="lot"?"Lottery · tiempo para confirmar":"Butacas reservadas para vos"});
+    tick();
+  }
+  function goData(){setLockbars();clearErrs();show("v-data")}
+  $("#data-back").addEventListener("click",function(){if(flow==="rush"){lockEnd=0;show("v-det")}else{show("v-lotw");renderWait()}});
+  var F={nom:$("#f-nom"),ape:$("#f-ape"),mail:$("#f-mail"),cel:$("#f-cel")};
+  function setErr(el,msg){el.setAttribute("aria-invalid",msg?"true":"false");el.parentNode.querySelector(".err").textContent=msg||""}
+  function clearErrs(){Object.keys(F).forEach(function(k){setErr(F[k],"")})}
+  function validate(){
+    var ok=true,v={nom:F.nom.value.trim(),ape:F.ape.value.trim(),mail:F.mail.value.trim(),cel:F.cel.value.trim()};
+    setErr(F.nom,v.nom.length<2?"Escribí tu nombre":"");if(v.nom.length<2)ok=false;
+    setErr(F.ape,v.ape.length<2?"Escribí tu apellido":"");if(v.ape.length<2)ok=false;
+    var mOk=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.mail);setErr(F.mail,mOk?"":"Revisá el mail (ej.: nombre@mail.com)");if(!mOk)ok=false;
+    var d=v.cel.replace(/\D/g,"");setErr(F.cel,d.length<8?"Escribí un celular con código de área":"");if(d.length<8)ok=false;
+    return ok?v:null;
+  }
+  Object.keys(F).forEach(function(k){F[k].addEventListener("input",function(){if(F[k].getAttribute("aria-invalid")==="true")setErr(F[k],"")})});
+  function autofill(){F.nom.value="Camila";F.ape.value="Fernández";F.mail.value="camila.fernandez@mail.com";F.cel.value="11 5555 0123";clearErrs()}
+  $("#autofill").addEventListener("click",autofill);
+  $("#form").addEventListener("submit",function(e){e.preventDefault();$("#data-cta").click()});
+  $("#data-cta").addEventListener("click",function(){
+    var v=validate();if(!v){var bad=document.querySelector('#form [aria-invalid="true"]');if(bad)bad.focus();return}
+    buyer=v;goPay();
+  });
+
+  // ---------- PAGO ----------
+  function goPay(){
+    var n=picked.length;
+    $("#p-title").textContent=cur.t;
+    $("#p-when").textContent=(flow==="lot"?"Lottery · ":"Rush · ")+"Hoy "+hhmm(cur.start)+" h · "+cur.venue.split(" · ")[0];
+    $("#p-seats").textContent=seatText(picked);
+    $("#p-who").textContent=buyer.nom+" "+buyer.ape;
+    $("#p-break").innerHTML=breakdown(cur,n);
+    $("#pay-btn").textContent="Pagar "+fmt(priceOf(cur)*n)+" con Mercado Pago";
+    setLockbars();show("v-pay");
+  }
+  $$(".pay").forEach(function(p){p.addEventListener("click",function(){$$(".pay").forEach(function(x){x.setAttribute("aria-pressed","false")});p.setAttribute("aria-pressed","true");var mp=p.querySelector(".mp").textContent==="MP";$("#pay-btn").textContent="Pagar "+fmt(priceOf(cur)*picked.length)+(mp?" con Mercado Pago":" con tarjeta")})});
   $("#pay-btn").addEventListener("click",function(){
-    var b=this;b.textContent="Procesando…";
-    setTimeout(function(){b.textContent="Pagar con Mercado Pago";issueTicket(mode)},1100);
+    var b=this,t=b.textContent;b.textContent="Procesando…";b.disabled=true;
+    setTimeout(function(){b.textContent=t;b.disabled=false;issueTicket()},1100);
   });
-  function issueTicket(m){
+  function issueTicket(){
+    lockEnd=0;
+    if(flow==="lot"&&winner){winner.done=true;lotDeadline=0;setEntry(winner.s.id,"ok")}
     $("#t-title").textContent=cur.t;
-    $("#t-meta").textContent="Hoy "+hhmm(cur.start)+" h · "+cur.venue+" · "+cur.sector+" · "+(qty===1?"1 entrada":qty+" entradas");
+    $("#t-meta").textContent="Hoy "+hhmm(cur.start)+" h · "+cur.venue+" · "+cur.sector.split(" · ")[0]+" · "+seatText(picked);
+    $("#t-to").textContent=buyer?"A nombre de "+buyer.nom+" "+buyer.ape+" · también en "+buyer.mail:"Mostralo en la puerta · también está en tu mail";
     drawQR(cur.id+Date.now());show("v-tix");
     timers.push(setTimeout(function(){notify("Tu entrada está lista","Mostrá el QR en la puerta de "+cur.venue.split(" · ")[0]+". Te recordamos 1 h antes.")},1500));
   }
-  // lottery
-  function startLottery(){
-    $("#l-title").textContent=cur.t;$("#drum").classList.remove("stop");$("#drum-t").textContent="Sorteando…";
-    $("#l-msg").textContent="Sorteamos 4 horas antes de la función. Te avisamos por notificación.";$("#l-cta").hidden=true;show("v-lot");
-    timers.push(setTimeout(function(){
-      $("#drum").classList.add("stop");$("#drum-t").innerHTML="¡Ganaste!<br><small style='font-size:14px;color:#FF9F1C'>"+fmt(priceOf(cur,"lot"))+" c/u</small>";
-      $("#l-msg").textContent="Tenés 15 minutos para confirmar "+(qty===1?"tu entrada.":"tus "+qty+" entradas.");$("#l-cta").hidden=false;
-      notify("¡Saliste sorteada! 🎟️",cur.t+" hoy "+hhmm(cur.start)+" h. Confirmá en 15 min: "+fmt(priceOf(cur,"lot"))+" por entrada.");
-    },5000));
+
+  // ---------- LOTTERY ----------
+  var lotShows=function(){return shows.filter(function(s){return s.kind==="lot"})};
+  function openLottery(focus){
+    lotFocus=focus||null;
+    if(!lotSel.length)lotSel=lotShows().map(function(s){return s.id});
+    if(focus&&lotSel.indexOf(focus)<0)lotSel.push(focus);
+    renderLot();show("v-lot");
+    if(focus){var r=document.querySelector('#l-list [data-id="'+focus+'"]');if(r)setTimeout(function(){var sc=$("#v-lot .scroll"),y=r.offsetTop-sc.offsetTop-sc.clientHeight+r.offsetHeight+16;if(y>0)sc.scrollTop=y},60)}
   }
-  $("#l-cta").addEventListener("click",function(){issueTicket("lot")});
+  function renderLot(){
+    var h="";
+    lotShows().forEach(function(s){
+      var on=lotSel.indexOf(s.id)>-1;
+      h+='<button class="lrow'+(s.id===lotFocus?' hl':'')+'" role="checkbox" aria-checked="'+on+'" data-id="'+s.id+'" type="button"><span class="ck">✓</span><div class="poster" style="background:linear-gradient(150deg,'+s.c[0]+','+s.c[1]+')">'+s.g+'</div><div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span class="t">'+s.t+'</span><span class="v">'+s.venue.split(" · ")[0]+' · función '+hhmm(s.start)+' h</span><span class="v">Sorteo '+hhmm(drawTime(s))+' h · <b style="color:#fff">'+fmt(priceOf(s))+'</b> c/u</span></div></button>';
+    });
+    $("#l-list").innerHTML=h;
+    $$("#l-list .lrow").forEach(function(r){r.addEventListener("click",function(){var id=r.getAttribute("data-id"),i=lotSel.indexOf(id);if(i>-1)lotSel.splice(i,1);else lotSel.push(id);renderLot()})});
+    $("#l-qty").textContent=lotQty;$("#l-minus").disabled=lotQty<=1;$("#l-plus").disabled=lotQty>=4;
+    var n=lotSel.length;$("#l-count").textContent=n+" de "+lotShows().length;
+    var c=$("#consent").getAttribute("aria-checked")==="true";
+    var b=$("#l-cta");b.disabled=!n||!c;
+    b.textContent=!n?"Elegí al menos un sorteo":(!c?"Aceptá para participar":(n===1?"Participar en 1 sorteo":"Participar en los "+n+" sorteos"));
+  }
+  $("#l-minus").addEventListener("click",function(){lotQty=Math.max(1,lotQty-1);renderLot()});
+  $("#l-plus").addEventListener("click",function(){lotQty=Math.min(4,lotQty+1);renderLot()});
+  $("#consent").addEventListener("click",function(){this.setAttribute("aria-checked",String(this.getAttribute("aria-checked")!=="true"));renderLot()});
+  $("#l-cta").addEventListener("click",startDraw);
+
+  function setEntry(id,st){entries.forEach(function(e){if(e.id===id)e.st=st});renderWait()}
+  function startDraw(){
+    entries=lotShows().filter(function(s){return lotSel.indexOf(s.id)>-1}).map(function(s){return {id:s.id,st:"wait"}});
+    winner=null;lotDeadline=0;$("#win").hidden=true;
+    renderWait();show("v-lotw");
+    var wid=(lotFocus&&lotSel.indexOf(lotFocus)>-1)?lotFocus:entries[0].id;
+    timers.push(setTimeout(function(){
+      entries.forEach(function(e){e.st=e.id===wid?"win":"no"});
+      var s=byId(wid),row=s.zone[Math.floor(s.zone.length/2)],seats=[];
+      for(var c=3;c<3+lotQty;c++)seats.push(ROWS[row]+(c+1));
+      winner={s:s,seats:seats,done:false};lotDeadline=Date.now()+15*60000;
+      renderWait();
+      notify("¡Saliste sorteada! 🎟️",s.t+" hoy "+hhmm(s.start)+" h. Tenés 15 min para confirmar.");
+      timers.push(setTimeout(openWin,900));
+    },4200));
+  }
+  function renderWait(){
+    var h="",hasWin=false,pend=winner&&!winner.done&&lotDeadline&&entries.some(function(e){return e.st==="win"});
+    entries.forEach(function(e){
+      var s=byId(e.id),lbl={wait:'<span class="spin"></span>Sorteo en curso',no:"No saliste esta vez",win:"¡Saliste! Confirmá en <span class='wclock'>"+mmss(lotDeadline-Date.now())+"</span>",rej:"Rechazaste · pasó al siguiente",ok:"Comprada ✓",exp:"Se venció el tiempo"}[e.st];
+      if(e.st==="win")hasWin=true;
+      h+='<div class="lrow wrow'+(e.st==="win"?' hl':'')+'"><div class="poster" style="background:linear-gradient(150deg,'+s.c[0]+','+s.c[1]+')">'+s.g+'</div><div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span class="t">'+s.t+'</span><span class="v">'+s.venue.split(" · ")[0]+' · '+hhmm(s.start)+' h · '+plural(lotQty,"entrada","entradas")+'</span><span class="stt '+e.st+'">'+lbl+'</span></div></div>';
+    });
+    $("#w-list").innerHTML=h;
+    var waiting=entries.some(function(e){return e.st==="wait"});
+    var st=entries.map(function(e){return e.st});
+    $("#w-h").textContent=waiting?"Sorteando…":(st.indexOf("ok")>-1?"¡Entrada comprada!":(hasWin?"¡Saliste sorteada!":(st.indexOf("rej")>-1?"Rechazaste la entrada":(st.indexOf("exp")>-1?"Se venció el tiempo":"Esta vez no salió"))));
+    $("#w-sub").textContent=waiting?(entries.length===1?"Participás en 1 sorteo":"Participás en estos "+entries.length+" sorteos")+". Sorteamos 4 horas antes de cada función y te avisamos por notificación.":(hasWin?"Tenés 15 minutos para confirmar o rechazar tu entrada.":(st.indexOf("rej")>-1||st.indexOf("exp")>-1?"La entrada pasó a la siguiente persona. Podés anotarte en otros sorteos o mirar el Rush.":(st.indexOf("ok")>-1?"Tu QR está en Mis entradas.":"Podés anotarte en otros sorteos o mirar el Rush de esta noche.")));
+    $("#w-open").hidden=!pend;
+  }
+  $("#w-open").addEventListener("click",openWin);
+  function openWin(){
+    if(!winner||winner.done)return;
+    var s=winner.s;
+    $("#win-h").textContent="¡Saliste sorteada! 🎟️";
+    $("#win-t").textContent=s.t;
+    $("#win-v").textContent=s.venue.split(" · ")[0]+" · Hoy "+hhmm(s.start)+" h";
+    $("#win-seat").textContent=s.sector+" · "+seatText(winner.seats).replace(/^Fila /,"Fila ");
+    $("#win-price").textContent=plural(winner.seats.length,"entrada","entradas")+" · "+fmt(priceOf(s)*winner.seats.length)+" en total";
+    $("#win-btns").hidden=false;$("#win-btns2").hidden=true;$("#win-clock").hidden=false;
+    $("#win-lbl").textContent="para confirmar o rechazar. Si no respondés, la entrada pasa a la siguiente persona.";
+    $("#win").hidden=false;tick();
+  }
+  $("#win-ok").addEventListener("click",function(){
+    $("#win").hidden=true;
+    flow="lot";cur=winner.s;picked=winner.seats.slice();goData();
+  });
+  $("#win-no").addEventListener("click",function(){
+    $("#win").hidden=true;winner.done=true;lotDeadline=0;setEntry(winner.s.id,"rej");show("v-lotw");
+  });
+  $("#win-close").addEventListener("click",function(){$("#win").hidden=true;show("v-lotw")});
+  function expireLottery(){
+    winner.done=true;lotDeadline=0;setEntry(winner.s.id,"exp");
+    $("#win-h").textContent="Se venció el tiempo";
+    $("#win-clock").hidden=true;$("#win-lbl").textContent="Pasaron los 15 minutos y la entrada pasó a la siguiente persona.";
+    $("#win-btns").hidden=true;$("#win-btns2").hidden=false;$("#win").hidden=false;
+  }
 
   // QR de ejemplo
   function drawQR(seed){
@@ -541,10 +813,9 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
   $("#copy").addEventListener("click",function(){var b=this;try{navigator.clipboard.writeText($("#inv-link").textContent).then(function(){b.textContent="Copiado"},function(){b.textContent="Seleccioná y copiá"})}catch(e){b.textContent="Seleccioná y copiá"}});
 
   // onboarding
-  document.querySelectorAll(".genre").forEach(function(g){g.addEventListener("click",function(){g.setAttribute("aria-pressed",String(g.getAttribute("aria-pressed")!=="true"))})});
+  $$(".genre").forEach(function(g){g.addEventListener("click",function(){g.setAttribute("aria-pressed",String(g.getAttribute("aria-pressed")!=="true"))})});
   $("#sw").addEventListener("click",function(){var v=this.getAttribute("aria-checked")!=="true";this.setAttribute("aria-checked",String(v))});
   $("#go-home").addEventListener("click",function(){show("v-home");scheduleDemo()});
-  document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){document.querySelectorAll(".tab").forEach(function(x){x.classList.remove("sel")});t.classList.add("sel")})});
 
   // notificaciones de la demo
   var nTimer=null,nTarget=null,timers=[];
@@ -554,78 +825,91 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
     if(navigator.vibrate){try{navigator.vibrate(40)}catch(e){}}
     clearTimeout(nTimer);nTimer=setTimeout(function(){n.classList.remove("show")},5200);
   }
-  $("#notif").addEventListener("click",function(){this.classList.remove("show");if(nTarget)openShow(nTarget)});
+  $("#notif").addEventListener("click",function(){this.classList.remove("show");if(nTarget==="win"){openWin();return}if(nTarget)openAny(nTarget)});
   var script=[
-    [3500,"Se abrió el cupo Rush de tus salas","Hoy hay teatro: 5 obras con hasta 50% off. Mirá precio final y sector.",null],
-    [14000,"Hoy "+hhmm(shows[0].start)+" h · Comedia en Corrientes","Platea desde "+fmt(priceOf(shows[0],"rush"))+". Quedan 6 lugares.","a"],
-    [30000,"¿Qué hacés hoy a las 21?","Mañana abre el Lottery de "+shows[2].t+": anotate y pagá "+fmt(priceOf(shows[2],"lot"))+" si salís sorteada.","c"]
+    [3500,"Se abrió el cupo Rush de tus salas","Hoy hay teatro: 4 obras con hasta 50% off. Elegí tu butaca.",null],
+    [14000,"Hoy "+hhmm(shows[0].start)+" h · Comedia en Corrientes","Platea desde "+fmt(priceOf(shows[0]))+". Elegí tu butaca antes de que se agoten.","a"],
+    [30000,"Lottery de esta noche","Anotate gratis en "+byId("c").t+" y 3 obras más: si salís sorteada pagás "+fmt(priceOf(byId("c")))+".","c"]
   ];
   function scheduleDemo(){timers.forEach(clearTimeout);timers=script.map(function(s){return setTimeout(function(){notify(s[1],s[2],s[3])},s[0])})}
   var pushIdx=0;
   $("#pushNow").addEventListener("click",function(){var s=script[pushIdx++%script.length];notify(s[1],s[2],s[3])});
   $("#replay").addEventListener("click",start);
 
-  // reloj y cuentas regresivas
+  // reloj, cuentas regresivas y vencimientos
   function tick(){
     $("#clock").textContent=hhmm(new Date());
-    document.querySelectorAll(".timer[data-start]").forEach(function(t){t.textContent="Empieza en "+left(new Date(+t.getAttribute("data-start")))});
+    $$(".timer[data-start]").forEach(function(t){t.textContent=(t.getAttribute("data-pre")||"Empieza en ")+left(new Date(+t.getAttribute("data-start")))});
     if($("#v-det").classList.contains("on"))$("#d-timer").textContent="Empieza en "+left(cur.start);
-    if(lockEnd){var ms=Math.max(0,lockEnd-Date.now());$("#lock").textContent=String(Math.floor(ms/6e4)).padStart(2,"0")+":"+String(Math.floor(ms%6e4/1e3)).padStart(2,"0")}
+    var end=flow==="lot"?lotDeadline:lockEnd;
+    if(end)$$("#lock1 .lk,#lock2 .lk").forEach(function(l){l.textContent=mmss(end-Date.now())});
+    if(lotDeadline){
+      var ms=lotDeadline-Date.now();
+      $("#win-clock").textContent=mmss(ms);
+      $$(".wclock").forEach(function(w){w.textContent=mmss(ms)});
+      if(ms<=0&&winner&&!winner.done)expireLottery();
+    }
+    if(lockEnd&&flow==="rush"&&Date.now()>=lockEnd&&($("#v-data").classList.contains("on")||$("#v-pay").classList.contains("on"))){
+      lockEnd=0;var id=cur.id;openShow(id);notify("Se liberaron tus butacas","Pasaron los 10 minutos de reserva. Podés elegirlas de nuevo si siguen libres.");
+    }
   }
   setInterval(tick,1000);
 
+  function resetLottery(){entries=[];winner=null;lotDeadline=0;lotSel=[];lotFocus=null;lotQty=2;$("#consent").setAttribute("aria-checked","false");$("#win").hidden=true}
   function start(){
-    timers.forEach(clearTimeout);$("#sheet").hidden=true;show("v-splash");
+    timers.forEach(clearTimeout);$("#sheet").hidden=true;resetLottery();lockEnd=0;picked=[];flow="rush";
+    $$("#form input").forEach(function(i){i.value=""});clearErrs();setKind("rush");setView("map");show("v-splash");
     setTimeout(function(){show("v-onb")},1900);
   }
 
   // control externo (web de presentación): window.postMessage({lt:"go",step:"det"})
   var EMBED=location.hash.indexOf("embed")>-1;
   if(EMBED){document.documentElement.classList.add("embed")}
+  function demoSeats(){openShow("a");var s=byId("a");for(var k=0;k<s.zone.length&&!picked.length;k++){var r=s.zone[Math.floor(s.zone.length/2+k)%s.zone.length];for(var c=4;c<8;c++){if(seatState(s,r,c)==="av"&&seatState(s,r,c+1)==="av"&&c!==4){picked=[ROWS[r]+(c+1),ROWS[r]+(c+2)];break}}}if(!picked.length)picked=$$("#seats .st.av").slice(0,2).map(function(b){return b.getAttribute("data-seat")});renderPicked()}
   window.addEventListener("message",function(e){
     var d=e.data||{}; if(d.lt!=="go")return;
-    timers.forEach(clearTimeout);timers=[];$("#sheet").hidden=true;$("#notif").classList.remove("show");
+    timers.forEach(clearTimeout);timers=[];$("#sheet").hidden=true;$("#notif").classList.remove("show");$("#win").hidden=true;
     var st=d.step;
     if(st==="splash"){show("v-splash")}
     else if(st==="onb"){show("v-onb")}
-    else if(st==="home"){show("v-home")}
-    else if(st==="notify"){show("v-home");timers.push(setTimeout(function(){notify(script[0][1],script[0][2],script[0][3])},350))}
-    else if(st==="det"){openShow("a")}
-    else if(st==="pay"){openShow("a");setTimeout(function(){$("#d-cta").click()},300)}
-    else if(st==="lot"){openShow("c");setMode("lot");setTimeout(function(){$("#d-cta").click()},300)}
-    else if(st==="tix"){openShow("a");qty=2;issueTicket("rush")}
-    else if(st==="invite"){openShow("a");qty=2;issueTicket("rush");setTimeout(function(){$("#sheet").hidden=false},900)}
+    else if(st==="home"){setKind("rush");setView("map");show("v-home")}
+    else if(st==="notify"){setKind("rush");show("v-home");timers.push(setTimeout(function(){notify(script[0][1],script[0][2],script[0][3])},350))}
+    else if(st==="det"){demoSeats()}
+    else if(st==="data"){demoSeats();flow="rush";lockEnd=Date.now()+10*60000;goData()}
+    else if(st==="pay"){demoSeats();flow="rush";lockEnd=Date.now()+10*60000;autofill();buyer=validate();goPay()}
+    else if(st==="lot"){resetLottery();setKind("lot");$("#consent").setAttribute("aria-checked","true");openLottery("c")}
+    else if(st==="tix"||st==="invite"){demoSeats();flow="rush";autofill();buyer=validate();issueTicket();if(st==="invite")setTimeout(function(){$("#sheet").hidden=false},900)}
   });
-  if(EMBED){timers.forEach(clearTimeout)}
 
-  // mapa: ubicación simulada y obras cercanas con Rush
-  var places=[{n:"Abasto",x:165,y:150},{n:"Palermo",x:95,y:70},{n:"Belgrano",x:38,y:30}],pl=0,selId=null,view="map";
+  // mapa: ubicación simulada y obras cercanas de la modalidad elegida
+  var places=[{n:"Abasto",x:165,y:150},{n:"Palermo",x:95,y:70},{n:"Belgrano",x:38,y:30}],pl=0,selId=null;
   var KM=25; // 1 unidad del mapa = 25 m
   function distOf(s){var p=places[pl];return Math.round(Math.hypot(s.x-p.x,s.y-p.y)*KM)}
   function km(m){return m<1000?(Math.round(m/50)*50)+" m":(m/1000).toFixed(1).replace(".",",")+" km"}
   function renderMap(){
-    var p=places[pl],R=60;
+    var p=places[pl],R=60,lbl=kind==="rush"?"Rush":"Lottery";
     $("#locname").textContent=p.n;
     var me=$("#me"),rd=$("#radius");me.style.left=(p.x/340*100)+"%";me.style.top=(p.y/250*100)+"%";
     rd.style.left=me.style.left;rd.style.top=me.style.top;rd.style.width=(R*2/340*100)+"%";rd.style.height=(R*2/250*100)+"%";
-    var near=shows.map(function(s){return {s:s,d:distOf(s)}}).sort(function(a,b){return a.d-b.d});
+    var near=shows.filter(function(s){return s.kind===kind}).map(function(s){return {s:s,d:distOf(s)}}).sort(function(a,b){return a.d-b.d});
     var inR=near.filter(function(o){return o.d<=1500});
-    var ph="";near.forEach(function(o){ph+='<button class="pin'+(o.d>1500?' far':'')+(o.s.id===selId?' sel':'')+'" data-id="'+o.s.id+'" type="button" style="left:'+(o.s.x/340*100)+'%;top:'+(o.s.y/250*100)+'%" aria-label="'+o.s.t+'"><b>'+fmt(priceOf(o.s,"rush"))+'</b><i></i></button>'});
+    var ph="";near.forEach(function(o){ph+='<button class="pin'+(o.d>1500?' far':'')+(o.s.id===selId?' sel':'')+'" data-id="'+o.s.id+'" type="button" style="left:'+(o.s.x/340*100)+'%;top:'+(o.s.y/250*100)+'%" aria-label="'+o.s.t+'"><b>'+fmt(priceOf(o.s))+'</b><i></i></button>'});
     $("#pins").innerHTML=ph;
-    $("#maptag").textContent="Radio de 1,5 km · "+inR.length+(inR.length===1?" obra":" obras")+" con Rush";
+    $("#maptag").textContent="Radio de 1,5 km · "+inR.length+(inR.length===1?" obra":" obras")+" con "+lbl;
     $("#nearcount").textContent=inR.length?"ordenadas por distancia":"";
-    var nh="";inR.forEach(function(o){var s=o.s;nh+='<button class="ncard'+(s.id===selId?' sel':'')+'" data-id="'+s.id+'" type="button"><div class="poster" style="background:linear-gradient(150deg,'+s.c[0]+','+s.c[1]+')">'+s.g+'</div><div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span class="dist">a '+km(o.d)+'</span><span class="t">'+s.t+'</span><span class="v">'+s.venue.split(" · ")[0]+' · '+hhmm(s.start)+' h</span><span><span class="price">'+fmt(priceOf(s,"rush"))+'</span> <span class="badge rush">Rush −'+Math.round(s.rush*100)+'%</span></span></div></button>'});
+    $("#emptyt").textContent="No hay "+(kind==="rush"?"cupos Rush":"sorteos")+" a menos de 1,5 km.";
+    var nh="";inR.forEach(function(o){var s=o.s;nh+='<button class="ncard'+(s.id===selId?' sel':'')+'" data-id="'+s.id+'" type="button"><div class="poster" style="background:linear-gradient(150deg,'+s.c[0]+','+s.c[1]+')">'+s.g+'</div><div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span class="dist">a '+km(o.d)+'</span><span class="t">'+s.t+'</span><span class="v">'+s.venue.split(" · ")[0]+' · '+hhmm(s.start)+' h</span><span><span class="price">'+fmt(priceOf(s))+'</span> '+(s.kind==="rush"?'<span class="badge rush">Rush −'+Math.round(s.disc*100)+'%</span>':'<span class="badge lot">Sorteo '+hhmm(drawTime(s))+'</span>')+'</span></div></button>'});
     $("#near").innerHTML=nh;$("#near").hidden=!inR.length;$("#empty").hidden=!!inR.length;
-    document.querySelectorAll("#pins .pin").forEach(function(b){b.addEventListener("click",function(){var id=b.getAttribute("data-id");if(selId===id){openShow(id);return}selId=id;renderMap();var c=document.querySelector('.ncard[data-id="'+id+'"]');if(c){var n=$("#near");n.scrollTo({left:c.offsetLeft-n.offsetLeft,behavior:"smooth"})}else openShow(id)})});
-    document.querySelectorAll("#near .ncard").forEach(function(c){c.addEventListener("click",function(){openShow(c.getAttribute("data-id"))})});
+    $$("#pins .pin").forEach(function(b){b.addEventListener("click",function(){var id=b.getAttribute("data-id");if(selId===id){openAny(id);return}selId=id;renderMap();var c=document.querySelector('.ncard[data-id="'+id+'"]');if(c){var n=$("#near");n.scrollTo({left:c.offsetLeft-n.offsetLeft,behavior:"smooth"})}else openAny(id)})});
+    $$("#near .ncard").forEach(function(c){c.addEventListener("click",function(){openAny(c.getAttribute("data-id"))})});
   }
   function setView(v){view=v;$("#seg-map").setAttribute("aria-pressed",String(v==="map"));$("#seg-list").setAttribute("aria-pressed",String(v==="list"));$("#mapview").hidden=v!=="map";$("#listview").hidden=v!=="list"}
   $("#seg-map").addEventListener("click",function(){setView("map")});
   $("#seg-list").addEventListener("click",function(){setView("list")});
   $("#tolist").addEventListener("click",function(){setView("list")});
   $("#locbtn").addEventListener("click",function(){pl=(pl+1)%places.length;selId=null;renderMap()});
-  $("#q").addEventListener("input",function(){var q=this.value.trim().toLowerCase();if(q)setView("list");document.querySelectorAll("#list .card").forEach(function(c){var s=shows.filter(function(x){return x.id===c.getAttribute("data-id")})[0];c.hidden=!!q&&(s.t+" "+s.venue+" "+s.g).toLowerCase().indexOf(q)<0})});
-  renderList();renderMap();tick();if(!EMBED)start();
+  $("#q").addEventListener("input",function(){if(this.value.trim())setView("list");renderList()});
+  setKind("rush");renderLot();tick();if(!EMBED)start();
 })();
 </script>
 
