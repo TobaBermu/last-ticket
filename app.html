@@ -171,6 +171,16 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 .drum.stop{animation:none}
 @keyframes spin{to{transform:rotate(360deg)}}
 
+
+/* v9: Buti, elemento de marca */
+.buti{display:block;flex:none}
+.buti-bob{animation:butib 3.2s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes butib{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(-2deg)}}
+.buti-say{display:flex;align-items:center;gap:10px;margin:8px 0 6px}
+.buti-say .bub{position:relative;background:#fff;color:#0B0A3A;border-radius:16px 16px 16px 4px;padding:9px 12px;font-size:13.5px;line-height:1.3;font-weight:600}
+.buti-say .bub small{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#FF2D7A;margin-bottom:2px}
+.modal .box .buti{margin:-48px auto 2px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))}
+@media (prefers-reduced-motion:reduce){.buti-bob{animation:none}}
 /* notificación estilo iOS */
 .notif{position:absolute;top:52px;left:10px;right:10px;z-index:40;display:flex;gap:10px;padding:12px;border-radius:22px;background:rgba(40,38,90,.82);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:0 14px 40px rgba(0,0,0,.45);transform:translateY(-140%);transition:transform .45s cubic-bezier(.2,1.2,.4,1);text-align:left;width:auto}
 .notif.show{transform:none}
@@ -315,6 +325,28 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
       <div class="status"><span id="clock">20:14</span><span>5G ▮▮▮</span></div>
       <div class="bg-glow"></div>
 
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="buti-sad" viewBox="0 0 200 200"><defs><linearGradient id="btas" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF2D7A"/><stop offset="1" stop-color="#FF7A3D"/></linearGradient><linearGradient id="bsas" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF7A3D"/><stop offset="1" stop-color="#FF9F1C"/></linearGradient></defs>
+<ellipse cx="100" cy="186" rx="70" ry="9" fill="#000" opacity=".22"/>
+<rect x="58" y="168" width="10" height="16" rx="3" fill="#3B2A7A"/><rect x="132" y="168" width="10" height="16" rx="3" fill="#3B2A7A"/>
+<rect x="50" y="58" width="100" height="100" rx="28" fill="url(#btas)"/>
+<rect x="34" y="122" width="26" height="50" rx="12" fill="#E8245F"/><rect x="140" y="122" width="26" height="50" rx="12" fill="#E8245F"/>
+<rect x="52" y="140" width="96" height="34" rx="14" fill="url(#bsas)"/>
+<path d="M66 68 q34 -10 68 0" stroke="#fff" stroke-opacity=".35" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M72 92 q8 -6 16 -2" stroke="#0B0A3A" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M112 90 q8 -4 16 2" stroke="#0B0A3A" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="82" cy="104" r="6" fill="#0B0A3A"/><circle cx="118" cy="104" r="6" fill="#0B0A3A"/><path d="M88 128 q12 -10 24 0" stroke="#0B0A3A" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M122 112 q4 8 0 12 q-5 -4 0 -12z" fill="#7FD3FF"/></symbol><symbol id="buti-wait" viewBox="0 0 200 200"><defs><linearGradient id="btaw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF2D7A"/><stop offset="1" stop-color="#FF7A3D"/></linearGradient><linearGradient id="bsaw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF7A3D"/><stop offset="1" stop-color="#FF9F1C"/></linearGradient></defs>
+<ellipse cx="100" cy="186" rx="70" ry="9" fill="#000" opacity=".22"/>
+<rect x="58" y="168" width="10" height="16" rx="3" fill="#3B2A7A"/><rect x="132" y="168" width="10" height="16" rx="3" fill="#3B2A7A"/>
+<rect x="50" y="58" width="100" height="100" rx="28" fill="url(#btaw)"/>
+<rect x="34" y="122" width="26" height="50" rx="12" fill="#E8245F"/><rect x="140" y="122" width="26" height="50" rx="12" fill="#E8245F"/>
+<rect x="52" y="140" width="96" height="34" rx="14" fill="url(#bsaw)"/>
+<path d="M66 68 q34 -10 68 0" stroke="#fff" stroke-opacity=".35" stroke-width="5" fill="none" stroke-linecap="round"/>
+<circle cx="82" cy="104" r="7" fill="#0B0A3A"/><circle cx="118" cy="104" r="7" fill="#0B0A3A"/><circle cx="84" cy="101" r="2.4" fill="#fff"/><circle cx="120" cy="101" r="2.4" fill="#fff"/><path d="M90 126 h20" stroke="#0B0A3A" stroke-width="5" stroke-linecap="round"/><g transform="translate(150 30)"><rect x="0" y="0" width="44" height="26" rx="6" fill="#fff"/><text x="22" y="18" text-anchor="middle" font-family="DM Mono" font-size="12" fill="#0B0A3A">21:00</text></g></symbol><symbol id="buti-happy" viewBox="0 0 200 200"><defs><linearGradient id="btah" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF2D7A"/><stop offset="1" stop-color="#FF7A3D"/></linearGradient><linearGradient id="bsah" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF7A3D"/><stop offset="1" stop-color="#FF9F1C"/></linearGradient></defs>
+<ellipse cx="100" cy="186" rx="70" ry="9" fill="#000" opacity=".22"/>
+<rect x="58" y="168" width="10" height="16" rx="3" fill="#3B2A7A"/><rect x="132" y="168" width="10" height="16" rx="3" fill="#3B2A7A"/>
+<rect x="50" y="58" width="100" height="100" rx="28" fill="url(#btah)"/>
+<rect x="34" y="122" width="26" height="50" rx="12" fill="#E8245F"/><rect x="140" y="122" width="26" height="50" rx="12" fill="#E8245F"/>
+<rect x="52" y="140" width="96" height="34" rx="14" fill="url(#bsah)"/>
+<path d="M66 68 q34 -10 68 0" stroke="#fff" stroke-opacity=".35" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M74 106 q8 -10 16 0" stroke="#0B0A3A" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M110 106 q8 -10 16 0" stroke="#0B0A3A" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M84 120 q16 18 32 0 z" fill="#0B0A3A"/><path d="M92 126 q8 6 16 0" fill="#FF6B9A"/><circle cx="70" cy="120" r="7" fill="#FF6B9A" opacity=".7"/><circle cx="130" cy="120" r="7" fill="#FF6B9A" opacity=".7"/><g fill="#FFC46B"><path d="M30 40 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/><path d="M168 28 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z"/></g></symbol></svg>
       <button class="notif" id="notif" type="button" aria-live="polite">
         <svg class="ni" viewBox="0 0 120 120" aria-hidden="true"><use href="#lt-icon"/></svg>
         <div class="nb"><div class="nh"><span>LAST TICKET</span><span>ahora</span></div><div class="nt" id="nT"></div><div class="nm" id="nM"></div></div>
@@ -471,7 +503,7 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
         <section class="view" id="v-lotw">
           <div class="top"><button class="back" data-back="v-home" type="button" aria-label="Volver">←</button><b>Mis sorteos</b><span style="width:38px"></span></div>
           <div class="scroll">
-            <div class="eyebrow" style="margin-top:6px">Estás anotada</div>
+            <div class="buti-say"><svg class="buti buti-bob" width="74" height="74" viewBox="0 0 200 200" aria-hidden="true"><use href="#buti-wait"/></svg><div class="bub"><small>Buti</small>Te guardo el lugar mientras sorteamos. Si salís, te aviso.</div></div><div class="eyebrow" style="margin-top:6px">Estás anotada</div>
             <h2 class="h" id="w-h">Sorteando…</h2>
             <p class="sub" id="w-sub">Sorteamos 4 horas antes de cada función. Te avisamos por notificación.</p>
             <div id="w-list"></div>
@@ -483,7 +515,7 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
         <section class="view" id="v-tix">
           <div class="top"><button class="back" data-back="v-home" type="button" aria-label="Volver">←</button><b>Tu entrada</b><span style="width:38px"></span></div>
           <div class="scroll">
-            <div class="success">✓ Pago aprobado. Tu QR ya está listo.</div>
+            <div class="success">✓ Pago aprobado. Tu QR ya está listo.</div><div class="buti-say"><svg class="buti buti-bob" width="64" height="64" viewBox="0 0 200 200" aria-hidden="true"><use href="#buti-happy"/></svg><div class="bub"><small>Buti</small>¡Esta noche no me quedo vacía! Te espero en la sala.</div></div>
             <div class="ticket">
               <div class="tt" id="t-title"></div>
               <small id="t-meta"></small>
@@ -507,6 +539,7 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
       </div>
       <div class="modal" id="win" hidden role="dialog" aria-modal="true" aria-labelledby="win-h">
         <div class="box" id="win-box">
+          <svg class="buti buti-bob" width="86" height="86" viewBox="0 0 200 200" aria-hidden="true"><use href="#buti-happy"/></svg>
           <div class="eyebrow">Lottery</div>
           <h4 id="win-h">¡Saliste sorteada! 🎟️</h4>
           <div class="mt" id="win-t"></div>
@@ -828,7 +861,7 @@ button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
   $("#notif").addEventListener("click",function(){this.classList.remove("show");if(nTarget==="win"){openWin();return}if(nTarget)openAny(nTarget)});
   var script=[
     [3500,"Se abrió el cupo Rush de tus salas","Hoy hay teatro: 4 obras con hasta 50% off. Elegí tu butaca.",null],
-    [14000,"Hoy "+hhmm(shows[0].start)+" h · Comedia en Corrientes","Platea desde "+fmt(priceOf(shows[0]))+". Elegí tu butaca antes de que se agoten.","a"],
+    [14000,"Buti te guardó un lugar","Hoy "+hhmm(shows[0].start)+" h, comedia en Corrientes. Platea desde "+fmt(priceOf(shows[0]))+". Elegí tu butaca antes de que se agoten.","a"],
     [30000,"Lottery de esta noche","Anotate gratis en "+byId("c").t+" y 3 obras más: si salís sorteada pagás "+fmt(priceOf(byId("c")))+".","c"]
   ];
   function scheduleDemo(){timers.forEach(clearTimeout);timers=script.map(function(s){return setTimeout(function(){notify(s[1],s[2],s[3])},s[0])})}
