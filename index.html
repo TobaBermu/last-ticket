@@ -787,6 +787,83 @@ details.xdata>summary:hover{border-color:rgba(255,45,122,.65)}
 details.xdata>summary:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
 details.xdata[open]>summary{margin-bottom:clamp(18px,2.6vw,28px)}
 @media (prefers-reduced-motion:reduce){.ph-band img{animation:none}}
+
+/* v18: marca suelta y 8 P */
+.ax-tool{margin-top:16px}.ax-tool .axt{font-family:var(--display);font-size:clamp(20px,2vw,26px);margin:0}
+
+.brand-board{margin-top:clamp(36px,5vw,64px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.brand-board button{appearance:none;font:inherit;color:#fff;text-align:left;cursor:pointer;border:0;position:relative}
+.brand-board .more{position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:16px;background:var(--magenta);color:var(--ink-on-accent);z-index:2}
+.b-lbl{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.igpost{display:grid;width:min(400px,100%);justify-self:center;background:#fff;color:#0B0A3A!important;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45);transform:rotate(-2.5deg);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.igpost:hover,.igpost:focus-visible{transform:rotate(0) translateY(-4px)}
+.ig-top{display:flex;align-items:center;gap:10px;padding:10px 12px}
+.ig-av{width:34px;height:34px;border-radius:50%;padding:2px;background:linear-gradient(45deg,#FF9F1C,#FF2D7A,#7B5CFF);display:grid;place-items:center}
+.ig-av svg{width:28px;height:28px;border-radius:50%;background:#0B0A3A}
+.ig-who{display:grid;line-height:1.15}.ig-who b{font-size:14px}.ig-who small{font-size:12px;color:#55557a}
+.ig-dots{margin-left:auto;font-size:12px;letter-spacing:2px;color:#0B0A3A;padding-right:30px}
+.ig-img{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:#1a1440}
+.ig-img img{width:100%;height:100%;object-fit:cover;display:block;animation:kb 18s ease-in-out infinite alternate}
+.ig-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,10,58,.85),transparent 50%)}
+.ig-copy{position:absolute;z-index:1;left:18px;bottom:18px;font-family:var(--display);font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;letter-spacing:-.02em;color:#fff}
+.ig-cta{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;background:linear-gradient(90deg,#FF2D7A,#FF9F1C);color:#0B0A3A;font-weight:700;font-size:14px}
+.ig-cta span{font-size:20px;line-height:1}
+.ig-act{display:flex;justify-content:space-between;padding:10px 12px 4px}
+.ig-act .l{display:flex;gap:14px}
+.ig-act svg{width:24px;height:24px;fill:none;stroke:#0B0A3A;stroke-width:1.9;stroke-linejoin:round;stroke-linecap:round}
+.ig-act .l svg:first-child{fill:#FF2D7A;stroke:#FF2D7A;animation:likeb 3s ease-in-out infinite}
+@keyframes likeb{0%,80%,100%{transform:scale(1)}88%{transform:scale(1.25)}}
+.ig-cap{display:block;padding:4px 14px 14px;font-size:14px;line-height:1.4;color:#0B0A3A}
+.ig-cap b{margin-right:4px}
+.igpost .b-lbl{display:block;padding:10px 14px;background:#0B0A3A;color:var(--orange)}
+.brand-side{display:grid;gap:clamp(18px,2.4vw,26px)}
+.posmsg{display:grid;gap:14px;padding:22px;border-radius:24px;background:linear-gradient(160deg,var(--night-3),var(--night-2));border:1px solid var(--line)!important;transform:rotate(1.2deg);transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .3s}
+.posmsg:hover,.posmsg:focus-visible{transform:rotate(0) translateY(-3px);border-color:rgba(255,45,122,.65)!important}
+.chat{display:grid;gap:10px}
+.bub{max-width:88%;padding:12px 15px;border-radius:20px;font-size:clamp(16px,1.5vw,19px);line-height:1.35}
+.bub.me{justify-self:end;background:#2A2670;border-bottom-right-radius:6px;font-size:15px}
+.bub.lt{justify-self:start;background:linear-gradient(135deg,#FF2D7A,#FF9F1C);color:#0B0A3A;border-bottom-left-radius:6px;font-family:var(--display);font-weight:700;letter-spacing:-.01em}
+.bub .who{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:400;margin-bottom:4px}
+.bub .who svg{width:18px;height:18px;border-radius:50%;background:#0B0A3A}
+.typing{justify-self:end;display:flex;gap:4px;padding:10px 14px;border-radius:16px;background:#2A2670}
+.typing i{width:6px;height:6px;border-radius:50%;background:#fff;opacity:.4;animation:tdot 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tdot{0%,60%,100%{opacity:.35;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+.idcard{display:grid;gap:14px;padding:22px;border-radius:24px;background:#0B0A3A;border:1px solid var(--line)!important;transform:rotate(-1deg);transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .3s;overflow:hidden}
+.idcard:hover,.idcard:focus-visible{transform:rotate(0) translateY(-3px);border-color:rgba(255,159,28,.65)!important}
+.idcard .dots{display:flex}
+.idcard .dots i{width:clamp(54px,6vw,72px);aspect-ratio:1;border-radius:50%;border:3px solid #0B0A3A;margin-left:-14px;box-shadow:0 8px 20px rgba(0,0,0,.35);transition:margin .4s}
+.idcard .dots i:first-child{margin-left:0;border-color:rgba(255,255,255,.25)}
+.idcard:hover .dots i{margin-left:6px}.idcard:hover .dots i:first-child{margin-left:0}
+.idcard .slog{font-family:var(--display);font-weight:800;font-size:clamp(30px,3.4vw,46px);line-height:1;letter-spacing:-.03em}
+.prisma-btn{border:1px solid var(--line)!important;background:var(--night-2)}
+.prisma-btn .more{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)}
+@media (max-width:860px){.brand-board{grid-template-columns:1fr}.igpost{transform:rotate(-1.5deg)}}
+/* 8 P */
+.p8{display:grid;gap:clamp(22px,3vw,34px)}
+.p8-h{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.p8-h .pill{padding:4px 10px;border-radius:999px;background:var(--grad);color:var(--ink-on-accent);font-weight:700;letter-spacing:.04em}
+.p8-grp.sv .p8-h .pill{background:linear-gradient(120deg,#FF9F1C,#FFC46B)}
+.p8-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.4vw,16px)}
+.p8c{appearance:none;font:inherit;color:#fff;text-align:left;cursor:pointer;position:relative;overflow:hidden;display:grid;gap:8px;align-content:start;min-height:190px;padding:22px 20px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(165deg,var(--night-3),var(--night-2));transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
+.p8c:hover,.p8c:focus-visible{transform:translateY(-5px);border-color:rgba(255,45,122,.7);box-shadow:0 18px 40px rgba(255,45,122,.18)}
+.p8-grp.sv .p8c:hover,.p8-grp.sv .p8c:focus-visible{border-color:rgba(255,159,28,.75);box-shadow:0 18px 40px rgba(255,159,28,.16)}
+.p8c:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.p8c .n{position:absolute;right:-6px;bottom:-22px;font-family:var(--display);font-weight:800;font-size:110px;line-height:1;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.12);pointer-events:none;transition:-webkit-text-stroke-color .3s}
+.p8c:hover .n{-webkit-text-stroke-color:rgba(255,45,122,.45)}
+.p8-grp.sv .p8c:hover .n{-webkit-text-stroke-color:rgba(255,159,28,.5)}
+.p8c .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--grad);color:var(--ink-on-accent);margin-bottom:6px}
+.p8-grp.sv .p8c .ico{background:linear-gradient(135deg,#FF9F1C,#FFC46B)}
+.p8c .ico .ic{color:var(--ink-on-accent)!important;width:24px;height:24px}
+.p8c b{font-family:var(--display);font-size:clamp(19px,1.7vw,22px);line-height:1.1}
+.p8c .tg{font-size:14px;line-height:1.35;color:#fff;opacity:.82;max-width:22ch;position:relative}
+.p8c .more{position:absolute;top:16px;right:16px;width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:15px}
+@media (max-width:980px){.p8-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.p8c{min-height:170px;padding:18px 16px}.p8c .n{font-size:86px}}
+.tools-link{margin:clamp(26px,3.5vw,40px) 0 0;font-size:16px;color:#fff;opacity:.9}
+.tools-link a{color:#fff;text-decoration:underline;text-decoration-color:var(--magenta);text-decoration-thickness:2px;text-underline-offset:4px;font-weight:600}
+.tools-link a:hover{color:var(--orange);text-decoration-color:var(--orange)}
+@media (prefers-reduced-motion:reduce){.ig-img img,.typing i,.ig-act svg{animation:none!important}}
 </style>
 </head>
 <body>
@@ -1004,21 +1081,8 @@ details.xdata[open]>summary{margin-bottom:clamp(18px,2.6vw,28px)}
         <p class="eyebrow">07 · Marketing mix</p>
         <h2>Ocho decisiones, una sola promesa.</h2>
       </div>
-      <div class="tiles t4">
-        <button class="tile pp rv" type="button" data-pop="p-producto"><svg class="ic" aria-hidden="true"><use href="#i-ticket"/></svg><b>Producto</b><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp rv" type="button" data-pop="p-precio4"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg><b>Precio</b><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp rv" type="button" data-pop="p-plaza"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><b>Plaza</b><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp rv" type="button" data-pop="p-promo"><svg class="ic" aria-hidden="true"><use href="#i-megaphone"/></svg><b>Promoción</b><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp sv rv" type="button" data-pop="p-procesos"><svg class="ic" aria-hidden="true"><use href="#i-flow"/></svg><b>Procesos</b><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp sv rv" type="button" data-pop="p-evidencia"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg><b>Evidencia física</b><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp sv rv" type="button" data-pop="p-personas"><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg><b>Personas</b><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp sv rv" type="button" data-pop="p-productividad"><svg class="ic" aria-hidden="true"><use href="#i-gear"/></svg><b>Productividad</b><span class="more" aria-hidden="true">+</span></button>
-      </div>
-      <p class="mix-label">Herramientas del servicio · tocá para abrir</p>
-      <div class="tiles t2">
-        <button class="tile tool rv" type="button" data-pop="p-flor"><svg class="ic lg" aria-hidden="true"><use href="#i-flower"/></svg><span><b>Flor de servicio</b></span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile tool rv" type="button" data-pop="p-ishikawa"><svg class="ic lg" aria-hidden="true"><use href="#i-fish"/></svg><span><b>Diagrama de Ishikawa</b></span><span class="more" aria-hidden="true">+</span></button>
-      </div>
+      <div class="p8"><div class="p8-grp"><p class="p8-h"><span class="pill">4 P</span>Del producto</p><div class="p8-grid"><button class="p8c rv" type="button" data-pop="p-producto"><span class="n" aria-hidden="true">01</span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-ticket"/></svg></span><b>Producto</b><span class="tg">Rush y Lottery en una sola app.</span><span class="more" aria-hidden="true">+</span></button><button class="p8c rv" type="button" data-pop="p-precio4"><span class="n" aria-hidden="true">02</span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg></span><b>Precio</b><span class="tg">Descuento real, precio final claro.</span><span class="more" aria-hidden="true">+</span></button><button class="p8c rv" type="button" data-pop="p-plaza"><span class="n" aria-hidden="true">03</span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><b>Plaza</b><span class="tg">En tu celular, en CABA y GBA.</span><span class="more" aria-hidden="true">+</span></button><button class="p8c rv" type="button" data-pop="p-promo"><span class="n" aria-hidden="true">04</span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-megaphone"/></svg></span><b>Promoción</b><span class="tg">Instagram primero, salas aliadas.</span><span class="more" aria-hidden="true">+</span></button></div></div><div class="p8-grp sv"><p class="p8-h"><span class="pill">+4 P</span>Del servicio</p><div class="p8-grid"><button class="p8c rv" type="button" data-pop="p-procesos"><span class="n" aria-hidden="true">05</span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-flow"/></svg></span><b>Procesos</b><span class="tg">Comprar en menos de un minuto.</span><span class="more" aria-hidden="true">+</span></button><button class="p8c rv" type="button" data-pop="p-evidencia"><span class="n" aria-hidden="true">06</span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg></span><b>Evidencia física</b><span class="tg">La cuenta regresiva y el QR.</span><span class="more" aria-hidden="true">+</span></button><button class="p8c rv" type="button" data-pop="p-personas"><span class="n" aria-hidden="true">07</span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg></span><b>Personas</b><span class="tg">Atención cuando se decide la salida.</span><span class="more" aria-hidden="true">+</span></button><button class="p8c rv" type="button" data-pop="p-productividad"><span class="n" aria-hidden="true">08</span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-gear"/></svg></span><b>Productividad</b><span class="tg">Todo digital, sin doble venta.</span><span class="more" aria-hidden="true">+</span></button></div></div></div>
+      <p class="tools-link">La Flor de servicio y el Diagrama de Ishikawa están en el <a class="to-ax" href="#ax-servicio">Anexo G · Herramientas del servicio</a>.</p>
     </div>
   </section>
 
@@ -1026,12 +1090,7 @@ details.xdata[open]>summary{margin-bottom:clamp(18px,2.6vw,28px)}
     <div class="wrap">
       <p class="eyebrow rv">08 · Marca</p>
       <p class="manifest rv">Último momento,<span class="o">el mejor plan.</span></p>
-      <div class="tiles t4 brand-tiles">
-        <button class="tile rv" type="button" data-pop="p-posic"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg><b>Posicionamiento</b><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile rv" type="button" data-pop="p-tono"><svg class="ic" aria-hidden="true"><use href="#i-msg"/></svg><b>Tono</b><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile rv" type="button" data-pop="p-identidad"><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg><b>Identidad</b><span class="swatches" aria-hidden="true"><i style="background:#0B0A3A"></i><i style="background:#5B1A8C"></i><i style="background:#FF2D7A"></i><i style="background:#FF9F1C"></i></span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile rv" type="button" data-pop="p-prisma"><svg class="ic" aria-hidden="true"><use href="#i-hex"/></svg><b>Prisma de Kapferer</b><span class="more" aria-hidden="true">+</span></button>
-      </div>
+      <div class="brand-board"><button class="igpost rv" type="button" data-pop="p-tono" aria-label="Tono de marca: ver el detalle"><span class="ig-top"><span class="ig-av"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#lt-icon"/></svg></span><span class="ig-who"><b>lastticket</b><small>Publicidad</small></span><span class="ig-dots" aria-hidden="true">•••</span></span><span class="ig-img"><img src="lt-amigas.webp" alt="Dos amigas se ríen en las butacas antes de que empiece la función" width="900" height="1115" loading="lazy"><span class="ig-copy">¿Qué hacés<br><span class="grad">hoy a las 21?</span></span></span><span class="ig-cta">Descargá la app<span aria-hidden="true">›</span></span><span class="ig-act"><span class="l"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z"/></svg></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4Z"/></svg></span><span class="ig-cap"><b>lastticket</b> Te avisamos a la tarde, vos elegís la butaca y en un minuto tenés el QR. Hoy hay teatro.</span><span class="b-lbl">Tono · cercano, cómplice y con voseo</span><span class="more" aria-hidden="true">+</span></button><div class="brand-side"><button class="posmsg rv" type="button" data-pop="p-posic" aria-label="Posicionamiento: ver el detalle"><span class="b-lbl">Posicionamiento</span><span class="chat"><span class="bub me">¿Qué hacemos hoy?</span><span class="bub lt"><span class="who"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#lt-icon"/></svg>Last Ticket</span>La app para decidir hoy: teatro de último momento, más barato y con tu butaca segura.</span><span class="typing" aria-hidden="true"><i></i><i></i><i></i></span></span><span class="more" aria-hidden="true">+</span></button><button class="idcard rv" type="button" data-pop="p-identidad" aria-label="Identidad: ver el detalle"><span class="b-lbl">Identidad</span><span class="dots" aria-hidden="true"><i style="background:#0B0A3A"></i><i style="background:#5B1A8C"></i><i style="background:#FF2D7A"></i><i style="background:#FF9F1C"></i></span><span class="slog">Hoy hay <span class="grad">teatro.</span></span><span class="more" aria-hidden="true">+</span></button><button class="tile prisma-btn rv" type="button" data-pop="p-prisma"><svg class="ic" aria-hidden="true"><use href="#i-hex"/></svg><b>Prisma de Kapferer</b><span class="more" aria-hidden="true">+</span></button></div></div>
     </div>
   </section>
 
@@ -1170,7 +1229,7 @@ details.xdata[open]>summary{margin-bottom:clamp(18px,2.6vw,28px)}
         <p class="lead">Investigación, cruces de variables, buyer persona, mapa de empatía, costo del producto, precio máximo aceptado y planificación de medios completa.</p>
       </div>
       <nav class="anx-nav" aria-label="Secciones del anexo">
-        <a href="#ax-investigacion">Investigación</a><a href="#ax-insights">Insights y cruces</a><a href="#ax-persona">Buyer persona y empatía</a><a href="#ax-costo">Costo del producto</a><a href="#ax-pma">PMA</a><a href="#ax-medios">Planificación de medios</a>
+        <a href="#ax-investigacion">Investigación</a><a href="#ax-insights">Insights y cruces</a><a href="#ax-persona">Buyer persona y empatía</a><a href="#ax-costo">Costo del producto</a><a href="#ax-pma">PMA</a><a href="#ax-medios">Planificación de medios</a><a href="#ax-servicio">Herramientas del servicio</a>
       </nav>
 
       <!-- A. INVESTIGACIÓN -->
@@ -1498,6 +1557,32 @@ details.xdata[open]>summary{margin-bottom:clamp(18px,2.6vw,28px)}
           </div>
         </div>
       </article>
+      <!-- G. HERRAMIENTAS DEL SERVICIO -->
+      <article class="ax" id="ax-servicio">
+        <header class="ax-h rv"><span class="ax-k">G</span><div><h3>Herramientas del servicio</h3><p>La Flor de servicio ordena qué rodea a la compra; el Diagrama de Ishikawa anticipa qué puede fallar en el momento más crítico.</p></div></header>
+        <div class="box rv ax-tool"><h4 class="axt">Flor de servicio · Lovelock</h4><p>En el centro, el servicio básico. Alrededor, los pétalos facilitadores (hacen posible la compra) y los de mejora (hacen que el espectador vuelva).</p><div class="flor">
+          <div class="pet tl"><h4>Información</h4><p>Cartelera filtrable, reglas de Rush y Lottery, precio final, sector y cómo ingresar.</p></div>
+          <div class="pet t"><h4>Toma de pedidos</h4><p>Selección de función, checkout de un toque e inscripción al sorteo.</p></div>
+          <div class="pet tr mej"><h4>Consulta</h4><p>Recomendaciones por historial, funciones alternativas y chatbot.</p></div>
+          <div class="pet l mej"><h4>Hospitalidad</h4><p>Recordatorio previo, bienvenida y mensaje a quien no ganó el sorteo.</p></div>
+          <div class="core"><b>Entradas de teatro de último momento</b><small>Rush y Lottery</small></div>
+          <div class="pet r"><h4>Facturación</h4><p>Desglose antes de confirmar, comprobante automático e historial.</p></div>
+          <div class="pet bl mej"><h4>Cuidado</h4><p>Protección de datos, resguardo del e-ticket y política ante suspensión.</p></div>
+          <div class="pet b mej"><h4>Excepciones</h4><p>Reembolso automático, cupo agotado, falla del QR y cambio de horario.</p></div>
+          <div class="pet br"><h4>Pago</h4><p>Mercado Pago prioritario (59,5% del segmento), MODO, tarjetas y medio guardado.</p></div>
+        </div>
+        <div class="legend"><span><i></i>Facilitadores</span><span><i class="mej"></i>De mejora</span></div></div>
+        <div class="box rv ax-tool"><h4 class="axt">Diagrama de Ishikawa</h4><p>El momento más crítico es el ingreso a la sala: ahí la promesa de certeza se cumple o se rompe. Seis causas posibles, cada una con su prevención.</p><div class="fish">
+          <div class="bone up" style="grid-row:1"><h4>Personas</h4><div class="c"><b>Causa</b>Personal de puerta sin instrucción; rotación.</div><div class="c a"><b>Prevención</b>Capacitación y guardia de soporte en la franja crítica.</div></div>
+          <div class="bone up" style="grid-row:1"><h4>Método</h4><div class="c"><b>Causa</b>Validación manual e inconsistente.</div><div class="c a"><b>Prevención</b>Proceso estandarizado y checklist de control en puerta.</div></div>
+          <div class="bone up" style="grid-row:1"><h4>Tecnología</h4><div class="c"><b>Causa</b>App o escáner sin sincronizar; fallas de conectividad.</div><div class="c a"><b>Prevención</b>Cupos por API en tiempo real y redundancia de conexión.</div></div>
+          <div class="spine" aria-hidden="true"></div>
+          <div class="fhead"><small>Efecto</small>El espectador no logra entrar a la sala con su entrada de Last Ticket.</div>
+          <div class="bone dn" style="grid-row:3"><h4>Materiales</h4><div class="c"><b>Causa</b>QR mal impreso o con baja legibilidad en pantalla.</div><div class="c a"><b>Prevención</b>QR en la billetera del teléfono y listado de respaldo.</div></div>
+          <div class="bone dn" style="grid-row:3"><h4>Entorno</h4><div class="c"><b>Causa</b>Alta demanda, filas largas y poca señalización.</div><div class="c a"><b>Prevención</b>Acceso identificado y señalética Last Ticket en salas socias.</div></div>
+          <div class="bone dn" style="grid-row:3"><h4>Medición</h4><div class="c"><b>Causa</b>Sin métricas de control ni alertas tempranas.</div><div class="c a"><b>Prevención</b>Meta de 98% de validaciones correctas y alertas en vivo.</div></div>
+        </div></div>
+      </article>
     </div>
   </section>
   <section class="finale" id="final" aria-label="Cierre">
@@ -1737,3 +1822,4 @@ details.xdata[open]>summary{margin-bottom:clamp(18px,2.6vw,28px)}
 </body>
 </html>
 <script>document.querySelectorAll("img[data-from]").forEach(function(i){var t=document.getElementById(i.getAttribute("data-from"));var s=t&&t.content.querySelector("img");if(s)i.src=s.getAttribute("src")});</script>
+<script>document.querySelectorAll("a.to-ax").forEach(function(l){l.addEventListener("click",function(){var t=document.querySelector(l.getAttribute("href"));if(t){t.classList.remove("fold");var m=t.querySelector(".ax-more");if(m)m.textContent="Ocultar el detalle"}})});</script>
