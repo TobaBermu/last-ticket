@@ -627,6 +627,16 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 #ax-medios .tbl td{overflow-wrap:break-word;hyphens:auto}
 #ax-medios .tbl th{font-size:11px;letter-spacing:.02em}
 .cross-row span:nth-child(2){color:#FFFFFF}
+/* voces de las entrevistas en el flujo de la app */
+.voices{display:grid;gap:10px;margin-top:6px;max-width:52ch}
+.voice{border-radius:14px;padding:12px 14px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-left:3px solid var(--orange);display:grid;gap:6px}
+.voice.hu{border-left-color:var(--magenta)}
+.voice .who{justify-self:start;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--orange);color:#0B0A3A;font-weight:500}
+.voice.hu .who{background:var(--magenta);color:#fff}
+.voice q{font-size:15px;line-height:1.45;color:#fff;font-style:italic;quotes:"“" "”"}
+.voice .so{font-size:14px;line-height:1.4;color:#fff}
+.voice .so b{color:var(--orange);font-weight:700}
+@media (max-width:900px){#flujo .phone{height:min(46vh,480px)}.fstep:has(.voices) > p{display:none}.voices{gap:6px}.voice{padding:8px 10px;gap:4px}.voice .who{font-size:10px}.voice q{font-size:13px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.voice .so{display:none}.fstep h3{font-size:21px}}
 </style>
 </head>
 <body>
@@ -810,12 +820,12 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
       </div>
       <div class="flow">
         <div class="steps" id="steps">
-          <div class="fstep" data-step="notify"><span class="num">1 · El aviso</span><h3>“Se abrió el cupo Rush de tus salas.”</h3><p>Llega entre 8 y 2 horas antes, cuando se decide el plan de la noche.</p></div>
-          <div class="fstep" data-step="home"><span class="num">2 · Cerca tuyo</span><h3>El mapa muestra qué hay con Rush a pocas cuadras.</h3><p>Si no hay nada cerca, la cartelera completa está a un toque.</p></div>
-          <div class="fstep" data-step="det"><span class="num">3 · Tus butacas</span><h3>Elegís tus butacas entre las naranjas, las disponibles.</h3><p>Responde al insight de certeza: sabés dónde te sentás y el precio final antes de pagar.</p></div>
-          <div class="fstep" data-step="pay"><span class="num">4 · Datos y pago</span><h3>Nombre, apellido, mail y celular, y pagás con la butaca reservada.</h3><p>Diez minutos de reserva en Rush. En Lottery, el sorteado tiene 15 minutos para confirmar, cargar sus datos y pagar.</p></div>
-          <div class="fstep" data-step="tix"><span class="num">5 · El QR</span><h3>La entrada llega al instante.</h3><p>En la app, en el mail y en la billetera del teléfono.</p></div>
-          <div class="fstep" data-step="invite"><span class="num">6 · Después</span><h3>Valorás la obra e invitás a alguien.</h3><p>Si se registra con tu link, los dos suman crédito para la próxima.</p></div>
+          <div class="fstep" data-step="notify"><span class="num">1 · El aviso</span><h3>“Se abrió el cupo Rush de tus salas.”</h3><p>Llega entre 8 y 2 horas antes, cuando se decide el plan de la noche.</p><div class="voices"><div class="voice hu"><span class="who">Heavy user · Chiara</span><q>He decidido ir el mismo día en varias oportunidades (…) cuando no tenía nada agendado para ese día.</q><span class="so"><b>En la app →</b> El aviso llega a la tarde, justo cuando se arma el plan de la noche.</span></div></div></div>
+          <div class="fstep" data-step="home"><span class="num">2 · Cerca tuyo</span><h3>El mapa muestra qué hay con Rush a pocas cuadras.</h3><p>Si no hay nada cerca, la cartelera completa está a un toque.</p><div class="voices"><div class="voice ex"><span class="who">Experto en desarrollo · Facundo</span><q>Podría ser interesante visualizarlas en un mapa por zona (…) para no irme tan lejos.</q><span class="so"><b>En la app →</b> Mapa con radio de 1,5 km, obras por distancia y filtros Rush / Lottery y por género.</span></div></div></div>
+          <div class="fstep" data-step="det"><span class="num">3 · Tus butacas</span><h3>Elegís tus butacas entre las naranjas, las disponibles.</h3><p>Responde al insight de certeza: sabés dónde te sentás y el precio final antes de pagar.</p><div class="voices"><div class="voice ex"><span class="who">Experto en desarrollo · Facundo</span><q>Si yo voy con mi pareja o con algún amigo (…) me interesa saber cuál es la ubicación de la butaca.</q><span class="so"><b>En la app →</b> Elegís butacas juntas en el plano antes de pagar.</span></div><div class="voice hu"><span class="who">Heavy user · Paula</span><q>Por miedo a ir hasta el lugar y que no haya lugar.</q><span class="so"><b>En la app →</b> Las naranjas son las butacas libres en ese momento: sabés que hay lugar antes de salir.</span></div></div></div>
+          <div class="fstep" data-step="pay"><span class="num">4 · Datos y pago</span><h3>Nombre, apellido, mail y celular, y pagás con la butaca reservada.</h3><p>Diez minutos de reserva en Rush. En Lottery, el sorteado tiene 15 minutos para confirmar, cargar sus datos y pagar.</p><div class="voices"><div class="voice ex"><span class="who">Experto en desarrollo · Facundo</span><q>Usar los datos que ya tenemos y no pedirle que rellene datos adicionales, como el DNI.</q><span class="so"><b>En la app →</b> “Usar los datos de mi perfil” completa nombre, apellido, mail y celular en un toque.</span></div><div class="voice ex"><span class="who">Experto en desarrollo · Facundo</span><q>Bloqueando la butaca por cierto tiempo (…) idealmente cinco o diez minutos.</q><span class="so"><b>En la app →</b> Reserva de 10 minutos con cuenta regresiva visible; en Lottery, 15 minutos para confirmar.</span></div></div></div>
+          <div class="fstep" data-step="tix"><span class="num">5 · El QR</span><h3>La entrada llega al instante.</h3><p>En la app, en el mail y en la billetera del teléfono.</p><div class="voices"><div class="voice hu"><span class="who">Heavy user · Paula</span><q>Las adquirí por internet y (…) llegué a la puerta del teatro y mostré el QR nada más.</q><span class="so"><b>En la app →</b> El QR llega al instante, en la app y en el mail.</span></div></div></div>
+          <div class="fstep" data-step="invite"><span class="num">6 · Después</span><h3>Valorás la obra e invitás a alguien.</h3><p>Si se registra con tu link, los dos suman crédito para la próxima.</p><div class="voices"><div class="voice hu"><span class="who">Heavy user · Chiara</span><q>Me gusta compartir la salida con personas que no van tan seguido (…) y lo vivo como un ritual.</q><span class="so"><b>En la app →</b> Invitás a alguien y los dos suman crédito para la próxima.</span></div></div></div>
         </div>
         <div class="phone-col">
           <div class="phone"><div class="island" aria-hidden="true"></div><iframe id="app" src="app.html#embed" title="Demo interactiva de la app Last Ticket" loading="eager"></iframe></div>
