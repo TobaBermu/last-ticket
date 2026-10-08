@@ -627,16 +627,18 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 #ax-medios .tbl td{overflow-wrap:break-word;hyphens:auto}
 #ax-medios .tbl th{font-size:11px;letter-spacing:.02em}
 .cross-row span:nth-child(2){color:#FFFFFF}
-/* voces de las entrevistas en el flujo de la app */
-.voices{display:grid;gap:10px;margin-top:6px;max-width:52ch}
-.voice{border-radius:14px;padding:12px 14px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-left:3px solid var(--orange);display:grid;gap:6px}
-.voice.hu{border-left-color:var(--magenta)}
-.voice .who{justify-self:start;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--orange);color:#0B0A3A;font-weight:500}
-.voice.hu .who{background:var(--magenta);color:#fff}
-.voice q{font-size:15px;line-height:1.45;color:#fff;font-style:italic;quotes:"“" "”"}
-.voice .so{font-size:14px;line-height:1.4;color:#fff}
-.voice .so b{color:var(--orange);font-weight:700}
-@media (max-width:900px){#flujo .phone{height:min(46vh,480px)}.fstep:has(.voices) > p{display:none}.voices{gap:6px}.voice{padding:8px 10px;gap:4px}.voice .who{font-size:10px}.voice q{font-size:13px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.voice .so{display:none}.fstep h3{font-size:21px}}
+/* v12: menos texto a la vista */
+.hint{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--orange)}
+.vchips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.vchip{appearance:none;font:inherit;cursor:pointer;position:relative;display:grid;gap:4px;text-align:left;padding:12px 44px 12px 14px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-left:3px solid var(--orange);color:#fff;min-width:0;transition:transform .25s,border-color .25s,background-color .25s}
+.vchip.hu{border-left-color:var(--magenta)}
+.vchip .who{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange)}
+.vchip.hu .who{color:#FF7AAA}
+.vchip .key{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.2}
+.vchip .more{position:absolute;top:50%;right:12px;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:16px;line-height:1}
+.vchip:hover,.vchip:focus-visible{transform:translateY(-2px);border-color:rgba(255,45,122,.65);background:#1B1860}
+.vchip:hover .more{background:var(--magenta);border-color:transparent}
+@media (max-width:900px){.vchips{gap:6px}.vchip{padding:8px 38px 8px 10px}.vchip .key{font-size:15px}.vchip .who{font-size:10px}}
 </style>
 </head>
 <body>
@@ -650,6 +652,7 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
     <ul>
       <li><a href="#problema">Problema</a></li>
       <li><a href="#investigacion">Investigación</a></li>
+      <li><a href="#insights">Insights</a></li>
       <li><a href="#solucion">Propuesta</a></li>
       <li><a href="#segmento">Segmento</a></li>
       <li><a href="#flujo">La app</a></li>
@@ -666,7 +669,7 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
     <div>
       <p class="eyebrow">Entradas de teatro de último momento · CABA y GBA</p>
       <h1><span class="line"><span>Hoy</span></span><span class="line"><span>hay</span></span><span class="line"><span class="grad">teatro.</span></span></h1>
-      <p class="lead">Last Ticket conecta las butacas que las salas no logran vender con quienes quieren salir esta noche. Precio final, sector antes de pagar y el QR al instante.</p>
+      <p class="lead">Las butacas libres de esta noche, al precio de último momento.</p>
       <div class="meta">
         <span class="chip">Lanzamiento <b>21/12/2026</b></span>
         <span class="chip">Encuesta <b>n = 404</b></span>
@@ -712,12 +715,12 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
       <div class="sec-head rv">
         <p class="eyebrow">01 · El problema</p>
         <h2>Las ganas de ir siguen. <span class="grad">El precio no ayuda.</span></h2>
-        <p class="lead">El público recorta salidas y las salas abren con butacas libres. Tocá cada dato para ver de dónde sale.</p>
+        <p class="hint">Tocá cada dato para ver de dónde sale.</p>
       </div>
       <div class="tiles t3">
-        <button class="tile stat-tile rv" type="button" data-pop="p-precio"><svg class="ic" aria-hidden="true"><use href="#i-wallet"/></svg><span class="n" data-count="63.1" data-dec="1" data-suf="%">63,1%</span><span class="tx">redujo su frecuencia de ir al teatro por el precio de las entradas.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile stat-tile rv" type="button" data-pop="p-ganas"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg><span class="n" data-count="88.9" data-dec="1" data-suf="%">88,9%</span><span class="tx">de quienes no fueron en el último año quiere volver.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile stat-tile rv" type="button" data-pop="p-hoy"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span class="n" data-count="96.4" data-dec="1" data-suf="%">96,4%</span><span class="tx">está abierto a decidir una salida el mismo día.</span><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile stat-tile rv" type="button" data-pop="p-precio"><svg class="ic" aria-hidden="true"><use href="#i-wallet"/></svg><span class="n" data-count="63.1" data-dec="1" data-suf="%">63,1%</span><span class="tx">va menos por el precio.</span><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile stat-tile rv" type="button" data-pop="p-ganas"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg><span class="n" data-count="88.9" data-dec="1" data-suf="%">88,9%</span><span class="tx">de quienes no van quiere volver.</span><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile stat-tile rv" type="button" data-pop="p-hoy"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span class="n" data-count="96.4" data-dec="1" data-suf="%">96,4%</span><span class="tx">se anima a decidir el mismo día.</span><span class="more" aria-hidden="true">+</span></button>
       </div>
     </div>
   </section>
@@ -726,73 +729,21 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
     <div class="wrap">
       <div class="sec-head rv">
         <p class="eyebrow">02 · La investigación</p>
-        <h2>Antes de diseñar, <span class="grad">escuchamos a 404 personas.</span></h2>
-        <p class="lead">Primero entrevistas para entender el problema; después una encuesta para medirlo. Cada decisión del plan sale de acá.</p>
+        <h2>Antes de diseñar, <span class="grad">escuchamos.</span></h2>
       </div>
       <ol class="method">
-        <li class="rv"><button class="tile mstep" type="button" data-pop="p-entrevistas"><span class="k">Cualitativa</span><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><b>4 entrevistas</b><span class="tx">2 espectadoras frecuentes, 1 productor y 1 experto en ticketing.</span><span class="more" aria-hidden="true">+</span></button></li>
-        <li class="rv"><button class="tile mstep" type="button" data-pop="p-encuesta"><span class="k">Cuantitativa</span><svg class="ic" aria-hidden="true"><use href="#i-form"/></svg><b>Encuesta de 41 preguntas</b><span class="tx">Online, 9 secciones y prueba de concepto de Rush y Lottery.</span><span class="more" aria-hidden="true">+</span></button></li>
-        <li class="rv"><button class="tile mstep" type="button" data-pop="p-muestra"><span class="k">Muestra</span><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg><b>404 respuestas válidas</b><span class="tx">Se necesitaban 385 para un 95% de confianza.</span><span class="more" aria-hidden="true">+</span></button></li>
-        <li class="rv"><button class="tile mstep" type="button" data-pop="p-cruces"><span class="k">Análisis</span><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg><b>Cruces de variables</b><span class="tx">Chi-cuadrado y Spearman para validar cada insight.</span><span class="more" aria-hidden="true">+</span></button></li>
+        <li class="rv"><button class="tile mstep" type="button" data-pop="p-entrevistas"><span class="k">Cualitativa</span><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><b>4 entrevistas</b><span class="more" aria-hidden="true">+</span></button></li>
+        <li class="rv"><button class="tile mstep" type="button" data-pop="p-encuesta"><span class="k">Cuantitativa</span><svg class="ic" aria-hidden="true"><use href="#i-form"/></svg><b>Encuesta de 41 preguntas</b><span class="more" aria-hidden="true">+</span></button></li>
+        <li class="rv"><button class="tile mstep" type="button" data-pop="p-muestra"><span class="k">Muestra</span><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg><b>404 respuestas</b><span class="tx">±4,9% de margen</span><span class="more" aria-hidden="true">+</span></button></li>
+        <li class="rv"><button class="tile mstep" type="button" data-pop="p-cruces"><span class="k">Análisis</span><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg><b>Cruces de variables</b><span class="more" aria-hidden="true">+</span></button></li>
       </ol>
-      <div class="sample rv" aria-label="Depuración de la muestra">
-        <div class="sb"><b>426</b><span>respuestas recibidas</span></div>
-        <i aria-hidden="true">→</i>
-        <div class="sb"><b>404</b><span>válidas en CABA y GBA, 18 a 55 años</span></div>
-        <i aria-hidden="true">→</i>
-        <div class="sb hl"><b>±4,9%</b><span>margen de error con 95% de confianza</span></div>
-      </div>
-      <p class="note">Detalle completo, fórmula y validación de variables en el <a href="#ax-investigacion">Anexo A</a>.</p>
-    </div>
-  </section>
-
-  <section id="solucion">
-    <div class="wrap">
-      <div class="sec-head rv">
-        <p class="eyebrow">03 · La propuesta</p>
-        <h2>Dos maneras de ir hoy.</h2>
-        <p class="lead">Las salas liberan cupos entre 8 y 2 horas antes de la función. Vos elegís cómo entrar.</p>
-      </div>
-      <div class="split">
-        <button class="mode rush rv" type="button" data-pop="p-rush">
-          <span class="tag"><svg class="ic sm" aria-hidden="true"><use href="#i-bolt"/></svg>Rush · por orden de llegada</span>
-          <span class="price"><strong>$25.200</strong><s>$50.400</s></span>
-          <span class="tx">Hasta 50% menos. Reservás la butaca y pagás en un toque.</span>
-          <span class="more" aria-hidden="true">+</span>
-        </button>
-        <button class="mode lot rv" type="button" data-pop="p-lottery">
-          <span class="tag"><svg class="ic sm" aria-hidden="true"><use href="#i-dice"/></svg>Lottery · sorteo</span>
-          <span class="price"><strong>$20.160</strong><s>$50.400</s></span>
-          <span class="tx">60% menos. Te anotás a la mañana y sorteamos 4 horas antes.</span>
-          <span class="more" aria-hidden="true">+</span>
-        </button>
-      </div>
-      <p class="note">Entrada de lista de $45.000; todos los precios incluyen el cargo por servicio del 12%.</p>
-    </div>
-  </section>
-
-  <section id="segmento" class="band">
-    <div class="wrap">
-      <div class="sec-head rv">
-        <p class="eyebrow">04 · Segmento</p>
-        <h2>De 3,3 millones a <span class="grad">666.642</span> personas.</h2>
-        <p class="lead">18 a 55 años, CABA y GBA, NSE C1 a C3, que redujeron su frecuencia por precio. Cada filtro sale de una pregunta de la encuesta: tocalo.</p>
-      </div>
-      <div class="funnel" id="funnel">
-        <button class="step  rv" type="button" data-pop="p-f0"><div class="shape" data-w="1"><b>3.312.139</b></div><span class="lbl"><b>Mercado potencial</b><span class="pct">base</span></span></button>
-        <button class="step  rv" type="button" data-pop="p-f1"><div class="shape" data-w=".473"><b>1.565.700</b></div><span class="lbl"><b>Intención de uso</b><span class="pct">× 47,3%</span></span></button>
-        <button class="step  rv" type="button" data-pop="p-f2"><div class="shape" data-w=".363"><b>1.202.458</b></div><span class="lbl"><b>Paga el precio Rush</b><span class="pct">× 76,8%</span></span></button>
-        <button class="step  rv" type="button" data-pop="p-f3"><div class="shape" data-w=".24"><b>793.622</b></div><span class="lbl"><b>Se organiza con 8 h de aviso</b><span class="pct">× 66,0%</span></span></button>
-        <button class="step final rv" type="button" data-pop="p-f4"><div class="shape" data-w=".201"><b>666.642</b></div><span class="lbl"><b>Acepta la butaca asignada</b><span class="pct">× 84,0%</span><span class="ftag">Segmento atractivo: el público de Last Ticket</span></span></button>
-      </div>
-      <p class="note">Objetivo del año 1: 2.500 entradas por mes, el 0,25% de la demanda potencial.</p>
     </div>
   </section>
 
   <section id="insights">
     <div class="wrap">
       <div class="sec-head rv">
-        <p class="eyebrow">05 · Insights</p>
+        <p class="eyebrow">03 · Lo que descubrimos</p>
         <h2>Planifica sus salidas. <span class="grad">Pero si la invitan para hoy, va.</span></h2>
       </div>
       <div class="persona">
@@ -811,21 +762,61 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
     </div>
   </section>
 
+  <section id="solucion" class="band">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">04 · La propuesta</p>
+        <h2>Dos maneras de ir hoy.</h2>
+        <p class="lead">Una respuesta a cada insight: precio, ocasión y certeza.</p>
+      </div>
+      <div class="split">
+        <button class="mode rush rv" type="button" data-pop="p-rush">
+          <span class="tag"><svg class="ic sm" aria-hidden="true"><use href="#i-bolt"/></svg>Rush · por orden de llegada</span>
+          <span class="price"><strong>$25.200</strong><s>$50.400</s></span>
+          <span class="tx">Elegís tu butaca y comprás ya.</span>
+          <span class="more" aria-hidden="true">+</span>
+        </button>
+        <button class="mode lot rv" type="button" data-pop="p-lottery">
+          <span class="tag"><svg class="ic sm" aria-hidden="true"><use href="#i-dice"/></svg>Lottery · sorteo</span>
+          <span class="price"><strong>$20.160</strong><s>$50.400</s></span>
+          <span class="tx">Te anotás y, si salís, confirmás en 15 minutos.</span>
+          <span class="more" aria-hidden="true">+</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="segmento">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">05 · Segmento</p>
+        <h2><span class="grad">666.642</span> personas buscan esta salida.</h2>
+      </div>
+      <div class="funnel" id="funnel">
+        <button class="step  rv" type="button" data-pop="p-f0"><div class="shape" data-w="1"><b>3.312.139</b></div><span class="lbl"><b>Mercado potencial</b><span class="pct">base</span></span></button>
+        <button class="step  rv" type="button" data-pop="p-f1"><div class="shape" data-w=".473"><b>1.565.700</b></div><span class="lbl"><b>Intención de uso</b><span class="pct">× 47,3%</span></span></button>
+        <button class="step  rv" type="button" data-pop="p-f2"><div class="shape" data-w=".363"><b>1.202.458</b></div><span class="lbl"><b>Paga el precio Rush</b><span class="pct">× 76,8%</span></span></button>
+        <button class="step  rv" type="button" data-pop="p-f3"><div class="shape" data-w=".24"><b>793.622</b></div><span class="lbl"><b>Se organiza con 8 h de aviso</b><span class="pct">× 66,0%</span></span></button>
+        <button class="step final rv" type="button" data-pop="p-f4"><div class="shape" data-w=".201"><b>666.642</b></div><span class="lbl"><b>Acepta la butaca asignada</b><span class="pct">× 84,0%</span><span class="ftag">Segmento atractivo: el público de Last Ticket</span></span></button>
+      </div>
+    </div>
+  </section>
+
   <section id="flujo" class="band">
     <div class="wrap">
       <div class="sec-head rv">
         <p class="eyebrow">06 · La app</p>
-        <h2>Bajá y mirá cómo funciona.</h2>
-        <p class="lead">El celular muestra la demo real. Cambia de pantalla a medida que avanzás; también podés tocarla.</p>
+        <h2>Así funciona la app.</h2>
+        <p class="hint">El celular es la demo real: tocalo para probarla.</p>
       </div>
       <div class="flow">
         <div class="steps" id="steps">
-          <div class="fstep" data-step="notify"><span class="num">1 · El aviso</span><h3>“Se abrió el cupo Rush de tus salas.”</h3><p>Llega entre 8 y 2 horas antes, cuando se decide el plan de la noche.</p><div class="voices"><div class="voice hu"><span class="who">Heavy user · Chiara</span><q>He decidido ir el mismo día en varias oportunidades (…) cuando no tenía nada agendado para ese día.</q><span class="so"><b>En la app →</b> El aviso llega a la tarde, justo cuando se arma el plan de la noche.</span></div></div></div>
-          <div class="fstep" data-step="home"><span class="num">2 · Cerca tuyo</span><h3>El mapa muestra qué hay con Rush a pocas cuadras.</h3><p>Si no hay nada cerca, la cartelera completa está a un toque.</p><div class="voices"><div class="voice ex"><span class="who">Experto en desarrollo · Facundo</span><q>Podría ser interesante visualizarlas en un mapa por zona (…) para no irme tan lejos.</q><span class="so"><b>En la app →</b> Mapa con radio de 1,5 km, obras por distancia y filtros Rush / Lottery y por género.</span></div></div></div>
-          <div class="fstep" data-step="det"><span class="num">3 · Tus butacas</span><h3>Elegís tus butacas entre las naranjas, las disponibles.</h3><p>Responde al insight de certeza: sabés dónde te sentás y el precio final antes de pagar.</p><div class="voices"><div class="voice ex"><span class="who">Experto en desarrollo · Facundo</span><q>Si yo voy con mi pareja o con algún amigo (…) me interesa saber cuál es la ubicación de la butaca.</q><span class="so"><b>En la app →</b> Elegís butacas juntas en el plano antes de pagar.</span></div><div class="voice hu"><span class="who">Heavy user · Paula</span><q>Por miedo a ir hasta el lugar y que no haya lugar.</q><span class="so"><b>En la app →</b> Las naranjas son las butacas libres en ese momento: sabés que hay lugar antes de salir.</span></div></div></div>
-          <div class="fstep" data-step="pay"><span class="num">4 · Datos y pago</span><h3>Nombre, apellido, mail y celular, y pagás con la butaca reservada.</h3><p>Diez minutos de reserva en Rush. En Lottery, el sorteado tiene 15 minutos para confirmar, cargar sus datos y pagar.</p><div class="voices"><div class="voice ex"><span class="who">Experto en desarrollo · Facundo</span><q>Usar los datos que ya tenemos y no pedirle que rellene datos adicionales, como el DNI.</q><span class="so"><b>En la app →</b> “Usar los datos de mi perfil” completa nombre, apellido, mail y celular en un toque.</span></div><div class="voice ex"><span class="who">Experto en desarrollo · Facundo</span><q>Bloqueando la butaca por cierto tiempo (…) idealmente cinco o diez minutos.</q><span class="so"><b>En la app →</b> Reserva de 10 minutos con cuenta regresiva visible; en Lottery, 15 minutos para confirmar.</span></div></div></div>
-          <div class="fstep" data-step="tix"><span class="num">5 · El QR</span><h3>La entrada llega al instante.</h3><p>En la app, en el mail y en la billetera del teléfono.</p><div class="voices"><div class="voice hu"><span class="who">Heavy user · Paula</span><q>Las adquirí por internet y (…) llegué a la puerta del teatro y mostré el QR nada más.</q><span class="so"><b>En la app →</b> El QR llega al instante, en la app y en el mail.</span></div></div></div>
-          <div class="fstep" data-step="invite"><span class="num">6 · Después</span><h3>Valorás la obra e invitás a alguien.</h3><p>Si se registra con tu link, los dos suman crédito para la próxima.</p><div class="voices"><div class="voice hu"><span class="who">Heavy user · Chiara</span><q>Me gusta compartir la salida con personas que no van tan seguido (…) y lo vivo como un ritual.</q><span class="so"><b>En la app →</b> Invitás a alguien y los dos suman crédito para la próxima.</span></div></div></div>
+          <div class="fstep" data-step="notify"><span class="num">1 · El aviso</span><h3>“Se abrió el cupo Rush de tus salas.”</h3><div class="vchips"><button class="vchip hu" type="button" data-pop="p-v1"><span class="who">Chiara · heavy user</span><span class="key">“cuando no tenía nada agendado”</span><span class="more" aria-hidden="true">+</span></button></div></div>
+          <div class="fstep" data-step="home"><span class="num">2 · Cerca tuyo</span><h3>El mapa muestra lo que hay cerca.</h3><div class="vchips"><button class="vchip ex" type="button" data-pop="p-v2"><span class="who">Nacho · desarrollo</span><span class="key">“un mapa por zona”</span><span class="more" aria-hidden="true">+</span></button></div></div>
+          <div class="fstep" data-step="det"><span class="num">3 · Tus butacas</span><h3>Elegís tus butacas entre las disponibles.</h3><div class="vchips"><button class="vchip ex" type="button" data-pop="p-v3"><span class="who">Nacho · desarrollo</span><span class="key">“dónde está mi butaca”</span><span class="more" aria-hidden="true">+</span></button><button class="vchip hu" type="button" data-pop="p-v4"><span class="who">Paula · heavy user</span><span class="key">“que no haya lugar”</span><span class="more" aria-hidden="true">+</span></button></div></div>
+          <div class="fstep" data-step="pay"><span class="num">4 · Datos y pago</span><h3>Tus datos y el pago, con la butaca reservada.</h3><div class="vchips"><button class="vchip ex" type="button" data-pop="p-v5"><span class="who">Nacho · desarrollo</span><span class="key">“usar los datos que ya tenemos”</span><span class="more" aria-hidden="true">+</span></button><button class="vchip ex" type="button" data-pop="p-v6"><span class="who">Nacho · desarrollo</span><span class="key">“bloquear la butaca 5 o 10 min”</span><span class="more" aria-hidden="true">+</span></button></div></div>
+          <div class="fstep" data-step="tix"><span class="num">5 · El QR</span><h3>La entrada llega al instante.</h3><div class="vchips"><button class="vchip hu" type="button" data-pop="p-v7"><span class="who">Paula · heavy user</span><span class="key">“mostré el QR nada más”</span><span class="more" aria-hidden="true">+</span></button></div></div>
+          <div class="fstep" data-step="invite"><span class="num">6 · Después</span><h3>Invitás a alguien.</h3><div class="vchips"><button class="vchip hu" type="button" data-pop="p-v8"><span class="who">Chiara · heavy user</span><span class="key">“compartir la salida”</span><span class="more" aria-hidden="true">+</span></button></div></div>
         </div>
         <div class="phone-col">
           <div class="phone"><div class="island" aria-hidden="true"></div><iframe id="app" src="app.html#embed" title="Demo interactiva de la app Last Ticket" loading="eager"></iframe></div>
@@ -840,22 +831,21 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
       <div class="sec-head rv">
         <p class="eyebrow">07 · Marketing mix</p>
         <h2>Ocho decisiones, una sola promesa.</h2>
-        <p class="lead">Un plan para esta noche, a un precio posible, sabiendo dónde vas a estar.</p>
       </div>
       <div class="tiles t4">
-        <button class="tile pp rv" type="button" data-pop="p-producto"><svg class="ic" aria-hidden="true"><use href="#i-ticket"/></svg><b>Producto</b><span class="tx">Rush y Lottery, de a dos, con QR inmediato.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp rv" type="button" data-pop="p-precio4"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg><b>Precio</b><span class="tx">30% a 60% menos; ingreso del 22% por entrada.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp rv" type="button" data-pop="p-plaza"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><b>Plaza</b><span class="tx">App 100% digital en CABA y GBA.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp rv" type="button" data-pop="p-promo"><svg class="ic" aria-hidden="true"><use href="#i-megaphone"/></svg><b>Promoción</b><span class="tx">Instagram primero; salas y microinfluencers.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp sv rv" type="button" data-pop="p-procesos"><svg class="ic" aria-hidden="true"><use href="#i-flow"/></svg><b>Procesos</b><span class="tx">Compra en menos de 60 segundos.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp sv rv" type="button" data-pop="p-evidencia"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg><b>Evidencia física</b><span class="tx">Plano del sector, QR y cuenta regresiva.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp sv rv" type="button" data-pop="p-personas"><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg><b>Personas</b><span class="tx">Atención de jueves a domingo, de 17 a 23 h.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile pp sv rv" type="button" data-pop="p-productividad"><svg class="ic" aria-hidden="true"><use href="#i-gear"/></svg><b>Productividad</b><span class="tx">Cupos por API, sin doble venta.</span><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile pp rv" type="button" data-pop="p-producto"><svg class="ic" aria-hidden="true"><use href="#i-ticket"/></svg><b>Producto</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile pp rv" type="button" data-pop="p-precio4"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg><b>Precio</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile pp rv" type="button" data-pop="p-plaza"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><b>Plaza</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile pp rv" type="button" data-pop="p-promo"><svg class="ic" aria-hidden="true"><use href="#i-megaphone"/></svg><b>Promoción</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile pp sv rv" type="button" data-pop="p-procesos"><svg class="ic" aria-hidden="true"><use href="#i-flow"/></svg><b>Procesos</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile pp sv rv" type="button" data-pop="p-evidencia"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg><b>Evidencia física</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile pp sv rv" type="button" data-pop="p-personas"><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg><b>Personas</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile pp sv rv" type="button" data-pop="p-productividad"><svg class="ic" aria-hidden="true"><use href="#i-gear"/></svg><b>Productividad</b><span class="more" aria-hidden="true">+</span></button>
       </div>
       <p class="mix-label">Herramientas del servicio · tocá para abrir</p>
       <div class="tiles t2">
-        <button class="tile tool rv" type="button" data-pop="p-flor"><svg class="ic lg" aria-hidden="true"><use href="#i-flower"/></svg><span><b>Flor de servicio</b><span class="tx">El servicio central y los 8 pétalos que lo sostienen.</span></span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile tool rv" type="button" data-pop="p-ishikawa"><svg class="ic lg" aria-hidden="true"><use href="#i-fish"/></svg><span><b>Diagrama de Ishikawa</b><span class="tx">Qué puede fallar en la puerta y cómo lo prevenimos.</span></span><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile tool rv" type="button" data-pop="p-flor"><svg class="ic lg" aria-hidden="true"><use href="#i-flower"/></svg><span><b>Flor de servicio</b></span><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile tool rv" type="button" data-pop="p-ishikawa"><svg class="ic lg" aria-hidden="true"><use href="#i-fish"/></svg><span><b>Diagrama de Ishikawa</b></span><span class="more" aria-hidden="true">+</span></button>
       </div>
     </div>
   </section>
@@ -865,10 +855,10 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
       <p class="eyebrow rv">08 · Marca</p>
       <p class="manifest rv">Último momento,<span class="o">el mejor plan.</span></p>
       <div class="tiles t4 brand-tiles">
-        <button class="tile rv" type="button" data-pop="p-posic"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg><b>Posicionamiento</b><span class="tx">La especialista en la salida de último momento.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile rv" type="button" data-pop="p-tono"><svg class="ic" aria-hidden="true"><use href="#i-msg"/></svg><b>Tono</b><span class="tx">Cercano, cómplice y preciso en precios.</span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile rv" type="button" data-pop="p-identidad"><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg><b>Identidad</b><span class="tx">Azul noche y las luces del escenario.</span><span class="swatches" aria-hidden="true"><i style="background:#0B0A3A"></i><i style="background:#5B1A8C"></i><i style="background:#FF2D7A"></i><i style="background:#FF9F1C"></i></span><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile rv" type="button" data-pop="p-prisma"><svg class="ic" aria-hidden="true"><use href="#i-hex"/></svg><b>Prisma de Kapferer</b><span class="tx">Seis caras de una misma marca.</span><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile rv" type="button" data-pop="p-posic"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg><b>Posicionamiento</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile rv" type="button" data-pop="p-tono"><svg class="ic" aria-hidden="true"><use href="#i-msg"/></svg><b>Tono</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile rv" type="button" data-pop="p-identidad"><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg><b>Identidad</b><span class="swatches" aria-hidden="true"><i style="background:#0B0A3A"></i><i style="background:#5B1A8C"></i><i style="background:#FF2D7A"></i><i style="background:#FF9F1C"></i></span><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile rv" type="button" data-pop="p-prisma"><svg class="ic" aria-hidden="true"><use href="#i-hex"/></svg><b>Prisma de Kapferer</b><span class="more" aria-hidden="true">+</span></button>
       </div>
     </div>
   </section>
@@ -878,7 +868,7 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
       <div class="sec-head rv">
         <p class="eyebrow">09 · Medios · año 1</p>
         <h2>$36 millones de pauta. <span class="grad">7.016 registrados.</span></h2>
-        <p class="lead">Instagram es el medio principal porque es donde vive el segmento: el 95,5% lo usa todos los días.</p>
+        <p class="hint">Instagram primero: el 95,5% del segmento lo usa a diario.</p>
       </div>
       <div class="media">
         <div class="mbars" id="mbars">
@@ -911,22 +901,22 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
     <template id="p-precio"><h3>El precio aleja, no el interés</h3><p>En la encuesta, el 63,1% de quienes van al teatro dijo que redujo su frecuencia por el costo de las entradas, y el 59,9% ya usa beneficios o promociones para ir.</p><p class="pk">Por eso Last Ticket no compite con el teatro: devuelve una salida que el presupuesto había recortado.</p><a class="pl" href="#ax-insights">Ver los cruces en el Anexo B</a></template>
     <template id="p-ganas"><h3>Hay demanda esperando</h3><p>De las personas que no fueron al teatro en el último año, el 88,9% querría volver en los próximos seis meses. El interés existe; falta una razón concreta para ir esta semana.</p><a class="pl" href="#ax-insights">Ver los cruces en el Anexo B</a></template>
     <template id="p-hoy"><h3>Planifican, pero se dejan tentar</h3><p>Solo el 5,7% compra el mismo día, pero el 96,4% está abierto a hacerlo y el 51,0% ya lo hizo alguna vez. El 66,0% puede organizarse con hasta 8 horas de aviso.</p><p class="pk">Ese es el momento en el que trabaja Last Ticket: entre 8 y 2 horas antes de la función.</p></template>
-    <template id="p-entrevistas"><h3>4 entrevistas en profundidad</h3><ul><li><b>2 espectadoras frecuentes:</b> cómo eligen, cuánto pagan y qué las hace ir o quedarse.</li><li><b>1 productor teatral:</b> qué pasa con las butacas que no se venden y qué descuento acepta una sala.</li><li><b>1 experto en ticketing:</b> bloqueo de butacas, validación del QR y doble venta.</li></ul><p>Son virtuales y conversacionales: no buscan representar a nadie, sino encontrar las tensiones que después medimos en la encuesta.</p></template>
+    <template id="p-entrevistas"><h3>4 entrevistas en profundidad</h3><ul><li><b>2 espectadoras frecuentes:</b> cómo eligen, cuánto pagan y qué las hace ir o quedarse.</li><li><b>1 productor teatral:</b> qué pasa con las butacas que no se venden y qué descuento acepta una sala.</li><li><b>1 experto en desarrollo de apps (Nacho):</b> qué ve primero el usuario, cuántos pasos tiene la compra y cómo se bloquea una butaca.</li></ul><p>Son virtuales y conversacionales: no buscan representar a nadie, sino encontrar las tensiones que después medimos en la encuesta.</p></template>
     <template id="p-encuesta"><h3>Encuesta online de 41 preguntas</h3><p>Hecha en Google Forms, con 9 secciones: hábitos teatrales, precio, compra digital, último momento y una prueba de concepto de Rush y Lottery con escalas Likert de 5 puntos.</p><p>Se difundió por redes y bola de nieve (muestreo no probabilístico por conveniencia).</p></template>
     <template id="p-muestra"><h3>Una muestra que alcanza</h3><div class="kv"><span>Muestra necesaria</span><b>385</b><span>Respuestas recibidas</span><b>426</b><span>Válidas (18 a 55, CABA y GBA)</span><b>404</b><span>Fueron al teatro en 12 meses</span><b>314</b><span>Completaron el concepto</span><b>394</b></div><p>Con n = 404 el margen de error es de ±4,9% con 95% de confianza (fórmula n = Z²·p·(1−p)/e², p = 0,5).</p><a class="pl" href="#ax-investigacion">Ver el detalle en el Anexo A</a></template>
     <template id="p-cruces"><h3>Cada insight, validado con datos</h3><p>Cruzamos las variables del segmento con la intención de uso mediante tablas con chi-cuadrado y V de Cramer, y correlaciones de Spearman. Un cruce cuenta si p &lt; 0,05.</p><p class="pk">Ejemplo: a menor disposición a pagar, mayor intención de usar la app (p = 0,005).</p><a class="pl" href="#ax-insights">Ver los cruces en el Anexo B</a></template>
-    <template id="p-rush"><h3>Rush · por orden de llegada</h3><ul><li>30% a 50% de descuento sobre el precio de lista, según el tiempo que falta.</li><li>La butaca queda bloqueada de 5 a 10 minutos con cuenta regresiva mientras pagás.</li><li>Dos entradas contiguas por defecto: el 83,0% compraría de a dos.</li><li>Pago en un toque con Mercado Pago y QR al instante.</li></ul></template>
-    <template id="p-lottery"><h3>Lottery · sorteo</h3><ul><li>60% de descuento. Te anotás desde la mañana.</li><li>El sorteo es 4 horas antes de la función y tenés 15 minutos para confirmar.</li><li>Si no salís, la app te propone otra obra del mismo género.</li></ul><p>El cupo que nadie confirma pasa a la lista de espera.</p></template>
-    <template id="p-f0"><h3>Mercado potencial: 3.312.139</h3><p>Método de cascada: desde la población argentina se filtra CABA y AMBA, edad, nivel socioeconómico y, por último, el 62% que quiere ir al teatro pero redujo su frecuencia por precio (Fundación Alternativa, 2025). La encuesta lo confirmó: 63,1%.</p></template>
+    <template id="p-rush"><h3>Rush · por orden de llegada</h3><ul><li>30% a 50% de descuento sobre el precio de lista, según el tiempo que falta.</li><li>Elegís tus butacas entre las disponibles, hasta 6 por compra (el 83,0% compraría de a dos).</li><li>Quedan bloqueadas 10 minutos con cuenta regresiva mientras cargás tus datos y pagás.</li><li>Pago en un toque con Mercado Pago y QR al instante.</li></ul><p>Entrada de lista de $45.000; los precios incluyen el cargo por servicio del 12%.</p></template>
+    <template id="p-lottery"><h3>Lottery · sorteo</h3><ul><li>60% de descuento. Te anotás gratis en los sorteos de la noche.</li><li>El sorteo es 4 horas antes de la función. Si salís, ves tu butaca y tenés 15 minutos para confirmar o rechazar.</li><li>Si confirmás, cargás tus datos y pagás dentro de esos mismos 15 minutos.</li></ul><p>La entrada que se rechaza o no se confirma pasa a la siguiente persona.</p></template>
+    <template id="p-f0"><h3>Mercado potencial: 3.312.139</h3><p>18 a 55 años, CABA y GBA, NSE C1 a C3. Método de cascada: desde la población argentina se filtra CABA y AMBA, edad, nivel socioeconómico y, por último, el 62% que quiere ir al teatro pero redujo su frecuencia por precio (Fundación Alternativa, 2025). La encuesta lo confirmó: 63,1%.</p></template>
     <template id="p-f1"><h3>Intención de uso: 47,3%</h3><p>Intención de uso ajustada, calculada con las respuestas a la prueba de concepto de Rush y Lottery de la encuesta.</p></template>
     <template id="p-f2"><h3>Paga el precio Rush: 76,8%</h3><p>Disposición a pagar el precio de referencia del Rush: $25.200 por una entrada de lista de $45.000.</p></template>
     <template id="p-f3"><h3>Se organiza con 8 horas: 66,0%</h3><p>Pueden decidir y organizar una salida con hasta 8 horas de aviso, que es la ventana en la que se liberan los cupos.</p></template>
-    <template id="p-f4"><h3>Acepta butaca asignada: 84,0%</h3><p>Aceptan que la sala asigne la butaca siempre que conozcan el sector antes de pagar. Así llegamos a 666.642 personas; el núcleo prioritario es de 186.660.</p></template>
+    <template id="p-f4"><h3>Acepta butaca asignada: 84,0%</h3><p>Aceptan que la sala asigne la butaca siempre que conozcan el sector antes de pagar. Así llegamos a 666.642 personas; el núcleo prioritario es de 186.660.</p><p class="pk">Objetivo del año 1: 2.500 entradas por mes, el 0,25% de la demanda potencial.</p></template>
     <template id="p-camila"><h3>Camila Ferreyra · buyer persona</h3><div class="kv"><span>Edad y barrio</span><b>27 · Almagro</b><span>Frecuencia</span><b>Cada 2 o 3 meses</b><span>Le gusta</span><b>Comedia e independiente</b><span>Compra</span><b>Online, de a dos</b><span>Redes</span><b>Instagram y WhatsApp</b></div><p>Antes iba todos los meses. Hoy cuida la plata, pero si la invitan a algo bueno para esta noche, va. El perfil secundario, Gabriela, está en el Anexo C.</p><a class="pl" href="#ax-persona">Ver mapa de empatía en el Anexo C</a></template>
     <template id="p-i1"><h3>Insight 1 · Precio</h3><p>“Desde que está todo tan caro voy menos al teatro, pero las ganas de ir siguen intactas.”</p><p class="pk">63,1% redujo su frecuencia por precio y 88,9% querría volver. La app no vende entradas baratas: devuelve una salida recortada.</p></template>
     <template id="p-i2"><h3>Insight 2 · Ocasión</h3><p>“Yo planifico mis salidas, pero si alguien me invita a algo para hoy, me prendo.”</p><p class="pk">66,0% se organiza con 8 horas de aviso y 66,2% iría si lo invitan. Por eso la app avisa a la tarde y facilita invitar.</p></template>
     <template id="p-i3"><h3>Insight 3 · Certeza</h3><p>“Si pago menos, no me importa que me asignen la butaca, siempre que sepa dónde me voy a sentar.”</p><p class="pk">84,0% acepta la butaca asignada si conoce el sector. Por eso cada función muestra el plano de la sala.</p></template>
-    <template id="p-producto"><h3>Producto</h3><p>Una sola línea con dos modalidades, Rush y Lottery. Cartelera inicial de comedias y comedias dramáticas, dos entradas contiguas por defecto, plano del sector y QR inmediato.</p></template>
+    <template id="p-producto"><h3>Producto</h3><p>Una sola línea con dos modalidades, Rush y Lottery. Cartelera inicial de comedias y comedias dramáticas, butacas elegidas en el plano y QR inmediato.</p></template>
     <template id="p-precio4"><h3>Precio</h3><p>La productora fija el descuento (30% a 60%). Last Ticket gana un take rate del 22%: 10% de comisión a la sala y 12% de cargo al usuario. Con una entrada Rush al 50%, el margen es de $3.690 por entrada.</p><a class="pl" href="#ax-costo">Ver el costo del producto en el Anexo D</a></template>
     <template id="p-plaza"><h3>Plaza</h3><p>App para el celular, sin boletería propia. Opera en CABA y GBA con salas socias. Mercado Pago es el medio prioritario porque lo usa el 59,5% del segmento.</p></template>
     <template id="p-promo"><h3>Promoción</h3><p>Pull hacia el espectador con Meta Ads, Google Ads, microinfluencers y canjes con salas y gastronómicos. Push hacia las salas con un ejecutivo de cuentas y un panel de ocupación recuperada.</p></template>
@@ -940,6 +930,14 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
     <template id="p-pre"><h3>Pre-lanzamiento · 2/11 al 20/12/2026</h3><p>Instalar la categoría antes que la marca: lista de espera, alta de salas y contenido en Instagram con el mensaje “Una butaca vacía no le sirve a nadie”.</p></template>
     <template id="p-lanz"><h3>Lanzamiento · 21/12/2026 al 31/03/2027</h3><p>Instalación y primeras compras con Meta y Google Ads, y las primeras colaboraciones con microinfluencers. Mensaje: “Hoy hay teatro”.</p></template>
     <template id="p-post"><h3>Post-lanzamiento · abril a octubre de 2027</h3><p>Conversión, invitaciones y recompra con remarketing, con pico en vacaciones de invierno. Mensaje: “¿Qué hacés hoy a las 21?”.</p><a class="pl" href="#ax-medios">Ver la planilla completa en el Anexo F</a></template>
+    <template id="p-v1"><h3>Chiara · heavy user</h3><p>“He decidido ir el mismo día en varias oportunidades. Esto suele sucederme con el teatro independiente (…) surgiendo el plan como una alternativa cuando no tenía nada agendado para ese día.”</p><p class="pk">En la app: El aviso llega a la tarde, justo cuando se arma el plan de la noche.</p></template>
+    <template id="p-v2"><h3>Nacho · experto en desarrollo de apps</h3><p>“Tal vez podría ser interesante visualizarlas en un mapa por zona, porque yo quizás quiero encontrar algún lugar o zona a la que sé que llego por el tiempo, que sé que estoy cerca, para no irme tan lejos.”</p><p class="pk">En la app: Mapa con radio de 1,5 km, obras ordenadas por distancia y filtros Rush / Lottery y por género.</p></template>
+    <template id="p-v3"><h3>Nacho · experto en desarrollo de apps</h3><p>“Si yo voy con mi pareja o con algún amigo, posiblemente quiera estar sentado cerca de él, así que me interesa saber cuál es la ubicación de la butaca que voy a poder comprar.”</p><p class="pk">En la app: En Rush elegís butacas juntas en el plano antes de pagar.</p></template>
+    <template id="p-v4"><h3>Paula · heavy user</h3><p>“Podría ser que me dé seguridad que queden pocas entradas (…) Creo que no saldría apurada al teatro por miedo a ir hasta el lugar y que no haya lugar.”</p><p class="pk">En la app: Las butacas naranjas son las libres en ese momento: sabés que hay lugar antes de salir.</p></template>
+    <template id="p-v5"><h3>Nacho · experto en desarrollo de apps</h3><p>“Lo ideal sería que el proceso de compra (…) sea lo más simple posible: usar los datos que ya tenemos y no pedirle que rellene datos adicionales, como el DNI.”</p><p class="pk">En la app: “Usar los datos de mi perfil” completa nombre, apellido, mail y celular en un toque.</p></template>
+    <template id="p-v6"><h3>Nacho · experto en desarrollo de apps</h3><p>“Lo ideal es bloquear esa entrada por un tiempo definido (…) idealmente cinco o diez minutos, hasta que la persona la rechace o haga la compra. Y el contador estaría vinculado con esto.”</p><p class="pk">En la app: Reserva de 10 minutos con cuenta regresiva en Rush; en Lottery, 15 minutos para confirmar o rechazar.</p></template>
+    <template id="p-v7"><h3>Paula · heavy user</h3><p>“La última vez que saqué fue en menos de 10 minutos, las adquirí por internet y bueno, llegué a la puerta del teatro y mostré el QR nada más.”</p><p class="pk">En la app: El QR llega al instante, en la app y en el mail.</p></template>
+    <template id="p-v8"><h3>Chiara · heavy user</h3><p>“También me gusta compartir la salida con personas que no van tan seguido para ver sus miradas, y lo vivo como un ritual que incluye salir a comer después.”</p><p class="pk">En la app: Invitás a alguien y los dos suman crédito para la próxima.</p></template>
     <template id="p-flor"><h3>Flor de servicio · Lovelock</h3><p>En el centro, el servicio básico. Alrededor, los pétalos facilitadores (hacen posible la compra) y los de mejora (hacen que el espectador vuelva).</p><div class="flor">
           <div class="pet tl"><h4>Información</h4><p>Cartelera filtrable, reglas de Rush y Lottery, precio final, sector y cómo ingresar.</p></div>
           <div class="pet t"><h4>Toma de pedidos</h4><p>Selección de función, checkout de un toque e inscripción al sorteo.</p></div>
@@ -1504,9 +1502,9 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 
   // modo presentación: anterior / siguiente por sección (y por paso dentro de la app)
   (function(){
-    var names={top:"Inicio",problema:"El problema",investigacion:"La investigación",solucion:"La propuesta",segmento:"Segmento",insights:"Insights",flujo:"La app",mix:"Marketing mix",marca:"Marca",medios:"Medios",anexo:"Anexo",final:"Cierre"};
+    var names={top:"Inicio",problema:"El problema",investigacion:"La investigación",solucion:"La propuesta",segmento:"Segmento",insights:"Lo que descubrimos",flujo:"La app",mix:"Marketing mix",marca:"Marca",medios:"Medios",anexo:"Anexo",final:"Cierre"};
     var slides=[];
-    ["top","problema","investigacion","solucion","segmento","insights","flujo"].forEach(function(id){var e=document.getElementById(id);if(e)slides.push({el:e,t:names[id]})});
+    ["top","problema","investigacion","insights","solucion","segmento","flujo"].forEach(function(id){var e=document.getElementById(id);if(e)slides.push({el:e,t:names[id]})});
     $$("#flujo .fstep").forEach(function(f,i){slides.push({el:f,t:"La app · paso "+(i+1),step:1})});
     ["mix","marca","medios","anexo","final"].forEach(function(id){var e=document.getElementById(id);if(e)slides.push({el:e,t:names[id]})});
     var $=function(q){return document.querySelector(q)};
