@@ -627,6 +627,7 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 #ax-medios .tbl td{overflow-wrap:break-word;hyphens:auto}
 #ax-medios .tbl th{font-size:11px;letter-spacing:.02em}
 .cross-row span:nth-child(2){color:#FFFFFF}
+
 /* v12: menos texto a la vista */
 .hint{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--orange)}
 .vchips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
@@ -639,6 +640,133 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 .vchip:hover,.vchip:focus-visible{transform:translateY(-2px);border-color:rgba(255,45,122,.65);background:#1B1860}
 .vchip:hover .more{background:var(--magenta);border-color:transparent}
 @media (max-width:900px){.vchips{gap:6px}.vchip{padding:8px 38px 8px 10px}.vchip .key{font-size:15px}.vchip .who{font-size:10px}}
+
+/* piezas de campaña en los pop-ups de medios */
+.pop-card:has(.piece){width:min(780px,100%)}
+.piece{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:24px;align-items:start}
+.piece img{width:100%;height:auto;aspect-ratio:4/5;border-radius:16px;border:1px solid rgba(255,255,255,.14);display:block}
+.piece .cap{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin:0 0 6px}
+@media (max-width:640px){.piece{grid-template-columns:1fr}.piece img{max-width:300px;margin-inline:auto}}
+
+/* v13: ilustraciones y highlights */
+.sec-art{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,4vw,56px);align-items:center;margin-bottom:clamp(28px,4vw,48px)}
+.sec-art .sec-head{margin-bottom:0}
+.art{min-width:0}
+.art-svg{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+@media (max-width:860px){.sec-art{grid-template-columns:1fr}.art{max-width:520px}}
+.beam{animation:beam 5s ease-in-out infinite;transform-origin:300px 26px}
+@keyframes beam{0%,100%{opacity:.75}50%{opacity:1}}
+.head{animation:headb 3.2s ease-in-out infinite}
+@keyframes headb{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.5px)}}
+.float1{animation:fl 6s ease-in-out infinite}.float2{animation:fl 6s ease-in-out -3s infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.bar{animation:barg 3s ease-in-out infinite;transform-origin:0 64px;transform-box:fill-box}
+@keyframes barg{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.9)}}
+.tk1{animation:tk 4.5s ease-in-out infinite}.tk2{animation:tk 4.5s ease-in-out -2.2s infinite}
+@keyframes tk{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(-3deg)}}
+.notif{animation:nt 6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes nt{0%,8%{opacity:0;transform:translateY(-8px)}14%,70%{opacity:1;transform:none}80%,100%{opacity:0;transform:translateY(-8px)}}
+.cta{animation:ctab 2.4s ease-in-out infinite}
+@keyframes ctab{0%,100%{opacity:1}50%{opacity:.8}}
+.crowd-wrap{margin:clamp(28px,4vw,44px) calc(-1 * clamp(16px,4vw,40px)) 0;overflow:hidden}
+.crowd{border-radius:0;box-shadow:none;height:clamp(110px,16vw,170px);width:100%}
+.bob{animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+/* Camila */
+.camila{width:clamp(130px,14vw,170px);height:auto;display:block;overflow:visible;filter:drop-shadow(0 14px 30px rgba(0,0,0,.35))}
+.cam-body{animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
+.cam-head{transform-box:fill-box;transform-origin:50% 90%;animation:tilt 7s ease-in-out infinite}
+@keyframes tilt{0%,100%{transform:rotate(0)}30%{transform:rotate(-3deg)}60%{transform:rotate(2deg)}}
+.cam-eyes{transform-box:fill-box;transform-origin:center;animation:blink 4.6s infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.cam-lock{transform-box:fill-box;transform-origin:top;animation:sway 5s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(0)}50%{transform:rotate(4deg)}}
+.cam-notif{animation:nt 7s ease-in-out infinite;transform-box:fill-box;transform-origin:left bottom}
+.card-persona .cam-wrap{display:flex;align-items:flex-end;gap:14px}
+/* telones del hero */
+.hero-cur{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.hero-cur svg{position:absolute;top:0;height:100%}
+.hc-l{left:0;width:clamp(38px,7vw,120px);animation:curl 9s ease-in-out infinite;transform-origin:top left}
+.hc-r{right:0;width:clamp(38px,7vw,120px);transform:scaleX(-1);animation:curr 9s ease-in-out infinite;transform-origin:top right}
+@keyframes curl{0%,100%{transform:skewX(0)}50%{transform:skewX(1.2deg)}}
+@keyframes curr{0%,100%{transform:scaleX(-1) skewX(0)}50%{transform:scaleX(-1) skewX(1.2deg)}}
+.hc-v{left:0;width:100%;height:clamp(30px,4vw,54px)!important}
+.hc-beam{position:absolute;top:0;right:12%;width:38%;height:100%;background:conic-gradient(from 180deg at 50% 0%,transparent 160deg,rgba(255,227,176,.10) 172deg,rgba(255,227,176,.16) 180deg,rgba(255,227,176,.10) 188deg,transparent 200deg)}
+@media (max-width:860px){.hc-l,.hc-r{width:22px}.hc-beam{display:none}}
+/* highlights de hipótesis */
+.hypo{margin-top:clamp(30px,4vw,48px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2.2fr);gap:clamp(14px,2vw,22px);align-items:stretch}
+.hypo-sum{appearance:none;font:inherit;color:#fff;text-align:left;cursor:pointer;position:relative;border-radius:22px;padding:22px;background:linear-gradient(150deg,#FF2D7A,#FF9F1C);display:grid;gap:10px;align-content:start;border:0}
+.hypo-sum .k{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0B0A3A}
+.hypo-sum b{font-family:var(--display);font-size:clamp(40px,5vw,60px);line-height:.9;color:#0B0A3A}
+.hypo-sum .hbars{display:flex;gap:4px;width:100%}.hypo-sum .hbars i{display:block;height:12px;width:auto;flex:1 1 0;min-width:0;margin:0;border:0;border-radius:4px;background:#0B0A3A;box-shadow:none}.hypo-sum .hbars i.hp{background:rgba(11,10,58,.35)}
+.hypo-sum .lg{font-size:14px;color:#0B0A3A;font-weight:600}
+.hypo-sum .more{position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;border:1px solid rgba(11,10,58,.4);display:grid;place-items:center;color:#0B0A3A}
+.hypo-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.4vw,16px)}
+.hcard{appearance:none;font:inherit;color:#fff;text-align:left;cursor:pointer;position:relative;border-radius:20px;padding:18px 16px;background:var(--night-2);border:1px solid var(--line);display:grid;gap:8px;align-content:start;min-width:0}
+.hcard:hover{border-color:rgba(255,45,122,.65);transform:translateY(-3px)}
+.hcard .st{justify-self:start;font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:3px 8px;border-radius:999px;background:rgba(43,217,159,.16);color:#6FF0C3}
+.hcard b{font-family:var(--display);font-size:18px;line-height:1.15}
+.hcard .pv{font-family:var(--mono);font-size:13px;color:var(--orange)}
+.hcard .more{position:absolute;top:12px;right:12px;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:15px}
+@media (max-width:980px){.hypo{grid-template-columns:1fr}.hypo-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* meta del año 1 */
+.meta1{margin-top:clamp(28px,4vw,44px);border-radius:24px;padding:clamp(18px,2.4vw,26px);background:linear-gradient(120deg,rgba(255,45,122,.16),rgba(255,159,28,.12));border:1px solid rgba(255,159,28,.4);display:grid;grid-template-columns:auto repeat(4,minmax(0,1fr));gap:clamp(12px,2vw,24px);align-items:center}
+.meta1 .k{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);writing-mode:horizontal-tb}
+.meta1 div{display:grid;gap:2px;min-width:0}.meta1 b{font-family:var(--display);font-size:clamp(26px,3.2vw,40px);line-height:1;font-variant-numeric:tabular-nums}.meta1 span{font-size:14px;color:#fff}
+@media (max-width:860px){.meta1{grid-template-columns:repeat(2,minmax(0,1fr))}.meta1 .k{grid-column:1/-1}}
+.ht-list{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px}
+.ht-list li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:15px;line-height:1.4}
+.ht-list .s{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.ht-list .s.v{background:rgba(43,217,159,.16);color:#6FF0C3}.ht-list .s.p{background:rgba(255,159,28,.16);color:#FFC46B}
+@media (prefers-reduced-motion:reduce){.camila *,.art-svg *,.hero-cur *{animation:none!important}}
+
+/* v14: piezas como imagen en la línea de tiempo */
+.timeline .stage.pimg{padding:12px 12px 18px;gap:6px;overflow:hidden}
+.pimg .ph{display:block;border-radius:14px;overflow:hidden;aspect-ratio:4/5;background:var(--night-3);margin-bottom:8px}
+.pimg .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pimg:hover .ph img{transform:scale(1.04)}
+.pimg .d,.pimg b{padding-inline:6px}
+.hypo-sum .lg0{font-family:var(--display);font-size:18px;color:#0B0A3A;margin-top:-6px}
+.pimg .more{top:auto;bottom:18px;right:18px;background:rgba(11,10,58,.7);backdrop-filter:blur(4px)}
+@media (max-width:760px){.timeline .stage.pimg{display:grid;grid-template-columns:110px minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:12px;align-items:start}.pimg .ph{grid-row:1/3;margin:0}.pimg .d{align-self:end}.pimg .d,.pimg b{padding-inline:0}.pimg .more{top:auto;bottom:14px;right:14px}}
+.piece{grid-template-columns:minmax(0,320px) minmax(0,1fr)}
+.hy-e{margin-bottom:14px}.hypo-wrap{margin-top:clamp(36px,5vw,60px)}.hypo-wrap .hypo{margin-top:0}
+.hcard .tx{font-size:14px;line-height:1.35;color:#fff;opacity:.85}
+.hcard .st.sp{background:rgba(255,159,28,.16);color:#FFC46B}
+.card-persona .cam-wrap{display:block}
+.camila{width:clamp(120px,13vw,160px)}
+
+/* v15: fotos (Canva) */
+.ph-art{position:relative;margin:0;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4);aspect-ratio:16/9;background:var(--night-3);isolation:isolate;max-width:100%}
+.ph-art img{width:100%;height:100%;object-fit:cover;display:block;animation:kb 20s ease-in-out infinite alternate;transform-origin:60% 40%}
+.ph-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,10,58,.65));pointer-events:none}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.09) translate(-1.5%,-1%)}}
+.ph-tag{position:absolute;left:14px;bottom:14px;z-index:1;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:rgba(11,10,58,.72);backdrop-filter:blur(6px);color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.04em}
+.ph-tag .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 0 rgba(255,159,28,.7);animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,159,28,.7)}100%{box-shadow:0 0 0 10px rgba(255,159,28,0)}}
+.ph-app{aspect-ratio:645/799;width:min(400px,100%);margin-inline:auto;overflow:visible;background:none}
+.ph-app .ph-in{position:absolute;inset:0;border-radius:22px;overflow:hidden}
+.ph-app::after{border-radius:22px}
+.ph-chip{position:absolute;z-index:2;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.04em;padding:10px 16px;border-radius:12px;color:var(--ink-on-accent);box-shadow:0 12px 30px rgba(0,0,0,.4)}
+.ph-chip.r{left:-14px;top:14%;background:linear-gradient(120deg,#FF2D7A,#FF9F1C);transform:rotate(-8deg);animation:tk 4.5s ease-in-out infinite}
+.ph-chip.l{right:-14px;top:30%;background:#FF9F1C;transform:rotate(6deg);animation:tk 4.5s ease-in-out -2.2s infinite}
+.ph-notif{position:absolute;z-index:2;right:12px;bottom:16px;left:auto;max-width:78%;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.94);color:#0B0A3A;font-size:13px;line-height:1.3;box-shadow:0 10px 26px rgba(0,0,0,.35);animation:nt 7s ease-in-out infinite}
+.ph-notif b{display:block;font-size:13px}
+@media (max-width:600px){.ph-chip.r{left:-4px}.ph-chip.l{right:-4px}}
+.cam-photo{position:relative;display:block;width:clamp(116px,12vw,148px);aspect-ratio:1;flex:none}
+.cam-photo .ring{position:absolute;inset:0;border-radius:50%;padding:4px;background:conic-gradient(from 0deg,#FF2D7A,#FF9F1C,#7B5CFF,#FF2D7A);animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cam-photo .face{position:absolute;inset:4px;border-radius:50%;overflow:hidden;border:3px solid var(--night-2);background:var(--night-3)}
+.cam-photo img{width:100%;height:100%;object-fit:cover;object-position:40% 30%;animation:kb 14s ease-in-out infinite alternate}
+.cam-photo .live{position:absolute;right:8px;bottom:10px;width:16px;height:16px;border-radius:50%;background:#2BD99F;border:3px solid var(--night-2);animation:pulseg 2s ease-out infinite}
+@keyframes pulseg{0%{box-shadow:0 0 0 0 rgba(43,217,159,.6)}100%{box-shadow:0 0 0 10px rgba(43,217,159,0)}}
+.cam-photo .cn{position:absolute;left:calc(100% + 6px);top:6px;white-space:nowrap;padding:7px 11px;border-radius:12px 12px 12px 4px;background:#fff;color:#0B0A3A;font-size:12px;line-height:1.25;box-shadow:0 10px 24px rgba(0,0,0,.35);animation:nt 7s ease-in-out infinite;transform-origin:left bottom}
+.cam-photo .cn b{display:block}
+.avatar.ph{padding:0;overflow:hidden;background:var(--night-3)}
+.avatar.ph img{width:100%;height:100%;object-fit:cover;object-position:40% 30%;border-radius:50%}
+@media (prefers-reduced-motion:reduce){.ph-art *,.cam-photo *,.ph-art img{animation:none!important}}
 </style>
 </head>
 <body>
@@ -646,6 +774,16 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 
 <div class="progress" id="progress" aria-hidden="true"></div>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="vel" x1="0" y1="0" x2=".18" y2="0" spreadMethod="repeat"><stop offset="0" stop-color="#4A0828"/><stop offset=".45" stop-color="#9A1550"/><stop offset=".6" stop-color="#B21C5E"/><stop offset="1" stop-color="#4A0828"/></linearGradient>
+<linearGradient id="velshade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".35"/><stop offset=".3" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></linearGradient>
+<linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE3B0" stop-opacity=".55"/><stop offset="1" stop-color="#FFE3B0" stop-opacity="0"/></linearGradient>
+<radialGradient id="pool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE3B0" stop-opacity=".45"/><stop offset="1" stop-color="#FFE3B0" stop-opacity="0"/></radialGradient>
+<linearGradient id="seatg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A3591"/><stop offset="1" stop-color="#211E66"/></linearGradient>
+<linearGradient id="hot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF2D7A"/><stop offset="1" stop-color="#FF9F1C"/></linearGradient>
+<symbol id="cur-panel" viewBox="0 0 100 600" preserveAspectRatio="none"><path d="M0 0H100V560C88 590 72 570 60 592C48 572 34 594 22 574C12 592 6 584 0 596Z" fill="url(#vel)"/><path d="M0 0H100V560C88 590 72 570 60 592C48 572 34 594 22 574C12 592 6 584 0 596Z" fill="url(#velshade)"/></symbol>
+<symbol id="valance" viewBox="0 0 1200 70" preserveAspectRatio="none"><path d="M0 0H1200V40Q1170 70 1140 40Q1110 70 1080 40Q1050 70 1020 40Q990 70 960 40Q930 70 900 40Q870 70 840 40Q810 70 780 40Q750 70 720 40Q690 70 660 40Q630 70 600 40Q570 70 540 40Q510 70 480 40Q450 70 420 40Q390 70 360 40Q330 70 300 40Q270 70 240 40Q210 70 180 40Q150 70 120 40Q90 70 60 40Q30 70 0 40Z" fill="#7A0F3E"/><path d="M0 40Q30 70 60 40Q90 70 120 40Q150 70 180 40Q210 70 240 40Q270 70 300 40Q330 70 360 40Q390 70 420 40Q450 70 480 40Q510 70 540 40Q570 70 600 40Q630 70 660 40Q690 70 720 40Q750 70 780 40Q810 70 840 40Q870 70 900 40Q930 70 960 40Q990 70 1020 40Q1050 70 1080 40Q1110 70 1140 40Q1170 70 1200 40" fill="none" stroke="#FF9F1C" stroke-width="3" opacity=".8"/></symbol>
+</defs></svg>
 <nav class="nav" aria-label="Secciones">
   <div class="wrap">
     <a class="brand" href="#top"><svg width="34" height="34" viewBox="0 0 120 120" aria-hidden="true"><use href="#lt-icon"/></svg>Last Ticket</a>
@@ -665,6 +803,7 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 </nav>
 
 <header class="hero" id="top">
+  <div class="hero-cur" aria-hidden="true"><svg class="hc-l" viewBox="0 0 100 600" preserveAspectRatio="none"><use href="#cur-panel" width="100" height="600"/></svg><svg class="hc-r" viewBox="0 0 100 600" preserveAspectRatio="none"><use href="#cur-panel" width="100" height="600"/></svg><svg class="hc-v" viewBox="0 0 1200 70" preserveAspectRatio="none"><use href="#valance" width="1200" height="70"/></svg><div class="hc-beam"></div></div>
   <div class="wrap">
     <div>
       <p class="eyebrow">Entradas de teatro de último momento · CABA y GBA</p>
@@ -712,11 +851,11 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 <main>
   <section id="problema">
     <div class="wrap">
-      <div class="sec-head rv">
+      <div class="sec-art"><div class="sec-head rv">
         <p class="eyebrow">01 · El problema</p>
         <h2>Las ganas de ir siguen. <span class="grad">El precio no ayuda.</span></h2>
         <p class="hint">Tocá cada dato para ver de dónde sale.</p>
-      </div>
+      </div><div class="art rv"><figure class="ph-art"><img src="lt-teatro.webp" alt="Sala de teatro con el telón abierto y las butacas vacías" width="799" height="449" loading="lazy"><figcaption class="ph-tag"><span class="dot"></span>Esta noche · butacas libres</figcaption></figure></div></div>
       <div class="tiles t3">
         <button class="tile stat-tile rv" type="button" data-pop="p-precio"><svg class="ic" aria-hidden="true"><use href="#i-wallet"/></svg><span class="n" data-count="63.1" data-dec="1" data-suf="%">63,1%</span><span class="tx">va menos por el precio.</span><span class="more" aria-hidden="true">+</span></button>
         <button class="tile stat-tile rv" type="button" data-pop="p-ganas"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg><span class="n" data-count="88.9" data-dec="1" data-suf="%">88,9%</span><span class="tx">de quienes no van quiere volver.</span><span class="more" aria-hidden="true">+</span></button>
@@ -727,16 +866,27 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 
   <section id="investigacion" class="band">
     <div class="wrap">
-      <div class="sec-head rv">
+      <div class="sec-art"><div class="sec-head rv">
         <p class="eyebrow">02 · La investigación</p>
         <h2>Antes de diseñar, <span class="grad">escuchamos.</span></h2>
-      </div>
+      </div><div class="art rv"><svg class="art-svg" viewBox="0 0 420 300" role="img" aria-label="Una entrevista y una encuesta con sus resultados">
+<rect width="420" height="300" rx="22" fill="#0E0C45"/>
+<g class="float1"><rect x="26" y="30" width="190" height="74" rx="18" fill="#FF2D7A"/><path d="M60 104L52 124L84 104Z" fill="#FF2D7A"/><rect x="44" y="50" width="130" height="9" rx="4.5" fill="#fff" opacity=".9"/><rect x="44" y="68" width="150" height="9" rx="4.5" fill="#fff" opacity=".7"/><rect x="44" y="84" width="90" height="9" rx="4.5" fill="#fff" opacity=".55"/></g>
+<g class="float2"><rect x="120" y="128" width="170" height="60" rx="18" fill="#3A3591"/><path d="M262 188L272 206L244 188Z" fill="#3A3591"/><rect x="138" y="146" width="120" height="9" rx="4.5" fill="#fff" opacity=".85"/><rect x="138" y="162" width="80" height="9" rx="4.5" fill="#fff" opacity=".6"/></g>
+<g transform="translate(300 40)"><rect width="96" height="128" rx="10" fill="#F4EFE6"/><rect x="30" y="-8" width="36" height="16" rx="5" fill="#FF9F1C"/>
+<g fill="none" stroke="#0B0A3A" stroke-width="3"><rect x="14" y="24" width="12" height="12" rx="2"/><rect x="14" y="52" width="12" height="12" rx="2"/><rect x="14" y="80" width="12" height="12" rx="2"/></g>
+<path d="M16 30l4 4 8-9M16 58l4 4 8-9" stroke="#FF2D7A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<g fill="#0B0A3A" opacity=".7"><rect x="34" y="27" width="46" height="6" rx="3"/><rect x="34" y="55" width="40" height="6" rx="3"/><rect x="34" y="83" width="44" height="6" rx="3"/></g></g>
+<g transform="translate(40 214)"><rect x="0" y="40" width="34" height="24" rx="5" fill="#3A3591"/><rect x="46" y="22" width="34" height="42" rx="5" fill="#5B1A8C"/><rect x="92" y="6" width="34" height="58" rx="5" fill="url(#hot)" class="bar"/><rect x="138" y="28" width="34" height="36" rx="5" fill="#3A3591"/></g>
+<g font-family="Bricolage Grotesque,system-ui" font-weight="800" fill="#fff"><text x="250" y="262" font-size="44">404</text><text x="252" y="284" font-size="13" font-family="DM Mono,monospace" font-weight="400" fill="#FF9F1C">RESPUESTAS VÁLIDAS</text></g>
+</svg></div></div>
       <ol class="method">
         <li class="rv"><button class="tile mstep" type="button" data-pop="p-entrevistas"><span class="k">Cualitativa</span><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><b>4 entrevistas</b><span class="more" aria-hidden="true">+</span></button></li>
         <li class="rv"><button class="tile mstep" type="button" data-pop="p-encuesta"><span class="k">Cuantitativa</span><svg class="ic" aria-hidden="true"><use href="#i-form"/></svg><b>Encuesta de 41 preguntas</b><span class="more" aria-hidden="true">+</span></button></li>
         <li class="rv"><button class="tile mstep" type="button" data-pop="p-muestra"><span class="k">Muestra</span><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg><b>404 respuestas</b><span class="tx">±4,9% de margen</span><span class="more" aria-hidden="true">+</span></button></li>
         <li class="rv"><button class="tile mstep" type="button" data-pop="p-cruces"><span class="k">Análisis</span><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg><b>Cruces de variables</b><span class="more" aria-hidden="true">+</span></button></li>
       </ol>
+      <div class="hypo-wrap rv"><p class="eyebrow hy-e">Lo que validamos con la encuesta</p><div class="hypo"><button class="hypo-sum" type="button" data-pop="p-hipo"><span class="k">Hipótesis · n = 404</span><b>0</b><span class="lg0">rechazadas de 10</span><span class="hbars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i class="hp"></i><i class="hp"></i><i class="hp"></i><i class="hp"></i><i class="hp"></i></span><span class="lg">5 validadas · 5 parciales</span><span class="more" aria-hidden="true">+</span></button><div class="hypo-cards"><button class="hcard" type="button" data-pop="p-h2"><span class="st">H2 · validada</span><b>Precio</b><span class="tx">A menor precio que está dispuesto a pagar, más ganas de usar la app.</span><span class="pv">p = 0,005</span><span class="more" aria-hidden="true">+</span></button><button class="hcard" type="button" data-pop="p-h5"><span class="st">H5 · validada</span><b>Último momento</b><span class="tx">Quien se organiza en pocas horas tiene más intención de uso.</span><span class="pv">p = 0,002</span><span class="more" aria-hidden="true">+</span></button><button class="hcard" type="button" data-pop="p-h10"><span class="st sp">H10 · parcial</span><b>Aviso</b><span class="tx">Las notificaciones de ofertas suben la intención de uso.</span><span class="pv">p < 0,001</span><span class="more" aria-hidden="true">+</span></button><button class="hcard" type="button" data-pop="p-h9"><span class="st">H9 · validada</span><b>Perfil completo</b><span class="tx">El segmento que reúne los cuatro rasgos es el que más quiere usarla.</span><span class="pv">65,9% vs 43–47%</span><span class="more" aria-hidden="true">+</span></button></div></div></div>
     </div>
   </section>
 
@@ -748,7 +898,7 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
       </div>
       <div class="persona">
         <button class="card-persona rv" type="button" data-pop="p-camila">
-          <span class="avatar" aria-hidden="true">CF</span>
+          <span class="cam-wrap"><span class="cam-photo"><span class="ring"></span><span class="face"><img src="lt-camila.webp" alt="Camila, 27 años, de Almagro" width="800" height="800"></span><i class="live" aria-hidden="true"></i><span class="cn" aria-hidden="true"><b>¡Rush −50%!</b>Hoy 21 h · Corrientes</span></span></span>
           <span class="who"><b>Camila, 27</b><span>Almagro · va cada 2 o 3 meses</span></span>
           <span class="qt">“Si me avisan a la tarde que hay algo bueno y no me cuesta un ojo de la cara, arrastro a mis amigas y vamos.”</span>
           <span class="more" aria-hidden="true">+</span>
@@ -764,11 +914,11 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 
   <section id="solucion" class="band">
     <div class="wrap">
-      <div class="sec-head rv">
+      <div class="sec-art"><div class="sec-head rv">
         <p class="eyebrow">04 · La propuesta</p>
         <h2>Dos maneras de ir hoy.</h2>
         <p class="lead">Una respuesta a cada insight: precio, ocasión y certeza.</p>
-      </div>
+      </div><div class="art rv"><figure class="ph-art ph-app"><span class="ph-in"><img src="lt-app.webp" alt="Una persona usa la app de Last Ticket en la calle, frente a los teatros" width="645" height="799" loading="lazy"></span><span class="ph-chip r" aria-hidden="true">RUSH</span><span class="ph-chip l" aria-hidden="true">LOTTERY</span><span class="ph-notif" aria-hidden="true"><b>Se abrió el cupo Rush</b>Platea · hoy 21 h · −50%</span></figure></div></div>
       <div class="split">
         <button class="mode rush rv" type="button" data-pop="p-rush">
           <span class="tag"><svg class="ic sm" aria-hidden="true"><use href="#i-bolt"/></svg>Rush · por orden de llegada</span>
@@ -788,10 +938,10 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 
   <section id="segmento">
     <div class="wrap">
-      <div class="sec-head rv">
+      <div class="sec-art"><div class="sec-head rv">
         <p class="eyebrow">05 · Segmento</p>
         <h2><span class="grad">666.642</span> personas buscan esta salida.</h2>
-      </div>
+      </div><div class="art rv"><figure class="ph-art"><img src="lt-publico.webp" alt="Público joven en una sala de teatro, mirando el escenario" width="799" height="449" loading="lazy"><figcaption class="ph-tag"><span class="dot"></span>18 a 55 años · CABA y GBA</figcaption></figure></div></div>
       <div class="funnel" id="funnel">
         <button class="step  rv" type="button" data-pop="p-f0"><div class="shape" data-w="1"><b>3.312.139</b></div><span class="lbl"><b>Mercado potencial</b><span class="pct">base</span></span></button>
         <button class="step  rv" type="button" data-pop="p-f1"><div class="shape" data-w=".473"><b>1.565.700</b></div><span class="lbl"><b>Intención de uso</b><span class="pct">× 47,3%</span></span></button>
@@ -799,6 +949,8 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
         <button class="step  rv" type="button" data-pop="p-f3"><div class="shape" data-w=".24"><b>793.622</b></div><span class="lbl"><b>Se organiza con 8 h de aviso</b><span class="pct">× 66,0%</span></span></button>
         <button class="step final rv" type="button" data-pop="p-f4"><div class="shape" data-w=".201"><b>666.642</b></div><span class="lbl"><b>Acepta la butaca asignada</b><span class="pct">× 84,0%</span><span class="ftag">Segmento atractivo: el público de Last Ticket</span></span></button>
       </div>
+      <div class="meta1 rv"><span class="k">Meta del año 1</span><div><b>125</b><span>funciones por mes</span></div><div><b>30.000</b><span>usuarios registrados</span></div><div><b>2.500</b><span>entradas por mes</span></div><div><b>10%</b><span>de reconocimiento</span></div></div>
+      <div class="crowd-wrap rv" aria-hidden="true"><svg class="art-svg crowd" viewBox="0 0 1000 170" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Público en la sala; una parte destacada en color es el segmento de Last Ticket"><g class="bob" style="animation-delay:-1.30s"><path d="M-4.9 70C-3.4 40.0 44.6 40.0 46.1 70Z" fill="url(#hot)"/><circle cx="20.6" cy="35.5" r="12.8" fill="url(#hot)"/></g><g style="animation-delay:-0.73s"><path d="M37.6 70C39.1 40.0 87.1 40.0 88.6 70Z" fill="#2A2575"/><circle cx="63.1" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-0.07s"><path d="M82.8 70C84.3 40.0 132.3 40.0 133.8 70Z" fill="#2A2575"/><circle cx="108.3" cy="35.5" r="12.8" fill="#2A2575"/></g><g class="bob" style="animation-delay:-0.18s"><path d="M132.8 70C134.3 40.0 182.3 40.0 183.8 70Z" fill="url(#hot)"/><circle cx="158.3" cy="35.5" r="12.8" fill="url(#hot)"/></g><g style="animation-delay:-0.25s"><path d="M178.1 70C179.6 40.0 227.6 40.0 229.1 70Z" fill="#2A2575"/><circle cx="203.6" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-1.90s"><path d="M221.2 70C222.7 40.0 270.7 40.0 272.2 70Z" fill="#2A2575"/><circle cx="246.7" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-1.95s"><path d="M270.9 70C272.4 40.0 320.4 40.0 321.9 70Z" fill="#2A2575"/><circle cx="296.4" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-0.58s"><path d="M310.0 70C311.5 40.0 359.5 40.0 361.0 70Z" fill="#2A2575"/><circle cx="335.5" cy="35.5" r="12.8" fill="#2A2575"/></g><g class="bob" style="animation-delay:-0.62s"><path d="M356.6 70C358.1 40.0 406.1 40.0 407.6 70Z" fill="url(#hot)"/><circle cx="382.1" cy="35.5" r="12.8" fill="url(#hot)"/></g><g class="bob" style="animation-delay:-1.16s"><path d="M410.1 70C411.6 40.0 459.6 40.0 461.1 70Z" fill="url(#hot)"/><circle cx="435.6" cy="35.5" r="12.8" fill="url(#hot)"/></g><g style="animation-delay:-1.10s"><path d="M453.4 70C454.9 40.0 502.9 40.0 504.4 70Z" fill="#2A2575"/><circle cx="478.9" cy="35.5" r="12.8" fill="#2A2575"/></g><g class="bob" style="animation-delay:-0.41s"><path d="M492.0 70C493.5 40.0 541.5 40.0 543.0 70Z" fill="url(#hot)"/><circle cx="517.5" cy="35.5" r="12.8" fill="url(#hot)"/></g><g style="animation-delay:-0.63s"><path d="M544.8 70C546.3 40.0 594.3 40.0 595.8 70Z" fill="#2A2575"/><circle cx="570.3" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-0.60s"><path d="M589.2 70C590.7 40.0 638.7 40.0 640.2 70Z" fill="#2A2575"/><circle cx="614.7" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-0.49s"><path d="M637.1 70C638.6 40.0 686.6 40.0 688.1 70Z" fill="#2A2575"/><circle cx="662.6" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-1.75s"><path d="M679.9 70C681.4 40.0 729.4 40.0 730.9 70Z" fill="#2A2575"/><circle cx="705.4" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-1.96s"><path d="M727.3 70C728.8 40.0 776.8 40.0 778.3 70Z" fill="#2A2575"/><circle cx="752.8" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-1.51s"><path d="M765.4 70C766.9 40.0 814.9 40.0 816.4 70Z" fill="#2A2575"/><circle cx="790.9" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-0.08s"><path d="M811.2 70C812.7 40.0 860.7 40.0 862.2 70Z" fill="#2A2575"/><circle cx="836.7" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-1.15s"><path d="M862.9 70C864.4 40.0 912.4 40.0 913.9 70Z" fill="#2A2575"/><circle cx="888.4" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-1.39s"><path d="M910.8 70C912.3 40.0 960.3 40.0 961.8 70Z" fill="#2A2575"/><circle cx="936.3" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-0.91s"><path d="M952.9 70C954.4 40.0 1002.4 40.0 1003.9 70Z" fill="#2A2575"/><circle cx="978.4" cy="35.5" r="12.8" fill="#2A2575"/></g><g style="animation-delay:-0.95s"><path d="M13.0 118C14.8 82.0 72.4 82.0 74.2 118Z" fill="#332D86"/><circle cx="43.6" cy="76.6" r="15.3" fill="#332D86"/></g><g class="bob" style="animation-delay:-1.40s"><path d="M63.5 118C65.3 82.0 122.9 82.0 124.7 118Z" fill="url(#hot)"/><circle cx="94.1" cy="76.6" r="15.3" fill="url(#hot)"/></g><g style="animation-delay:-1.64s"><path d="M115.9 118C117.7 82.0 175.3 82.0 177.1 118Z" fill="#332D86"/><circle cx="146.5" cy="76.6" r="15.3" fill="#332D86"/></g><g style="animation-delay:-1.34s"><path d="M164.2 118C166.0 82.0 223.6 82.0 225.4 118Z" fill="#332D86"/><circle cx="194.8" cy="76.6" r="15.3" fill="#332D86"/></g><g style="animation-delay:-0.34s"><path d="M213.7 118C215.5 82.0 273.1 82.0 274.9 118Z" fill="#332D86"/><circle cx="244.3" cy="76.6" r="15.3" fill="#332D86"/></g><g class="bob" style="animation-delay:-1.54s"><path d="M267.4 118C269.2 82.0 326.8 82.0 328.6 118Z" fill="url(#hot)"/><circle cx="298.0" cy="76.6" r="15.3" fill="url(#hot)"/></g><g style="animation-delay:-0.78s"><path d="M320.2 118C322.0 82.0 379.6 82.0 381.4 118Z" fill="#332D86"/><circle cx="350.8" cy="76.6" r="15.3" fill="#332D86"/></g><g class="bob" style="animation-delay:-0.90s"><path d="M381.8 118C383.6 82.0 441.2 82.0 443.0 118Z" fill="url(#hot)"/><circle cx="412.4" cy="76.6" r="15.3" fill="url(#hot)"/></g><g style="animation-delay:-1.64s"><path d="M430.5 118C432.3 82.0 489.9 82.0 491.7 118Z" fill="#332D86"/><circle cx="461.1" cy="76.6" r="15.3" fill="#332D86"/></g><g style="animation-delay:-0.83s"><path d="M486.9 118C488.7 82.0 546.3 82.0 548.1 118Z" fill="#332D86"/><circle cx="517.5" cy="76.6" r="15.3" fill="#332D86"/></g><g style="animation-delay:-1.92s"><path d="M533.5 118C535.3 82.0 592.9 82.0 594.7 118Z" fill="#332D86"/><circle cx="564.1" cy="76.6" r="15.3" fill="#332D86"/></g><g class="bob" style="animation-delay:-0.46s"><path d="M583.6 118C585.4 82.0 643.0 82.0 644.8 118Z" fill="url(#hot)"/><circle cx="614.2" cy="76.6" r="15.3" fill="url(#hot)"/></g><g style="animation-delay:-1.18s"><path d="M637.3 118C639.1 82.0 696.7 82.0 698.5 118Z" fill="#332D86"/><circle cx="667.9" cy="76.6" r="15.3" fill="#332D86"/></g><g class="bob" style="animation-delay:-0.84s"><path d="M690.2 118C692.0 82.0 749.6 82.0 751.4 118Z" fill="url(#hot)"/><circle cx="720.8" cy="76.6" r="15.3" fill="url(#hot)"/></g><g style="animation-delay:-1.91s"><path d="M744.1 118C745.9 82.0 803.5 82.0 805.3 118Z" fill="#332D86"/><circle cx="774.7" cy="76.6" r="15.3" fill="#332D86"/></g><g style="animation-delay:-1.24s"><path d="M800.6 118C802.4 82.0 860.0 82.0 861.8 118Z" fill="#332D86"/><circle cx="831.2" cy="76.6" r="15.3" fill="#332D86"/></g><g class="bob" style="animation-delay:-1.80s"><path d="M853.1 118C854.9 82.0 912.5 82.0 914.3 118Z" fill="url(#hot)"/><circle cx="883.7" cy="76.6" r="15.3" fill="url(#hot)"/></g><g style="animation-delay:-1.60s"><path d="M907.0 118C908.8 82.0 966.4 82.0 968.2 118Z" fill="#332D86"/><circle cx="937.6" cy="76.6" r="15.3" fill="#332D86"/></g><g style="animation-delay:-0.21s"><path d="M955.0 118C956.8 82.0 1014.4 82.0 1016.2 118Z" fill="#332D86"/><circle cx="985.6" cy="76.6" r="15.3" fill="#332D86"/></g><g class="bob" style="animation-delay:-0.13s"><path d="M-2.8 170C-0.7 128.0 66.5 128.0 68.6 170Z" fill="url(#hot)"/><circle cx="32.9" cy="121.7" r="17.9" fill="url(#hot)"/></g><g class="bob" style="animation-delay:-0.68s"><path d="M54.6 170C56.7 128.0 123.9 128.0 126.0 170Z" fill="url(#hot)"/><circle cx="90.3" cy="121.7" r="17.9" fill="url(#hot)"/></g><g class="bob" style="animation-delay:-0.30s"><path d="M115.2 170C117.3 128.0 184.5 128.0 186.6 170Z" fill="url(#hot)"/><circle cx="150.9" cy="121.7" r="17.9" fill="url(#hot)"/></g><g style="animation-delay:-0.05s"><path d="M178.3 170C180.4 128.0 247.6 128.0 249.7 170Z" fill="#3A3591"/><circle cx="214.0" cy="121.7" r="17.9" fill="#3A3591"/></g><g style="animation-delay:-0.30s"><path d="M250.0 170C252.1 128.0 319.3 128.0 321.4 170Z" fill="#3A3591"/><circle cx="285.7" cy="121.7" r="17.9" fill="#3A3591"/></g><g style="animation-delay:-0.73s"><path d="M305.1 170C307.2 128.0 374.4 128.0 376.5 170Z" fill="#3A3591"/><circle cx="340.8" cy="121.7" r="17.9" fill="#3A3591"/></g><g style="animation-delay:-1.99s"><path d="M366.0 170C368.1 128.0 435.3 128.0 437.4 170Z" fill="#3A3591"/><circle cx="401.7" cy="121.7" r="17.9" fill="#3A3591"/></g><g style="animation-delay:-0.17s"><path d="M432.6 170C434.7 128.0 501.9 128.0 504.0 170Z" fill="#3A3591"/><circle cx="468.3" cy="121.7" r="17.9" fill="#3A3591"/></g><g style="animation-delay:-0.53s"><path d="M490.8 170C492.9 128.0 560.1 128.0 562.2 170Z" fill="#3A3591"/><circle cx="526.5" cy="121.7" r="17.9" fill="#3A3591"/></g><g class="bob" style="animation-delay:-0.05s"><path d="M562.0 170C564.1 128.0 631.3 128.0 633.4 170Z" fill="url(#hot)"/><circle cx="597.7" cy="121.7" r="17.9" fill="url(#hot)"/></g><g style="animation-delay:-0.29s"><path d="M626.0 170C628.1 128.0 695.3 128.0 697.4 170Z" fill="#3A3591"/><circle cx="661.7" cy="121.7" r="17.9" fill="#3A3591"/></g><g class="bob" style="animation-delay:-1.06s"><path d="M683.6 170C685.7 128.0 752.9 128.0 755.0 170Z" fill="url(#hot)"/><circle cx="719.3" cy="121.7" r="17.9" fill="url(#hot)"/></g><g style="animation-delay:-1.39s"><path d="M751.3 170C753.4 128.0 820.6 128.0 822.7 170Z" fill="#3A3591"/><circle cx="787.0" cy="121.7" r="17.9" fill="#3A3591"/></g><g style="animation-delay:-0.33s"><path d="M805.2 170C807.3 128.0 874.5 128.0 876.6 170Z" fill="#3A3591"/><circle cx="840.9" cy="121.7" r="17.9" fill="#3A3591"/></g><g style="animation-delay:-1.56s"><path d="M873.8 170C875.9 128.0 943.1 128.0 945.2 170Z" fill="#3A3591"/><circle cx="909.5" cy="121.7" r="17.9" fill="#3A3591"/></g><g style="animation-delay:-1.62s"><path d="M931.0 170C933.1 128.0 1000.3 128.0 1002.4 170Z" fill="#3A3591"/><circle cx="966.7" cy="121.7" r="17.9" fill="#3A3591"/></g></svg></div>
     </div>
   </section>
 
@@ -889,9 +1041,9 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
         </div>
       </div>
       <div class="tiles t3 timeline">
-        <button class="tile stage rv" type="button" data-pop="p-pre"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg><span class="d">Nov – dic 2026</span><b>Pre-lanzamiento</b><q>Una butaca vacía no le sirve a nadie.</q><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile stage rv" type="button" data-pop="p-lanz"><svg class="ic" aria-hidden="true"><use href="#i-rocket"/></svg><span class="d">Dic 2026 – mar 2027</span><b>Lanzamiento</b><q>Hoy hay teatro.</q><span class="more" aria-hidden="true">+</span></button>
-        <button class="tile stage rv" type="button" data-pop="p-post"><svg class="ic" aria-hidden="true"><use href="#i-repeat"/></svg><span class="d">Abr – oct 2027</span><b>Post-lanzamiento</b><q>¿Qué hacés hoy a las 21?</q><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile stage pimg rv" type="button" data-pop="p-pre" aria-label="Pre-lanzamiento: ver la pieza"><span class="ph"><img data-from="p-pre" alt="" width="432" height="540"></span><span class="d">Nov – dic 2026</span><b>Pre-lanzamiento</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile stage pimg rv" type="button" data-pop="p-lanz" aria-label="Lanzamiento: ver la pieza"><span class="ph"><img data-from="p-lanz" alt="" width="432" height="540"></span><span class="d">Dic 2026 – mar 2027</span><b>Lanzamiento</b><span class="more" aria-hidden="true">+</span></button>
+        <button class="tile stage pimg rv" type="button" data-pop="p-post" aria-label="Post-lanzamiento: ver la pieza"><span class="ph"><img data-from="p-post" alt="" width="432" height="540"></span><span class="d">Abr – oct 2027</span><b>Post-lanzamiento</b><span class="more" aria-hidden="true">+</span></button>
       </div>
     </div>
   </section>
@@ -927,9 +1079,9 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
     <template id="p-posic"><h3>Posicionamiento</h3><p>La especialista en la salida de último momento: la app para decidir hoy, a menor precio y con certeza. Se posiciona por ocasión de uso y beneficio, no solo por precio.</p></template>
     <template id="p-tono"><h3>Tono</h3><p>Cercano, cómplice y ágil, con voseo. Preciso en precios y condiciones. Habla de plan y de oportunidad, nunca de “entradas baratas” ni de “sobrantes”.</p></template>
     <template id="p-identidad"><h3>Identidad</h3><p>Azul noche de sala a oscuras, violeta, y magenta y naranja de las luces del escenario. La cuenta regresiva es el recurso propio de la marca. Eslogan: “Hoy hay teatro”.</p><div class="sw4"><i style="background:#0B0A3A"><span>#0B0A3A</span></i><i style="background:#5B1A8C"><span>#5B1A8C</span></i><i style="background:#FF2D7A"><span>#FF2D7A</span></i><i style="background:#FF9F1C"><span>#FF9F1C</span></i></div></template>
-    <template id="p-pre"><h3>Pre-lanzamiento · 2/11 al 20/12/2026</h3><p>Instalar la categoría antes que la marca: lista de espera, alta de salas y contenido en Instagram con el mensaje “Una butaca vacía no le sirve a nadie”.</p></template>
-    <template id="p-lanz"><h3>Lanzamiento · 21/12/2026 al 31/03/2027</h3><p>Instalación y primeras compras con Meta y Google Ads, y las primeras colaboraciones con microinfluencers. Mensaje: “Hoy hay teatro”.</p></template>
-    <template id="p-post"><h3>Post-lanzamiento · abril a octubre de 2027</h3><p>Conversión, invitaciones y recompra con remarketing, con pico en vacaciones de invierno. Mensaje: “¿Qué hacés hoy a las 21?”.</p><a class="pl" href="#ax-medios">Ver la planilla completa en el Anexo F</a></template>
+    <template id="p-hipo"><h3>Diez hipótesis, ninguna rechazada</h3><p>Cada hipótesis se puso a prueba con cruces de la encuesta (chi-cuadrado y Spearman). Cuenta como validada si los cruces dan p &lt; 0,05 en la dirección esperada.</p><ul class="ht-list"><li><span class="s v">Validada</span><span><b>H2 · Sensibilidad al precio</b><br>p = 0,040 y p = 0,005</span></li><li><span class="s v">Validada</span><span><b>H5 · Menor anticipación</b><br>p = 0,011 · mismo día p = 0,039 · organizarse p = 0,002</span></li><li><span class="s v">Validada</span><span><b>H6 · El precio como motivación</b><br>media 3,82 · 75,6% condiciona la compra a un descuento</span></li><li><span class="s v">Validada</span><span><b>H8 · Facilidad y precio sobre lo secundario</b><br>QR 64,5% y butaca asignada 59,9% vs actores 14,7% y grupal 16,0%</span></li><li><span class="s v">Validada</span><span><b>H9 · Segmento combinado</b><br>65,9% “definitivamente sí” vs 43–47% · p = 0,025</span></li><li><span class="s p">Parcial</span><span><b>H1 · Frecuencia de asistencia</b><br>compra esperada p = 0,010 · intención p = 0,109</span></li><li><span class="s p">Parcial</span><span><b>H3 · Descuentos y beneficios</b><br>uso de beneficios p = 0,017 · importancia del descuento p = 0,675</span></li><li><span class="s p">Parcial</span><span><b>H4 · Canales digitales</b><br>billeteras p = 0,021 · canal p = 0,015, en dirección opuesta</span></li><li><span class="s p">Parcial</span><span><b>H7 · Seguridad y certeza</b><br>QR 64,5% · sector 54,3% · elegir butaca p &lt; 0,001</span></li><li><span class="s p">Parcial</span><span><b>H10 · La propuesta</b><br>butaca asignada y notificaciones p &lt; 0,001 · modalidad p = 0,410</span></li></ul><a class="pl" href="#ax-insights">Ver los cruces en el Anexo B</a></template><template id="p-h2"><h3>El precio empuja a la app</h3><p>Cuanto menos está dispuesto a pagar alguien por una entrada, más intención tiene de usar Last Ticket (p = 0,005). La importancia del precio también se asocia con la intención (p = 0,040).</p><p class="pk">Lectura: el descuento es la puerta de entrada, no un detalle.</p></template><template id="p-h5"><h3>Decidir en pocas horas</h3><p>Quien necesita menos tiempo para organizarse ante una oferta tiene más intención de uso (p = 0,002). También pesan la anticipación habitual de compra (p = 0,011) y haber ido alguna vez el mismo día (p = 0,039).</p><p class="pk">Por eso el aviso llega a la tarde y la función es esa noche.</p></template><template id="p-h10"><h3>El aviso convierte</h3><p>Quien acepta recibir notificaciones de ofertas y la butaca asignada a cambio de pagar menos muestra mucha más intención de uso (p &lt; 0,001 en ambos cruces). La hipótesis queda parcial porque el tamaño del descuento (p = 0,675) y la modalidad (p = 0,410) no marcan diferencia.</p><p class="pk">Lectura: importa enterarse a tiempo más que el porcentaje exacto.</p></template><template id="p-h9"><h3>El perfil que más la quiere</h3><p>Quienes van seguido, compran online, cuidan el precio y deciden con poca anticipación dicen “definitivamente sí” en el 65,9% de los casos, contra 43% a 47% del resto (p = 0,025; rho = 0,166, p = 0,003).</p><p class="pk">Ese es el segmento atractivo y el perfil de Camila.</p></template><template id="p-pre"><div class="piece"><img src="pieza-pre.webp" alt="Pieza de pre-lanzamiento: una butaca triste bajo un reflector con un cartel que dice “Busco a alguien. Prometo ser cómoda.”" width="432" height="540" loading="lazy"><div><p class="cap">Pieza para Instagram · feed</p><h3>Pre-lanzamiento · 2/11 al 20/12/2026</h3><p>Instalar la categoría antes que la marca: lista de espera, alta de salas y contenido en Instagram con el mensaje “Una butaca vacía no le sirve a nadie”.</p></div></div></template>
+    <template id="p-lanz"><div class="piece"><img src="pieza-lanz.webp" alt="Pieza de lanzamiento: un televisor pregunta “¿Seguís ahí?” y el sillón quedó vacío. “Tu sillón va a estar bien. Hoy hay teatro.”" width="432" height="540" loading="lazy"><div><p class="cap">Pieza para Instagram · feed</p><h3>Lanzamiento · 21/12/2026 al 31/03/2027</h3><p>Instalación y primeras compras con Meta y Google Ads, y las primeras colaboraciones con microinfluencers. Mensaje: “Hoy hay teatro”.</p></div></div></template>
+    <template id="p-post"><div class="piece"><img src="pieza-post.webp" alt="Pieza de post-lanzamiento: un chat que invita al teatro esa noche. “Las mejores noches no se planean. Se avisan.”" width="432" height="540" loading="lazy"><div><p class="cap">Pieza para Instagram · feed</p><h3>Post-lanzamiento · abril a octubre de 2027</h3><p>Conversión, invitaciones y recompra con remarketing, con pico en vacaciones de invierno. Mensaje: “¿Qué hacés hoy a las 21?”.</p><a class="pl" href="#ax-medios">Ver la planilla completa en el Anexo F</a></div></div></template>
     <template id="p-v1"><h3>Chiara · heavy user</h3><p>“He decidido ir el mismo día en varias oportunidades. Esto suele sucederme con el teatro independiente (…) surgiendo el plan como una alternativa cuando no tenía nada agendado para ese día.”</p><p class="pk">En la app: El aviso llega a la tarde, justo cuando se arma el plan de la noche.</p></template>
     <template id="p-v2"><h3>Nacho · experto en desarrollo de apps</h3><p>“Tal vez podría ser interesante visualizarlas en un mapa por zona, porque yo quizás quiero encontrar algún lugar o zona a la que sé que llego por el tiempo, que sé que estoy cerca, para no irme tan lejos.”</p><p class="pk">En la app: Mapa con radio de 1,5 km, obras ordenadas por distancia y filtros Rush / Lottery y por género.</p></template>
     <template id="p-v3"><h3>Nacho · experto en desarrollo de apps</h3><p>“Si yo voy con mi pareja o con algún amigo, posiblemente quiera estar sentado cerca de él, así que me interesa saber cuál es la ubicación de la butaca que voy a poder comprar.”</p><p class="pk">En la app: En Rush elegís butacas juntas en el plano antes de pagar.</p></template>
@@ -1117,7 +1269,7 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
         <header class="ax-h rv"><span class="ax-k">C</span><div><h3>Buyer persona y mapa de empatía</h3><p>Camila es el perfil principal (núcleo 18–34, CABA). Gabriela es el secundario: menor volumen pero mayor intención (59,7% en 45–55 y 69,4% en GBA Sur).</p></div></header>
         <div class="two">
           <div class="box persona-b rv">
-            <div class="pb-top"><div class="avatar" aria-hidden="true">CF</div><div><h4>Camila Ferreyra · principal</h4><p>27 años · Almagro, CABA · NSE C2</p></div></div>
+            <div class="pb-top"><div class="avatar ph" aria-hidden="true"><img src="lt-camila.webp" alt=""></div><div><h4>Camila Ferreyra · principal</h4><p>27 años · Almagro, CABA · NSE C2</p></div></div>
             <dl class="kv">
               <dt>Teatro</dt><dd>Cada 2 o 3 meses; antes, todos los meses. Comedias; amigos que actúan en el off.</dd>
               <dt>Compra</dt><dd>Plateanet o Alternativa Teatral, con días de anticipación, siempre dos entradas, Mercado Pago, busca 2x1.</dd>
@@ -1140,7 +1292,7 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
         <div class="empathy rv" aria-label="Mapa de empatía de Camila">
           <div class="em q1"><h4>¿Qué piensa y siente?</h4><p>El teatro se volvió un lujo y tuvo que elegir entre salidas. No quiere dejarlo. Disfruta cuando consigue un buen plan barato y lo cuenta.</p></div>
           <div class="em q2"><h4>¿Qué ve?</h4><p>Entradas de $40.000 o más en Corrientes. Promos bancarias que no aplican a su tarjeta. Reels de planes en Buenos Aires.</p></div>
-          <div class="em-center"><div class="avatar big" aria-hidden="true">CF</div><b>Camila</b></div>
+          <div class="em-center"><div class="avatar ph big" aria-hidden="true"><img src="lt-camila.webp" alt=""></div><b>Camila</b></div>
           <div class="em q3"><h4>¿Qué oye?</h4><p>Amigas que recomiendan obras. Conocidos que actúan y la invitan. “El teatro está carísimo.” “Hay funciones con la sala medio vacía.”</p></div>
           <div class="em q4"><h4>¿Qué dice y hace?</h4><p>Planifica, pero se suma si la invitan. Compra de a dos con Mercado Pago. Compara precios: “vamos, pero busquemos promo”.</p></div>
           <div class="em q5"><h4>Esfuerzos</h4><p>Precio de las entradas. No enterarse a tiempo. Miedo a ir sobre la hora y no tener lugar. No poder elegir dónde sentarse.</p></div>
@@ -1562,3 +1714,4 @@ button.card-persona:hover{transform:translateY(-4px);border-color:rgba(255,45,12
 
 </body>
 </html>
+<script>document.querySelectorAll("img[data-from]").forEach(function(i){var t=document.getElementById(i.getAttribute("data-from"));var s=t&&t.content.querySelector("img");if(s)i.src=s.getAttribute("src")});</script>
